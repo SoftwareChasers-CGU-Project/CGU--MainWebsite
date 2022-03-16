@@ -32,21 +32,21 @@ export class ApplyVacanciesComponent implements OnInit {
   }
 applyVacancy(){
   this.VacancyService.applyVacancies(this.applyVacancyForm.value).subscribe(data => {
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Cv is submitted successfully',
-      showConfirmButton: false,
-      timer: 1000
-    })
+    // Swal.fire({
+    //   position: 'center',
+    //   icon: 'success',
+    //   title: 'Cv is submitted successfully',
+    //   showConfirmButton: false,
+    //   timer: 1000
+    // })
   }, error => {
-    Swal.fire({
-      position: 'center',
-      icon: 'error',
-      title: 'Unable to submit CV',
-      showConfirmButton: false,
-      timer: 1000
-    })
+    // Swal.fire({
+    //   position: 'center',
+    //   icon: 'error',
+    //   title: 'Unable to submit CV',
+    //   showConfirmButton: false,
+    //   timer: 1000
+    // })
   })
   this.applyVacancyForm.reset();
  }

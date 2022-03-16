@@ -47,7 +47,6 @@ export class AddVacanciesComponent implements OnInit {
      }
 
    }
-
  }
 
 //  VacancyTypes: VacancyType[] = [
