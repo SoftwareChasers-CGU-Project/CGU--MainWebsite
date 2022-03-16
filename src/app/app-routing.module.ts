@@ -5,6 +5,7 @@ import { DeleteVacanciesComponent } from './vacancies/delete-vacancies/delete-va
 import { ListVacanciesComponent } from './vacancies/list-vacancies/list-vacancies.component';
 import { ViewVacancyComponent } from './vacancies/view-vacancy/view-vacancy.component';
 import { AcceptVacanciesComponent } from './vacancies/accept-vacancies/accept-vacancies.component';
+import { ApplyVacanciesComponent } from './vacancies/apply-vacancies/apply-vacancies.component';
 
 const routes: Routes = [
   
@@ -15,7 +16,7 @@ const routes: Routes = [
         {path: 'delete/:vacancyId', component: DeleteVacanciesComponent},
         {path: 'view/:vacancyId', component: ViewVacancyComponent},
         {path: 'create', component: AddVacanciesComponent},
-        {path: 'accept/:vacancyId', component: AcceptVacanciesComponent},
+        {path: 'apply/:vacancyId', component:  ApplyVacanciesComponent},
       ]
     }
 

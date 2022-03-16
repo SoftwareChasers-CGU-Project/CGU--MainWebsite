@@ -24,11 +24,15 @@
     </mat-form-field>
     <br> -->
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class = "inputfield">
       <mat-label>Choose a Vacancy Type</mat-label>
       <mat-select formControlName="VacancyType">
-        <mat-option value="one">First option</mat-option>
-        <mat-option value="two">Second option</mat-option>
+        <mat-option value="one">Government</mat-option>
+        <mat-option value="two">Private</mat-option>
+        <mat-option value="three">NGO</mat-option>
+        <mat-option value="three">Volunteer</mat-option>
+        <mat-option value="three">Internship</mat-option>
+        <mat-option value="four">Higher Studies</mat-option>   
       </mat-select>
     </mat-form-field>
     <!-- <input   type="text" matInput formControlName="VacancyType" >
@@ -62,9 +66,10 @@
     </mat-form-field>
     <br>
     
-    
+    <mat-label>Upload a Poster</mat-label><br>
     <img [src] = "url" height="200"><br>
     <input type="file" (change) ="onSelectFile($event)" formControlName="poster">
+    <br>
      
     <!-- <mat-form-field class="example-full-width" appearance="fill" class = "inputfield">
           <mat-label>Upload Poster</mat-label>
