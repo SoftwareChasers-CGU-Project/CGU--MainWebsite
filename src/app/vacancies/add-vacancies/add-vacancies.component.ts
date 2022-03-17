@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { VacancyService } from 'src/app/services/vacancy.service';
 
@@ -47,17 +47,16 @@ export class AddVacanciesComponent implements OnInit {
      }
 
    }
-
  }
 
- VacancyTypes: VacancyType[] = [
-  {value: 'government-0', viewValue: 'Government'},
-  {value: 'semi-government-1', viewValue: 'Semi-government'},
-  {value: 'private-2', viewValue: 'Private'},
-  {value: 'ngo-3', viewValue: 'NGO'},
-  {value: 'internship-4', viewValue: 'Internship'},
-  {value: 'volunteer-5', viewValue: 'Volunteer'},
-];
+//  VacancyTypes: VacancyType[] = [
+//   {value: 'government-0', viewValue: 'Government'},
+//   {value: 'semi-government-1', viewValue: 'Semi-government'},
+//   {value: 'private-2', viewValue: 'Private'},
+//   {value: 'ngo-3', viewValue: 'NGO'},
+//   {value: 'internship-4', viewValue: 'Internship'},
+//   {value: 'volunteer-5', viewValue: 'Volunteer'},
+// ];
 
  createVacancy(){
   this.VacancyService.addVacancies(this.addVacancyForm.value).subscribe(data => {
@@ -66,7 +65,7 @@ export class AddVacanciesComponent implements OnInit {
       icon: 'success',
       title: 'Vacancy created successfully',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1000
     })
   }, error => {
     Swal.fire({
@@ -74,7 +73,7 @@ export class AddVacanciesComponent implements OnInit {
       icon: 'error',
       title: 'Unable to create Vacancy',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1000
     })
   })
   this.addVacancyForm.reset();

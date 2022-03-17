@@ -9,6 +9,7 @@ import { RegisterProgramComponent } from './programs/register-programs/register-
 import { ListProgramsComponent } from './programs/list-programs/list-programs.component';
 import { SessionRequestComponent} from './programs/session-request/session-request.component';
 import { ViewProgramComponent} from './programs/view-program/view-program.component';
+import { ApplyVacanciesComponent } from './vacancies/apply-vacancies/apply-vacancies.component';
 
 const routes: Routes = [
   
@@ -19,7 +20,7 @@ const routes: Routes = [
         {path: 'delete/:vacancyId', component: DeleteVacanciesComponent},
         {path: 'view/:vacancyId', component: ViewVacancyComponent},
         {path: 'create', component: AddVacanciesComponent},
-        {path: 'accept/:vacancyId', component: AcceptVacanciesComponent},
+        {path: 'apply/:vacancyId', component:  ApplyVacanciesComponent},
       ]
     },
 
