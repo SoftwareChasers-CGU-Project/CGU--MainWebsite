@@ -1,0 +1,45 @@
+.button{
+    background-color: brown;
+    color: aliceblue;
+    margin-left: 10px;
+}
+
+.container {
+    position: relative;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .container img {vertical-align: middle;}
+  
+  .container .content {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .grid-container {
+    display: flex;
+
+}
+
+.grid-child {
+    flex: 1;
+    border: 2px solid rgb(51, 51, 49);
+}  
+
+.card{
+  width: 300px;
+  margin-left: 10px;
+}
+
+.botton-seemore{
+  
+    background-color: brown;
+    color: aliceblue;
+    
+}
