@@ -6,6 +6,7 @@ import { ListVacanciesComponent } from './vacancies/list-vacancies/list-vacancie
 import { ViewVacancyComponent } from './vacancies/view-vacancy/view-vacancy.component';
 import { AcceptVacanciesComponent } from './vacancies/accept-vacancies/accept-vacancies.component';
 import { ApplyVacanciesComponent } from './vacancies/apply-vacancies/apply-vacancies.component';
+import { AddUsersComponent } from './user-registration/add-users/add-users.component';
 
 const routes: Routes = [
   
@@ -18,7 +19,14 @@ const routes: Routes = [
         {path: 'create', component: AddVacanciesComponent},
         {path: 'apply/:vacancyId', component:  ApplyVacanciesComponent},
       ]
-    }
+    },
+
+    {path: 'user-registration',
+    children: [
+      {path: 'create', component: AddUsersComponent},
+    ]
+  }
+
 
 ];
 

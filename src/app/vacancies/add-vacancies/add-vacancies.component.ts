@@ -32,7 +32,6 @@ export class AddVacanciesComponent implements OnInit {
         'closingDate' : new FormControl(''),
         'poster' : new FormControl(''),
         'VacancyType' : new FormControl('')
-
      })
  }
 

@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VacancyService {
 
-  // baseurl: string='https://jsonplaceholder.cypress.io/';
   baseurl: string='http://localhost:3000/';
   
   constructor(private http:HttpClient) { }

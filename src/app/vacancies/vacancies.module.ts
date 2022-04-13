@@ -5,7 +5,7 @@ import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 import { ListVacanciesComponent } from './list-vacancies/list-vacancies.component';
 import { DeleteVacanciesComponent } from './delete-vacancies/delete-vacancies.component';
 import { AcceptVacanciesComponent } from './accept-vacancies/accept-vacancies.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
