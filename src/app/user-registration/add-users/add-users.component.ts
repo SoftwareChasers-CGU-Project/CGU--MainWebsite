@@ -17,10 +17,11 @@ export class AddUsersComponent implements OnInit {
     this.addUserForm = this.formBuilder.group({
       'undergradFName': new FormControl(''),
       'undergradLName' : new FormControl(''),
-      'undergradEmail' : new FormControl(''),
+      'email' : new FormControl(''),
       'faculty' : new FormControl(''),
       'batch' : new FormControl(''),
-      'undergradPassword' : new FormControl('')
+      'undergradPassword' : new FormControl(''),
+      'phoneNumber' : new FormControl('')
    })
   }
 

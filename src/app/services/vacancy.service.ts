@@ -22,6 +22,7 @@ export class VacancyService {
 
   addVacancies(vacancyObj: any){
     //  return this.http.post(this.baseurl + 'users/' , vacancyObj );
+     console.log(vacancyObj);
      return this.http.post(this.baseurl + 'vacancies/' ,vacancyObj );
   }
 
