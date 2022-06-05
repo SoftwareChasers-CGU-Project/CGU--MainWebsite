@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { VacancyService } from 'src/app/services/vacancy.service';
-
 import Swal from 'sweetalert2'
-
-
 
 interface VacancyType {
   value: string;
@@ -44,7 +41,6 @@ export class AddVacanciesComponent implements OnInit {
      reader.onload=(event:any)=>{
        this.url= event.target.result;
      }
-
    }
  }
 

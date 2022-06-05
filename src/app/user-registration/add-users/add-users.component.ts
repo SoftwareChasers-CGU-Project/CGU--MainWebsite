@@ -21,7 +21,7 @@ export class AddUsersComponent implements OnInit {
       'faculty' : new FormControl(''),
       'batch' : new FormControl(''),
       'undergradPassword' : new FormControl(''),
-      'phoneNumber' : new FormControl('')
+      'phone_number' : new FormControl('')
    })
   }
 

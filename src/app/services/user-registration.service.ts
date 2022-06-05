@@ -10,8 +10,8 @@ export class UserRegistrationService {
   
   constructor(private http:HttpClient) { }
 
-  addUsers(vacancyObj: any){
-     console.log(vacancyObj);
-     return this.http.post(this.baseurl + 'users/' ,vacancyObj );
+  addUsers(UserObj: any){
+     console.log(UserObj);
+     return this.http.post(this.baseurl + 'users/' ,UserObj );
   }
 }
