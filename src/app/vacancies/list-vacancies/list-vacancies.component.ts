@@ -55,14 +55,7 @@ export class ListVacanciesComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,private VacancyService : VacancyService) { }
 
   ngOnInit(): void {
-   
-    
-    this.VacancyService.listPendingVacancies().subscribe(data =>{
-      this.listVacancies = data as String[];
-      console.log(this.listVacancies);
-      console.log(this.listVacancies.data.length);
-    });
-
+  
     this.VacancyService.listAcceptedVacancies().subscribe(data =>{
       this.acceptedvacancies = data as String[];
       console.log(this.acceptedvacancies);

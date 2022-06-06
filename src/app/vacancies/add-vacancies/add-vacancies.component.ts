@@ -15,14 +15,13 @@ interface VacancyType {
   styleUrls: ['./add-vacancies.component.css']
 })
 
-
 export class AddVacanciesComponent implements OnInit {
   addVacancyForm :FormGroup = new FormGroup({});
   constructor(private formBuilder: FormBuilder, private VacancyService: VacancyService) { }
 
   ngOnInit(): void {
      this.addVacancyForm = this.formBuilder.group({
-        'companyName': new FormControl(''),
+        'companyName': new FormControl('', Validators.required),
         'companyEmail' : new FormControl(''),
         'vacancyTitle' : new FormControl(''),
         'vacancyDesc' : new FormControl(''),

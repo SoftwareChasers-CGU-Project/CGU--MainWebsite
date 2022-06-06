@@ -3,15 +3,13 @@
 
     <mat-card-title class = "title">Apply for the Vacancy</mat-card-title>
     <form [formGroup] = "applyVacancyForm"  (submit) = "applyVacancy()"  class = "form">
-        
         <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
             <mat-label>Name</mat-label>
-            <input matInput formControlName="name">
+            <input matInput formControlName="vacancyId">
         </mat-form-field>
-
         <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
             <mat-label>Email</mat-label>
-            <input matInput formControlName="email">
+            <input matInput formControlName="undergrad_email">
         </mat-form-field>
         <br>
           

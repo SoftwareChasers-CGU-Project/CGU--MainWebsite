@@ -9,15 +9,15 @@ import Swal from 'sweetalert2'
   styleUrls: ['./apply-vacancies.component.css']
 })
 export class ApplyVacanciesComponent implements OnInit {
-
+  vacancyId : String = '';
   applyVacancyForm :FormGroup = new FormGroup({});
   constructor(private formBuilder: FormBuilder, private VacancyService: VacancyService) { }
 
   ngOnInit(): void {
 
     this.applyVacancyForm = this.formBuilder.group({
-      'name': new FormControl(''),
-      'email' : new FormControl(''),
+      'vacancyId' : new FormControl(''),
+      'undergrad_email' : new FormControl(''),
    })
   }
   url="./assets/uomlogo.png";
@@ -32,21 +32,21 @@ export class ApplyVacanciesComponent implements OnInit {
   }
 applyVacancy(){
   this.VacancyService.applyVacancies(this.applyVacancyForm.value).subscribe(data => {
-    // Swal.fire({
-    //   position: 'center',
-    //   icon: 'success',
-    //   title: 'Cv is submitted successfully',
-    //   showConfirmButton: false,
-    //   timer: 1000
-    // })
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Cv is submitted successfully',
+      showConfirmButton: false,
+      timer: 1000
+    })
   }, error => {
-    // Swal.fire({
-    //   position: 'center',
-    //   icon: 'error',
-    //   title: 'Unable to submit CV',
-    //   showConfirmButton: false,
-    //   timer: 1000
-    // })
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Unable to submit CV',
+      showConfirmButton: false,
+      timer: 1000
+    })
   })
   this.applyVacancyForm.reset();
  }

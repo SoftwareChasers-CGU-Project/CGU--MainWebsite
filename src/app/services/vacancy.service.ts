@@ -11,17 +11,13 @@ export class VacancyService {
   constructor(private http:HttpClient) { }
 
   listVacancies(){
-    // this.http.get(this.baseurl + 'vacancies');
-    // return this.http.get(this.baseurl + 'users/');
     return this.http.get(this.baseurl + 'vacancies/');
   }
   ViewVacancies(vacancyId:String){
-    console.log(vacancyId);
     return this.http.get(this.baseurl +'vacancies/' + vacancyId);
   }
 
   addVacancies(vacancyObj: any){
-    //  return this.http.post(this.baseurl + 'users/' , vacancyObj );
      console.log(vacancyObj);
      return this.http.post(this.baseurl + 'vacancies/' ,vacancyObj );
   }
@@ -36,20 +32,17 @@ export class VacancyService {
   }
 
   listPendingVacancies(){
-    // this.http.get(this.baseurl + 'vacancies');
-    // return this.http.get(this.baseurl + 'users/');
     return this.http.get(this.baseurl + 'vacancies/pendingVacancy/');
   }
 
   listAcceptedVacancies(){
-    // this.http.get(this.baseurl + 'vacancies');
-    // return this.http.get(this.baseurl + 'users/');
     return this.http.get(this.baseurl + 'vacancies/acceptedvacancy');
   }
 
-  applyVacancies(vacancyObj: any){
+  applyVacancies(cvObj: any){
+    console.log(cvObj);
     //  return this.http.post(this.baseurl + 'users/' , vacancyObj );
-     return this.http.post(this.baseurl + 'vacancies/apply/',vacancyObj );
+     return this.http.post(this.baseurl + 'vacancies/cv',cvObj );
   }
 }
 
