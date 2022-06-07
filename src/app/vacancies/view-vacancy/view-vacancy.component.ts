@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VacancyService } from 'src/app/services/vacancy.service';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ApplyVacanciesComponent } from '../apply-vacancies/apply-vacancies.component';
 
 @Component({
   selector: 'app-view-vacancy',
@@ -11,7 +13,7 @@ export class ViewVacancyComponent implements OnInit {
   vacancyId : String = '';
   VacancyDetails : any;
   router : any;
-  constructor(private VacancyService : VacancyService, private activatedRoute : ActivatedRoute) { }
+  constructor(private VacancyService : VacancyService, private activatedRoute : ActivatedRoute, private MatDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data => {
@@ -19,6 +21,13 @@ export class ViewVacancyComponent implements OnInit {
     });
     this.VacancyService.ViewVacancies(this.vacancyId ).subscribe(data => {
        this.VacancyDetails = data;
+    });
+  }
+
+  onOpenDialogClick(){
+    this.MatDialog.open(ApplyVacanciesComponent,
+    {
+      data:this.vacancyId
     });
   }
 

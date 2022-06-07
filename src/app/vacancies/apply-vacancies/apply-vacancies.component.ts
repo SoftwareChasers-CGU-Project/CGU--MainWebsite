@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { VacancyService } from 'src/app/services/vacancy.service';
 import Swal from 'sweetalert2'
 
@@ -11,12 +12,12 @@ import Swal from 'sweetalert2'
 export class ApplyVacanciesComponent implements OnInit {
   vacancyId : String = '';
   applyVacancyForm :FormGroup = new FormGroup({});
-  constructor(private formBuilder: FormBuilder, private VacancyService: VacancyService) { }
+  constructor( @Inject(MAT_DIALOG_DATA) private data: String, private formBuilder: FormBuilder, private VacancyService: VacancyService) { }
 
   ngOnInit(): void {
 
     this.applyVacancyForm = this.formBuilder.group({
-      'vacancyId' : new FormControl(''),
+
       'undergrad_email' : new FormControl(''),
    })
   }

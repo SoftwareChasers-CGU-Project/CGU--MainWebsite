@@ -13,6 +13,7 @@ export class VacancyService {
   listVacancies(){
     return this.http.get(this.baseurl + 'vacancies/');
   }
+  
   ViewVacancies(vacancyId:String){
     return this.http.get(this.baseurl +'vacancies/' + vacancyId);
   }
