@@ -1,0 +1,138 @@
+<div class="row row-cols-2 row-cols-md-3 g-4 card-group">
+  <div class="col">
+    <div
+      class="card type-card height"
+      [routerLink]="['/consultation/type']"
+    >
+      <img
+        src="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.dailymirror.lk/assets/uploads/image_4fb100db7d.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h2 class="card-title">Individual Career Counseling Sessions</h2>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="card type-card height"
+      [routerLink]="['/consultation/type']"
+    >
+      <img
+        src="https://www.sab.ac.lk/sites/default/files/articles/ublc/ublc02.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h2 class="card-title">Round Table Discussions</h2>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card type-card height">
+      <img
+        src="https://uom.lk/sites/default/files/archi/images/2_3.jpg"
+        class="card-img-top"
+        alt="..."
+        height="230px"
+      />
+      <div class="card-body">
+        <h2 class="card-title">Soft Skill Development</h2>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card type-card height">
+      <img
+        src="https://www.immerse.education/wp-content/uploads/2022/01/Cambridge-University-Interview-Questions.jpg"
+        class="card-img-top"
+        alt="..."
+        height="230px"
+      />
+      <div class="card-body">
+        <h2 class="card-title">
+          Session with an Expert in a Foreign University
+        </h2>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card type-card height">
+      <img
+        src="http://s3.amazonaws.com/bizenglish/wp-content/uploads/2019/11/19165428/HR-Professionals-representing-various-Businesses-of-JKH-consulting-the-students-during-Flagship-Day.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h2 class="card-title">Mockup Interview</h2>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card type-card height">
+      <img
+        src="https://uom.lk/sites/default/files/archi/images/IMG_4668_0.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body height">
+        <h2 class="card-title">Session with an Academic Expert</h2>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card bg-dark text-white">
+  <img
+    src="https://www.ncpcsrilanka.org/wp-content/uploads/2022/01/DRBO6689-scaled.jpg"
+    class="card-img"
+    alt="..."
+  />
+  <div class="card-img-overlay">
+    <h5 class="card-title">Consultation Sessions</h5>
+    <!-- <p class="card-text">
+      This is a wider card with supporting text below as a natural lead-in to additional
+      content. This content is a little bit longer.
+    </p> -->
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>
+
+<br /><br />
+<h1 class="heading"><b>Consultants</b></h1>
+<br />
+
+<mat-card class="card" *ngFor="let consultant of listConsultants?.data">
+  <span class="consultantname">
+    <b>{{ consultant.consultantFName + " " + consultant.consultantLName }}</b>
+  </span>
+  <br /><br /><br />
+  <span class="username"> {{ consultant.universityName }}</span> <br /><br />
+  <span class="username"> {{ consultant.post }}</span> <br /><br />
+  <span class="username"> {{ consultant.email }}</span> <br />
+</mat-card>

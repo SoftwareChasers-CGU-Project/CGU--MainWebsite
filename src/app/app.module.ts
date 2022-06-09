@@ -12,6 +12,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { ConsultationModule } from './consultation/consultation.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,8 @@ import { ConsultationModule } from './consultation/consultation.module';
     MatListModule,
     MatTableModule,
     ConsultationModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

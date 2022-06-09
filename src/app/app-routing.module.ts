@@ -5,7 +5,8 @@ import { DeleteVacanciesComponent } from './vacancies/delete-vacancies/delete-va
 import { ListVacanciesComponent } from './vacancies/list-vacancies/list-vacancies.component';
 import { ViewVacancyComponent } from './vacancies/view-vacancy/view-vacancy.component';
 import { AcceptVacanciesComponent } from './vacancies/accept-vacancies/accept-vacancies.component';
-import { ListConsultantsComponent } from './consultation/list-consultants/list-consultants.component';
+import { ListConsultationComponent } from './consultation/list-consultation/list-consultation.component';
+import { RequestConsultationComponent } from './consultation/request-consultation/request-consultation.component';
 
 const routes: Routes = [
   
@@ -21,12 +22,9 @@ const routes: Routes = [
     },
     {path: 'consultation',
       children: [
-        {path: '', component: ListConsultantsComponent},
-        //{path: 'list', component: ListVacanciesComponent},
-        // {path: 'delete/:vacancyId', component: DeleteVacanciesComponent},
-        // {path: 'view/:vacancyId', component: ViewVacancyComponent},
-        // {path: 'create', component: AddVacanciesComponent},
-        // {path: 'accept/:vacancyId', component: AcceptVacanciesComponent},
+        {path: '', component: ListConsultationComponent},
+        {path: 'list', component: ListConsultationComponent},
+        {path: 'type', component: RequestConsultationComponent},
       ]
     }
 
