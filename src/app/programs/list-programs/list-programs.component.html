@@ -1,6 +1,110 @@
-<br><br><br>
+<img src="../../../assets/program.jpg" width="100%" height="400">
+<br><br>
+<mat-card class="card2" style="flex: 1 1 auto;"> 
+  <mat-card-title class="title">Send Your Request to Us</mat-card-title>
+  <br>
+  <mat-card-content >
+    <button mat-raised-button class="button2"  [routerLink]="['/programs/session-request']">Request to conduct sessions</button><br><br>
+  </mat-card-content>
+</mat-card>
 
-<button mat-raised-button class="button"  [routerLink]="['/programs/session-request']">Request to conduct sessions</button><br><br>
+<mat-card class="card1" *ngFor="let program of listPrograms" style="flex: 1 1 auto;"> 
+  <mat-card-content >
+  <span class="programName"><b>{{program.programName}}</b></span> <br>
+  <span class="programCat"> {{program.programCat}}</span> <br><br>
+  <button  mat-raised-button class="botton-seemore"  [routerLink] = "['/programs/viewprogram',program.programId]">See More</button><br><br>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card1" *ngFor="let session of listComSessions" style="flex: 1 1 auto;">
+  <mat-card-content >
+  <span class="programName"><b>{{session.sessionTopic}}</b></span> <br>
+  <span class="programCat">Company Session</span> <br><br>
+  <button  mat-raised-button class="botton-seemore"  [routerLink] = "['/programs/viewsession',session.sessionId]">See More</button><br><br>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <mat-card class="card" role="list">
     <h1>All Events and Workshops</h1>
   <table  class="table table-hover">
@@ -24,17 +128,17 @@
       </tbody>
     </table >
   </mat-card>  -->
-<div style="display: flex;">
+<!-- <div style="display: flex;"> -->
 <!-- <div class="grid-container"> -->
-  <mat-card style="flex: 1 1 auto;" *ngFor="let program of listPrograms">
+  <!-- <mat-card style="flex: 1 1 auto;" *ngFor="let program of listPrograms"> -->
   <!-- <div class="container" *ngFor="let program of listPrograms" class="grid-child"> -->
-    <img src="/assets/blank.jpg" alt="Notebook" style="width:350px; height: 350px;">
+    <!-- <img src="/assets/blank.jpg" alt="Notebook" style="width:350px; height: 350px;"> -->
     <!-- <div class="content"> -->
-      <h1>{{program.programName}}</h1>
+      <!-- <h1>{{program.programName}}</h1>
       <p>{{program.programCat}}</p>
-    <button  mat-raised-button class="botton-seemore"  [routerLink] = "['/programs/view',program.programId]">See More</button>
+    <button  mat-raised-button class="botton-seemore"  [routerLink] = "['/programs/view',program.programId]">See More</button> -->
     <!-- </div> -->
   <!-- </div> -->
 <!-- </div> -->
-  </mat-card>
-</div>
+  <!-- </mat-card>
+</div> -->

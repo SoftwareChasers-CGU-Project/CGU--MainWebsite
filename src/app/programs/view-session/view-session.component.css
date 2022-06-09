@@ -3,13 +3,6 @@
     color: aliceblue;
 }
 
-.user-details{
-    margin: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-
-
 div{
    
     width: 520px;
@@ -20,4 +13,10 @@ div{
 
 .desc{
     width:1000px;
-    }
+}
+
+.user-details{
+    margin: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}

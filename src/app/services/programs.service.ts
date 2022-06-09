@@ -14,6 +14,10 @@ export class ProgramsService {
     return this.http.get(this.baseurl + 'programs/');
   }
 
+  listComSessions(){
+    return this.http.get(this.baseurl + 'comSessions/accepted');
+  }
+
   sendSessionRequest(sessionObj: any){
      return this.http.post(this.baseurl + 'comSessions/' ,sessionObj );
   }
@@ -21,5 +25,19 @@ export class ProgramsService {
   viewProgram(id : String){
     return this.http.get(this.baseurl + 'programs/'+ id );
   }
+
+  registerEvent(data: any){
+    return this.http.post(this.baseurl + 'registerEvent/' ,data);
+ }
+
+ registerSession(data: any){
+  return this.http.post(this.baseurl + 'registerSession/' ,data);
+}
+
+viewSession(id : String){
+  return this.http.get(this.baseurl + 'comSessions/'+ id );
+}
+
+ 
   
 }
