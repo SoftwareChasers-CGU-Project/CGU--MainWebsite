@@ -15,28 +15,31 @@ export class ApplyVacanciesComponent implements OnInit {
   constructor( @Inject(MAT_DIALOG_DATA) private data: String, private formBuilder: FormBuilder, private VacancyService: VacancyService) { }
 
   ngOnInit(): void {
-
+    this.vacancyId =this. data;
+    console.log(this.vacancyId);
     this.applyVacancyForm = this.formBuilder.group({
-
+      'vacancyId'  : this.vacancyId,
       'undergrad_email' : new FormControl(''),
+      'linkedin' : new FormControl(''),
    })
   }
   url="./assets/uomlogo.png";
-  onSelectFile(e: any){
-    if(e.target.files){
-      var reader = new FileReader();
-      reader.readAsDataURL(e.target.files[0]);
-      reader.onload=(event:any)=>{
-        this.url= event.target.result;
-      }
-    }
-  }
+  // onSelectFile(e: any){
+  //   if(e.target.files){
+  //     var reader = new FileReader();
+  //     reader.readAsDataURL(e.target.files[0]);
+  //     reader.onload=(event:any)=>{
+  //       this.url= event.target.result;
+  //     }
+  //   }
+  // }
+  
 applyVacancy(){
   this.VacancyService.applyVacancies(this.applyVacancyForm.value).subscribe(data => {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Cv is submitted successfully',
+      title: 'Linkedin Profile is submitted successfully',
       showConfirmButton: false,
       timer: 1000
     })
@@ -44,7 +47,7 @@ applyVacancy(){
     Swal.fire({
       position: 'center',
       icon: 'error',
-      title: 'Unable to submit CV',
+      title: 'Unable to submit Linkedin Profile',
       showConfirmButton: false,
       timer: 1000
     })

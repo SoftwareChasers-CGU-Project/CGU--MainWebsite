@@ -42,8 +42,7 @@ export class VacancyService {
 
   applyVacancies(cvObj: any){
     console.log(cvObj);
-    //  return this.http.post(this.baseurl + 'users/' , vacancyObj );
-     return this.http.post(this.baseurl + 'vacancies/cv',cvObj );
+     return this.http.post(this.baseurl + 'vacancies/apply',cvObj );
   }
 }
 

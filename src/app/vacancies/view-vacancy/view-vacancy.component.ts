@@ -21,12 +21,16 @@ export class ViewVacancyComponent implements OnInit {
     });
     this.VacancyService.ViewVacancies(this.vacancyId ).subscribe(data => {
        this.VacancyDetails = data;
+       console.log(this.VacancyDetails);
+       console.log(this.VacancyDetails.companyName);
     });
   }
+
 
   onOpenDialogClick(){
     this.MatDialog.open(ApplyVacanciesComponent,
     {
+      //Sending vacancyI
       data:this.vacancyId
     });
   }

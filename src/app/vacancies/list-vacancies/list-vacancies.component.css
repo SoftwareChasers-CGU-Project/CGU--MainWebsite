@@ -1,9 +1,15 @@
 .title{
     margin-left: 100px;
     margin-top: 30px;
+    color: white;
+    text-align: center;
 }
 
-.share-button{
+.card{
+    background-color: #A52A2A;
+    height : 100px;
+}
+.share-button{margin-top: 20px;
     background-color: #A52A2A;
     margin-left: 120px;
 }

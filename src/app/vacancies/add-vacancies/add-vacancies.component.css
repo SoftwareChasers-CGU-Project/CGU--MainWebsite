@@ -14,7 +14,8 @@
   }
 
 .inputfield{
-    width: 468px;
+  width: 95%;
+  margin-left: 7px;
 }
 
 .share-button{

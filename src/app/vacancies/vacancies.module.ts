@@ -5,8 +5,6 @@ import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 import { ListVacanciesComponent } from './list-vacancies/list-vacancies.component';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule} from '@angular/material/input';
@@ -20,8 +18,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { ApplyVacanciesComponent } from './apply-vacancies/apply-vacancies.component';
-
-
 
 @NgModule({
   declarations: [ 

@@ -14,4 +14,9 @@ export class UserRegistrationService {
      console.log(UserObj);
      return this.http.post(this.baseurl + 'users/' ,UserObj );
   }
+  
+  checkUser(email:String){
+    return this.http.get(this.baseurl +'users/check/' + email);
+  }
+
 }
