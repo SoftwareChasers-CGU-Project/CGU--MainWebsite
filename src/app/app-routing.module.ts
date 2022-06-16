@@ -5,11 +5,12 @@ import { DeleteVacanciesComponent } from './vacancies/delete-vacancies/delete-va
 import { ListVacanciesComponent } from './vacancies/list-vacancies/list-vacancies.component';
 import { ViewVacancyComponent } from './vacancies/view-vacancy/view-vacancy.component';
 import { AcceptVacanciesComponent } from './vacancies/accept-vacancies/accept-vacancies.component';
-import { RegisterProgramComponent } from './programs/register-programs/register-program.component';
+// import { RegisterProgramComponent } from './programs/register-programs/register-program.component';
 import { ListProgramsComponent } from './programs/list-programs/list-programs.component';
 import { SessionRequestComponent} from './programs/session-request/session-request.component';
 import { ViewProgramComponent} from './programs/view-program/view-program.component';
 import { ApplyVacanciesComponent } from './vacancies/apply-vacancies/apply-vacancies.component';
+import { ViewSessionComponent } from './programs/view-session/view-session.component';
 
 const routes: Routes = [
   
@@ -28,9 +29,10 @@ const routes: Routes = [
       children: [
         {path: '', component: ListProgramsComponent},
         {path: 'list', component: ListProgramsComponent},
-        {path: 'register', component: RegisterProgramComponent},
+        // {path: 'register/:programId', component: RegisterProgramComponent},
         {path: 'session-request', component:SessionRequestComponent},
-        {path: 'view/:programId', component:ViewProgramComponent},
+        {path: 'viewprogram/:programId', component:ViewProgramComponent},
+        {path: 'viewsession/:sessionId', component:ViewSessionComponent},
       ]
     }
 

@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { DateAdapter } from '@angular/material/core';
 import { VacancyService } from 'src/app/services/vacancy.service';
 
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 
 
 
@@ -60,21 +60,21 @@ export class AddVacanciesComponent implements OnInit {
 
  createVacancy(){
   this.VacancyService.addVacancies(this.addVacancyForm.value).subscribe(data => {
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Vacancy created successfully',
-      showConfirmButton: false,
-      timer: 1000
-    })
+    // Swal.fire({
+    //   position: 'center',
+    //   icon: 'success',
+    //   title: 'Vacancy created successfully',
+    //   showConfirmButton: false,
+    //   timer: 1000
+    // })
   }, error => {
-    Swal.fire({
-      position: 'center',
-      icon: 'error',
-      title: 'Unable to create Vacancy',
-      showConfirmButton: false,
-      timer: 1000
-    })
+    // Swal.fire({
+    //   position: 'center',
+    //   icon: 'error',
+    //   title: 'Unable to create Vacancy',
+    //   showConfirmButton: false,
+    //   timer: 1000
+    // })
   })
   this.addVacancyForm.reset();
  }
