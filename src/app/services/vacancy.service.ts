@@ -46,6 +46,12 @@ export class VacancyService {
     // return this.http.get(this.baseurl + 'users/');
     return this.http.get(this.baseurl + 'vacancies/acceptedvacancy');
   }
+
+  applyVacancies(vacancyObj: any){
+    //  return this.http.post(this.baseurl + 'users/' , vacancyObj );
+     return this.http.post(this.baseurl + 'vacancies/apply/',vacancyObj );
+  }
 }
+
 
 

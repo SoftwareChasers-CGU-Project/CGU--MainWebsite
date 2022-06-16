@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { VacancyService } from 'src/app/services/vacancy.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-accept-vacancies',
   templateUrl: './accept-vacancies.component.html',
@@ -20,36 +22,46 @@ export class AcceptVacanciesComponent implements OnInit {
       this.vacancyId = data.vacancyId;
       console.log(this.vacancyId);
    });
-  //  if(this.vacancyId){
-  //    this.VacancyService.acceptVacancies(this.vacancyId).subscribe(data => {
-  //          this._snackBar.open("Vacancy accepted successfully");
-  //    },err => {
-  //      this._snackBar.open("Unable to accept");
+  
+//    this.applyVacancyForm = this.formBuilder.group({
+//     'companyName': new FormControl(''),
+//     'companyEmail' : new FormControl(''),
+//     'vacancyTitle' : new FormControl(''),
 
-  //    })
-  //  }
-    // this.activatedRoute.params.subscribe(data => {
-    //   this.vacancyId = data.vacancyId
-    
-     //If the vacancyId is available
-    //   if(this.vacancyId ! = ''){
-    //   //View vacancy details
-    //     this.vacancyService.ViewVacancies(this.vacancyId)
-    //     .toPromise()
-    //     .then(data=> {
-    //       this.VacancyDetails = data;
-    //       Object.assign(this.VacancyDetails, data);
-    //       console.log(this.VacancyDetails);
-      
-    // //build the edit form
-
-
-    //     })
-
-    //   }
-
-    // })
-  //  }
-
+//  })
 }
 }
+
+// onSelectFile(e: any){
+//   if(e.target.files){
+//     var reader = new FileReader();
+//     reader.readAsDataURL(e.target.files[0]);
+//     reader.onload=(event:any)=>{
+//       this.url= event.target.result;
+//     }
+
+//   }
+
+// }
+
+// createVacancy(){
+//   this.VacancyService.addVacancies(this.addVacancyForm.value).subscribe(data => {
+//     Swal.fire({
+//       position: 'center',
+//       icon: 'success',
+//       title: 'Vacancy created successfully',
+//       showConfirmButton: false,
+//       timer: 1000
+//     })
+//   }, error => {
+//     Swal.fire({
+//       position: 'center',
+//       icon: 'error',
+//       title: 'Unable to create Vacancy',
+//       showConfirmButton: false,
+//       timer: 1000
+//     })
+//   })
+//   this.addVacancyForm.reset();
+//  }
+// }

@@ -10,6 +10,7 @@ import { VacanciesModule } from './vacancies/vacancies.module';
 import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import { ProgramsModule } from './programs/programs.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
     VacanciesModule,
     HttpClientModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    ProgramsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

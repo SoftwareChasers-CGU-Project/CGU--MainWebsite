@@ -2,23 +2,19 @@
     margin-top: 75px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 275px;
-    width: 40%;
+    margin-bottom: 75px;
+    width: 35%;
   }
   
   .form{
       margin-left: 5px;
-      /* margin: auto;
-      width: 50%;
-      padding: 10px; */
     }
   
   .inputfield{
-      width: 545px;
+      width: 485px;
   }
   
   .share-button{
-      margin-left: 230px;
       background-color: #A52A2A;
   }
   
@@ -26,4 +22,8 @@
     margin: auto;
     width: 50%;
     padding: 10px;
+  }
+
+  .mycsssnackbartest {
+    background-color: blue;
   }
