@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AcceptVacanciesComponent } from './accept-vacancies.component';
+import { AddUsersComponent } from './add-users.component';
 
-describe('AcceptVacanciesComponent', () => {
-  let component: AcceptVacanciesComponent;
-  let fixture: ComponentFixture<AcceptVacanciesComponent>;
+describe('AddUsersComponent', () => {
+  let component: AddUsersComponent;
+  let fixture: ComponentFixture<AddUsersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcceptVacanciesComponent ]
+      declarations: [ AddUsersComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AcceptVacanciesComponent);
+    fixture = TestBed.createComponent(AddUsersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

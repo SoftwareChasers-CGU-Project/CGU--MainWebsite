@@ -1,13 +1,144 @@
+<img src="./assets/Vacancies.jpg" alt="Find a vacancy" width="100%" height="400">
+<mat-card class="card"> 
+    <h1 class = "title">FIND JOB VACANCIES</h1>
+    <form [formGroup] = "filterVacancyForm" (submit) = "filterVacancy()">
+     <div class="row">
+      <div class="column">
+      <select class="form-select vacancyType" aria-label="Default select example" formControlName="vacancyType">
+        <option value ="" >Choose vacancy Type</option>
+        <option>Government</option>
+        <option>Private</option>
+        <option>NGO</option>
+        <option>Internship</option>
+        <option>Volunteer</option>
+      </select><br><br><br> 
+    </div>
+    <div class="column1">
+    <button mat-raised-button color="primary" class="filter-button">Search</button>
+    </div>
+   </div>
+  </form>
+</mat-card>
 
-<h1 class = "title">VACANCIES</h1>
 
-<button  mat-raised-button class="share-button" color="primary" [routerLink] = "['/vacancies/create']" >Post vacancies</button>
+<button  mat-raised-button class="share-button" color="primary" [routerLink] = "['/vacancies/create']"  >Post vacancies</button>
 
 <mat-card class="card1" *ngFor= "let vacancy of acceptedvacancies.data" style="flex: 1 1 auto;">
     <span class="vacancyTitle"><a class="action-link" [routerLink] = "['/vacancies/view',vacancy.vacancyId]"> <b>{{vacancy.vacancyTitle}}</b> </a></span> <br>
     <span class="companyName"> {{ vacancy.companyName }} </span> 
     <mat-card-content class="deadline">Deadline : {{vacancy.closingDate| date:'longDate'}}</mat-card-content>
-    <mat-card-content ></mat-card-content>
 </mat-card>
 
+ 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row row-cols-2 row-cols-md-3 g-4 card-group">
+    <div class="col">
+      <div class="card type-card height"  [routerLink]="['/consultation/type']" (click)="OnMatCardClickEvent('Individual Career Counseling Sessions')">
+     
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/041.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-title">Individual Career Counseling Sessions</h2>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card type-card height" [routerLink]="['/consultation/type']" (click)="OnMatCardClickEvent('Round Table Discussions')">
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/042.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-title">Round Table Discussions</h2>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card type-card height">
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/044.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-title">Soft Skill Development</h2>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card type-card height">
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/041.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-title">Session with an Expert in a Foreign University</h2>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card type-card height">
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/042.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-title">Mockup Interview</h2>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card type-card height">
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/044.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body height">
+          <h2 class="card-title">Session with an Academic Expert</h2>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> -->

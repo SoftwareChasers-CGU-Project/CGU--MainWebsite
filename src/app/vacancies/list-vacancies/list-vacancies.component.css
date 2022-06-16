@@ -1,9 +1,28 @@
 .title{
     margin-left: 100px;
     margin-top: 30px;
+    color: white;
+    text-align: center;
 }
 
-.share-button{
+.card{
+    background-color: #A52A2A;
+    height : 150px;
+}
+
+.vacancyType{
+    width: 65%;
+    height: 40px;
+    margin-left: 25%;
+}
+
+.filter-button{
+    margin-left: 5%;
+    background-color: white;
+    color: black;
+}
+
+.share-button{margin-top: 20px;
     background-color: #A52A2A;
     margin-left: 120px;
 }
@@ -37,6 +56,7 @@ a:hover {
     margin-left: 120px;
     margin-top: 20px;
     margin-right: 500px;
+    margin-bottom: 10px;
     min-width: 350px;
     min-height:100px;
     /* float: left; */
@@ -47,3 +67,16 @@ a:hover {
     padding: 10px;
 }
 
+.column {
+    /* float: left; */
+    width: 75%;
+  }
+.column1{
+    /* float: left; */
+    width: 25%; 
+}
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
