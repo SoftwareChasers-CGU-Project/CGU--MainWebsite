@@ -1,0 +1,25 @@
+.card{
+    /* margin-top: 78px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 275px; */
+      width: 600px;
+      height: 330px;
+  }
+
+  
+  .inputfield{
+      width: 545px;
+  }
+  
+  .share-button{
+      margin-left: 230px;
+      margin-bottom: 15px;
+      background-color: #A52A2A;
+  }
+  
+  .title{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }

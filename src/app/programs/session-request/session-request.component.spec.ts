@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteVacanciesComponent } from './delete-vacancies.component';
+import { SessionRequestComponent } from './session-request.component';
 
-describe('DeleteVacanciesComponent', () => {
-  let component: DeleteVacanciesComponent;
-  let fixture: ComponentFixture<DeleteVacanciesComponent>;
+describe('SessionRequestComponent', () => {
+  let component: SessionRequestComponent;
+  let fixture: ComponentFixture<SessionRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteVacanciesComponent ]
+      declarations: [ SessionRequestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteVacanciesComponent);
+    fixture = TestBed.createComponent(SessionRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
