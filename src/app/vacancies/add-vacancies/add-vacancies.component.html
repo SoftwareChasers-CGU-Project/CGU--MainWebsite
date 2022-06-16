@@ -2,39 +2,75 @@
 <mat-card  class="card">
   <mat-card-title class = "title">Add New Vacancy</mat-card-title>
   <form [formGroup] = "addVacancyForm" (submit) = "createVacancy()" class = "form">
-    <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
+    <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield" >
       <mat-label>Company Name</mat-label>
       <input matInput formControlName="companyName">
     </mat-form-field>
     <!-- <span *ngIf="">Company Name is required.</span> -->
 
     <br>
-    <mat-form-field class="example-full-width" appearance="fill" class = "inputfield">
+    <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
         <mat-label >Company Email</mat-label>
         <input matInput formControlName="companyEmail">
     </mat-form-field>
     <br>
-    
-    <mat-form-field class="example-full-width" appearance="fill" class = "inputfield">
+
+    <select class="form-select vacancyType" aria-label="Default select example"  formControlName="vacancyType">
+      <option value ="" >Choose Vacancy Type</option>
+      <option>Government</option>
+      <option>Private</option>
+      <option>NGO</option>
+      <option>Internship</option>
+      <option>Volunteer</option>
+    </select><br>
+
+    <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
       <mat-label>Vacancy Title</mat-label>
       <input matInput formControlName="vacancyTitle">
   </mat-form-field>
   <br>
 
-  <mat-form-field class="example-full-width" appearance="fill" class = "inputfield">
+  <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
     <mat-label>Vacancy Description</mat-label>
     <textarea matInput formControlName="vacancyDesc"></textarea>
   </mat-form-field>
   <br>
-  
-  <mat-form-field class="example-full-width" appearance="fill" class = "inputfield">
+
+  <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
     <mat-label>Application Closing Date</mat-label>
     <input matInput [matDatepicker]="picker" formControlName="closingDate" min="{{minDate}}">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <br>
-    <!-- <mat-form-field appearance="fill" class = "inputfield">
+   
+  <br>
+  <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">Share Now</button>
+ 
+  </form>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<input   type="text" matInput formControlName="VacancyType" >
+          <select class="custom-select" formControlName="vacancyType">
+            <option value="">Choose Vacancy Type</option>
+            <option>Governmenr</option>
+            <option>Semi-government</option>
+            <option>Volunteer</option>
+          </select><br><br><br> -->
+
+ <!-- <mat-form-field appearance="fill" class = "inputfield">
       <mat-label>Company Type</mat-label>
       <mat-select formControlName="VacancyType">
         <mat-option *ngFor="let VacancyType of VacancyTypes" [value]="VacancyType.value" formControlName="VacancyType" >
@@ -78,8 +114,3 @@
           <img [src]="url" height="200px" width="300px"><br><br>
           <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onSelectFile($event)"   formControlName="programImage"><br><br>
     </mat-form-field> -->
-    <br>
-    <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">Share Now</button>
- 
-  </form>
-</mat-card>

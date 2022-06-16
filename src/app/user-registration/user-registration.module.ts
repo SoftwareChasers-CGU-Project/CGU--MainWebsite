@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatTableModule,
     MatIconModule 
-
-
-
+  ],
+  providers:[
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: {duration: 10000, panelClass: ['green-snackbar'], verticalPosition: 'top'}
+    }
   ]
 })
 export class UserRegistrationModule { }

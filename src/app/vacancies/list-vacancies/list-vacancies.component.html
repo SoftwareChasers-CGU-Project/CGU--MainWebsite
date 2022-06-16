@@ -1,7 +1,25 @@
 <img src="./assets/Vacancies.jpg" alt="Find a vacancy" width="100%" height="400">
 <mat-card class="card"> 
     <h1 class = "title">FIND JOB VACANCIES</h1>
+    <form [formGroup] = "filterVacancyForm" (submit) = "filterVacancy()">
+     <div class="row">
+      <div class="column">
+      <select class="form-select vacancyType" aria-label="Default select example" formControlName="vacancyType">
+        <option value ="" >Choose vacancy Type</option>
+        <option>Government</option>
+        <option>Private</option>
+        <option>NGO</option>
+        <option>Internship</option>
+        <option>Volunteer</option>
+      </select><br><br><br> 
+    </div>
+    <div class="column1">
+    <button mat-raised-button color="primary" class="filter-button">Search</button>
+    </div>
+   </div>
+  </form>
 </mat-card>
+
 
 <button  mat-raised-button class="share-button" color="primary" [routerLink] = "['/vacancies/create']"  >Post vacancies</button>
 
@@ -9,8 +27,20 @@
     <span class="vacancyTitle"><a class="action-link" [routerLink] = "['/vacancies/view',vacancy.vacancyId]"> <b>{{vacancy.vacancyTitle}}</b> </a></span> <br>
     <span class="companyName"> {{ vacancy.companyName }} </span> 
     <mat-card-content class="deadline">Deadline : {{vacancy.closingDate| date:'longDate'}}</mat-card-content>
-    <mat-card-content ></mat-card-content>
 </mat-card>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- <div class="row row-cols-2 row-cols-md-3 g-4 card-group">

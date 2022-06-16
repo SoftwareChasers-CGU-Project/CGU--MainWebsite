@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserRegistrationService } from 'src/app/services/user-registration.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomValidators } from 'src/app/user-registration/Validators';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -14,7 +17,7 @@ export class AddUsersComponent implements OnInit {
   userEmail : any;
   addUserForm :FormGroup = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder, private UserRegistrationService: UserRegistrationService) { }
+  constructor(private formBuilder: FormBuilder, private UserRegistrationService: UserRegistrationService, private router: Router, private _snackbar:MatSnackBar ) { }
 
   namePattern ="[a-zA-Z]*"; 
   phoneNumPattern = "^((\\+94-?)|0)?[0-9]{10}$";
@@ -27,39 +30,62 @@ export class AddUsersComponent implements OnInit {
       'faculty' : new FormControl('', Validators.required),
       'batch' : new FormControl('', Validators.required),
       'undergradPassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
+      'confirmPassword': new FormControl(['', Validators.required], ),
       'phone_number' : new FormControl('', [Validators.required, Validators.pattern(this.phoneNumPattern)])
-   })
+   }
+    )
+
+    
   }
 
+
   createUser(){
-    // this.UserRegistrationService.checkUser(this.addUserForm.value.email).subscribe(data=>{
-    //    this.userEmail = data;
-    //    console.log(data);
-    //    console.log(this.userEmail[0]['checkEmail']);
-    //   //  const ids = this.userEmail.map((obj) => obj.checkEmail);
-    //    if(this.userEmail[0]['checkEmail'] == 0){  
-    //      console.log("hi");
-    //    }
-    // })
-
-
     this.UserRegistrationService.addUsers(this.addUserForm.value).subscribe(data => {
+      this.refreshPage();  
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'User registered successfully',
-        showConfirmButton: false,
-        timer: 1000
-      })
-    }, error => {
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Unable to register user',
-        showConfirmButton: false,
-        timer: 1000
-      })
-    })
-    this.addUserForm.reset();
+            position: 'center',
+            icon: 'success',
+            title: 'User registered successfully',
+            showConfirmButton: false,
+            timerProgressBar: true,
+            timer: 5000
+          })
+        }, error => {
+          // this.refreshPage();  
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Unable to register User',
+            showConfirmButton: false,
+            timer: 1000
+          }) 
+          setTimeout(function(){
+            window.location.reload();
+         }, 1000);  
+        })
+  }
+  
+   refreshPage() {
+    window.location.reload();
    }
+   get f() {
+    return this.addUserForm.controls;
+  }
+
 }
+
+
+// MustMatch(controlName: string, matchingControlName: string) {
+//   return (formGroup: FormGroup) => {
+//   const control = formGroup.controls[controlName];
+//   const matchingControl = formGroup.controls[matchingControlName];
+//   if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+//   return;
+//   }
+//   if (control.value !== matchingControl.value) {
+//   matchingControl.setErrors({ mustMatch: true });
+//   } else {
+//   matchingControl.setErrors(null);
+//   }
+//   }
+//   }

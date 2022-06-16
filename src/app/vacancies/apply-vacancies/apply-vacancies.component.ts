@@ -16,24 +16,15 @@ export class ApplyVacanciesComponent implements OnInit {
 
   ngOnInit(): void {
     this.vacancyId =this. data;
-    console.log(this.vacancyId);
+  
     this.applyVacancyForm = this.formBuilder.group({
       'vacancyId'  : this.vacancyId,
-      'undergrad_email' : new FormControl(''),
-      'linkedin' : new FormControl(''),
+      'undergrad_email' : new FormControl('',[Validators.required, Validators.email]),
+      'linkedin' : new FormControl('', Validators.required),
    })
   }
   url="./assets/uomlogo.png";
-  // onSelectFile(e: any){
-  //   if(e.target.files){
-  //     var reader = new FileReader();
-  //     reader.readAsDataURL(e.target.files[0]);
-  //     reader.onload=(event:any)=>{
-  //       this.url= event.target.result;
-  //     }
-  //   }
-  // }
-  
+ 
 applyVacancy(){
   this.VacancyService.applyVacancies(this.applyVacancyForm.value).subscribe(data => {
     Swal.fire({
@@ -54,6 +45,17 @@ applyVacancy(){
   })
   this.applyVacancyForm.reset();
  }
+
+ 
 }
 
-
+ // onSelectFile(e: any){
+  //   if(e.target.files){
+  //     var reader = new FileReader();
+  //     reader.readAsDataURL(e.target.files[0]);
+  //     reader.onload=(event:any)=>{
+  //       this.url= event.target.result;
+  //     }
+  //   }
+  // }
+  

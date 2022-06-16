@@ -4,6 +4,7 @@ import { DateAdapter } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { VacancyService } from 'src/app/services/vacancy.service';
 import Swal from 'sweetalert2'
+import {MatSelectModule} from '@angular/material/select';
 
 interface VacancyType {
   value: string;
@@ -17,23 +18,35 @@ interface VacancyType {
 })
 
 export class AddVacanciesComponent implements OnInit {
+
+  vacancyType = String;
   addVacancyForm :FormGroup = new FormGroup({});
   constructor(private formBuilder: FormBuilder, private VacancyService: VacancyService, private router: Router) { }
 
   ngOnInit(): void {
     this.getDate();
      this.addVacancyForm = this.formBuilder.group({
+        // 'vacancyType'  : this.vacancyType,
         'companyName': new FormControl('', Validators.required),
-        'companyEmail' : new FormControl('', [Validators.required, Validators.email]),
-        'vacancyTitle' : new FormControl('', Validators.required),
+        'companyEmail': new FormControl('', [Validators.required, Validators.email]),
+        'vacancyType' : new FormControl('', Validators.required),
+        'vacancyTitle': new FormControl('', Validators.required),
         'vacancyDesc' : new FormControl('', Validators.required),
         'closingDate' : new FormControl('', Validators.required),
         'poster' : new FormControl('')
-        // 'VacancyType' : new FormControl('')
      })
  }
 
+ VacancyTypes: VacancyType[] = [
+    {value: 'government-0', viewValue: 'Government'},
+    {value: 'private-1', viewValue: 'Private'},
+    {value: 'ngo-2', viewValue: 'NGO'},
+    {value: 'internship-3', viewValue: 'Internship'},
+    {value: 'volunteer-4', viewValue: 'Volunteer'},
+  ];
+
  minDate:any="";
+ //Function get the future dates
   getDate(){
     var date:any= new Date();
     var toDate:any=date.getDate();
@@ -51,6 +64,7 @@ export class AddVacanciesComponent implements OnInit {
 
  createVacancy(){
   this.VacancyService.addVacancies(this.addVacancyForm.value).subscribe(data => {
+    console.log(this.vacancyType);
     Swal.fire({
       position: 'center',
       icon: 'success',
@@ -58,6 +72,7 @@ export class AddVacanciesComponent implements OnInit {
       showConfirmButton: false,
       timer: 1000
     })
+    // this.refreshPage(); 
   }, error => {
     Swal.fire({
       position: 'center',
@@ -66,9 +81,12 @@ export class AddVacanciesComponent implements OnInit {
       showConfirmButton: false,
       timer: 1000
     })
+    this.refreshPage();
   })
-  // this.addVacancyForm.reset();
-  this.router.navigate(["/vacancies/list"]);
+ }
+
+ refreshPage() {
+  window.location.reload();
  }
 }
 
@@ -94,13 +112,6 @@ export class AddVacanciesComponent implements OnInit {
 //    }
 //  }
 
-//  VacancyTypes: VacancyType[] = [
-//   {value: 'government-0', viewValue: 'Government'},
-//   {value: 'semi-government-1', viewValue: 'Semi-government'},
-//   {value: 'private-2', viewValue: 'Private'},
-//   {value: 'ngo-3', viewValue: 'NGO'},
-//   {value: 'internship-4', viewValue: 'Internship'},
-//   {value: 'volunteer-5', viewValue: 'Volunteer'},
-// ];
+//  
 
  

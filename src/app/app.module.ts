@@ -10,6 +10,7 @@ import { UserRegistrationModule } from './user-registration/user-registration.mo
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatTableModule } from '@angular/material/table';
     UserRegistrationModule,
     HttpClientModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

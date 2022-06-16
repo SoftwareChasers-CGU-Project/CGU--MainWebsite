@@ -19,7 +19,7 @@ export class VacancyService {
   }
 
   addVacancies(vacancyObj: any){
-     console.log(vacancyObj);
+    //  console.log(vacancyObj);
      return this.http.post(this.baseurl + 'vacancies/' ,vacancyObj );
   }
 
@@ -43,6 +43,10 @@ export class VacancyService {
   applyVacancies(cvObj: any){
     console.log(cvObj);
      return this.http.post(this.baseurl + 'vacancies/apply',cvObj );
+  }
+
+  listVacanciesbyType(vacancyType: any){
+    return this.http.get(this.baseurl +'vacancies/filterVacancies/' + vacancyType);
   }
 }
 
