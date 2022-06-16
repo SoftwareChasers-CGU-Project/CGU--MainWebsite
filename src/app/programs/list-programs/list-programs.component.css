@@ -1,0 +1,57 @@
+.button{
+    background-color: brown;
+    color: aliceblue;
+    margin-left: 10px;
+    margin-left: 120px;
+}
+
+.button2{
+  background-color: rgb(214, 187, 187);
+  color:  rgb(100, 16, 16);
+  margin-left: 100px;
+}
+
+.botton-seemore{
+  
+    background-color: brown;
+    color: aliceblue;
+    
+}
+
+.card1{
+  margin-left: 120px;
+  margin-top: 20px;
+  margin-right: 500px;
+  min-width: 350px;
+  min-height:100px;
+  background-color: white;
+}
+
+.programCat{
+  min-width: 250px; 
+  padding: 10px;
+  margin-top: 10px;
+  color: 	#696969;
+}
+
+.programName{
+  min-width: 250px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;    
+}
+
+.card2{
+  color: white;
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-right: 50px;
+  background-color: rgb(100, 16, 16);
+}
+
+.title{
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: 30px;
+  font-style: normal;
+}

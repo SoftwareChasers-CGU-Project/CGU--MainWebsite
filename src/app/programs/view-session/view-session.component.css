@@ -1,0 +1,22 @@
+.button{
+    background-color: brown;
+    color: aliceblue;
+}
+
+div{
+   
+    width: 520px;
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 0;
+}
+
+.desc{
+    width:1000px;
+}
+
+.user-details{
+    margin: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}

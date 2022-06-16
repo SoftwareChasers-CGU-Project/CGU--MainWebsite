@@ -6,6 +6,10 @@ import { VacancyService } from 'src/app/services/vacancy.service';
 import Swal from 'sweetalert2'
 import {MatSelectModule} from '@angular/material/select';
 
+// import Swal from 'sweetalert2'
+
+
+
 interface VacancyType {
   value: string;
   viewValue: string;
