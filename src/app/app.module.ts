@@ -14,11 +14,16 @@ import {MatTableModule} from '@angular/material/table';
 import { ConsultationModule } from './consultation/consultation.module';
 
 import { ProgramsModule } from './programs/programs.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
+
+ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,7 +37,10 @@ import { ProgramsModule } from './programs/programs.module';
     MatTableModule,
     ConsultationModule,
     // NgbModule,
-    ProgramsModule, 
+    ProgramsModule,
+    MatDialogModule,
+    NgbModule,
+    // NgbModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

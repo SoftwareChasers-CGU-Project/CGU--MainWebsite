@@ -1,20 +1,53 @@
-<img src="../../../assets/program.jpg" width="100%" height="400">
-<br><br>
-<mat-card class="card2" style="flex: 1 1 auto;"> 
+<div class="gfg">
+    <img src="../../../assets/career.jpg" width="100%" height="400">
+    <h3 class="first-txt" ><b>Send your Session Request to us</b></h3>
+    <button mat-raised-button class="button2"  [routerLink]="['/programs/session-request']">Request to conduct sessions</button>
+  </div>
+<mat-card class="card"> 
+  
+    <h1 class = "title">Student Programs</h1>
+    <form [formGroup] = "filterProgramForm" (submit) = "filterProgram()" >
+      <div class="row">
+      <div class="column"> 
+      
+        <select class="custom-select programCategory" aria-label="Default select example" formControlName="programCat">
+          <option value ="" >Choose Program Category</option>
+          <option>Department</option>
+          <option>CGU</option>
+          <option>Workshops</option>
+          <option>Company</option>
+        </select>
+      </div>
+      <div class="column1">
+      <button mat-raised-button  class="filter-button">Search</button>
+    </div>
+  </div>
+</form>
+
+</mat-card>
+
+
+<!-- <br><br> -->
+<!-- <mat-card class="card2" style="flex: 1 1 auto;"> 
   <mat-card-title class="title">Send Your Request to Us</mat-card-title>
   <br>
   <mat-card-content >
     <button mat-raised-button class="button2"  [routerLink]="['/programs/session-request']">Request to conduct sessions</button><br><br>
   </mat-card-content>
-</mat-card>
+</mat-card> -->
 
-<mat-card class="card1" *ngFor="let program of listPrograms" style="flex: 1 1 auto;"> 
+
+<br><br>
+
+
+<mat-card class="card1" *ngFor="let program of programs" style="flex: 1 1 auto;"> 
   <mat-card-content >
   <span class="programName"><b>{{program.programName}}</b></span> <br>
   <span class="programCat"> {{program.programCat}}</span> <br><br>
   <button  mat-raised-button class="botton-seemore"  [routerLink] = "['/programs/viewprogram',program.programId]">See More</button><br><br>
   </mat-card-content>
 </mat-card>
+
 
 <mat-card class="card1" *ngFor="let session of listComSessions" style="flex: 1 1 auto;">
   <mat-card-content >
@@ -23,6 +56,10 @@
   <button  mat-raised-button class="botton-seemore"  [routerLink] = "['/programs/viewsession',session.sessionId]">See More</button><br><br>
   </mat-card-content>
 </mat-card>
+<!-- <pagination-controls (pageChange) ="p = $event"></pagination-controls> -->
+<!-- <mat-paginator #paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"> -->
+<!-- </mat-paginator> -->
+<!-- | paginate: { itemsPerPage: 5, currentPage: p} -->
 
 
 
