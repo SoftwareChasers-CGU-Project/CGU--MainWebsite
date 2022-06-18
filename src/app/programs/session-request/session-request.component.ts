@@ -27,7 +27,10 @@ export class SessionRequestComponent implements OnInit {
       'sessionTopic': new FormControl('',[Validators.required]),
       'TargetGroup': new FormControl('',[Validators.required]),
       'sessionDate': new FormControl('',[Validators.required]),
-      'sessionDesc': new FormControl('',[Validators.required])
+      'sessionDesc': new FormControl('',[Validators.required]),
+      
+
+ 
     })
   }
 
