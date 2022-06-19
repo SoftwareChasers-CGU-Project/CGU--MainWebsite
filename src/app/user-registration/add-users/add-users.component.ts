@@ -32,37 +32,18 @@ export class AddUsersComponent implements OnInit {
       'undergradPassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
       'confirmPassword': new FormControl(['', Validators.required], ),
       'phone_number' : new FormControl('', [Validators.required, Validators.pattern(this.phoneNumPattern)])
-   }
-    )
-
-    
+   })  
   }
 
 
   createUser(){
     this.UserRegistrationService.addUsers(this.addUserForm.value).subscribe(data => {
-      this.refreshPage();  
-      Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'User registered successfully',
-            showConfirmButton: false,
-            timerProgressBar: true,
-            timer: 5000
-          })
-        }, error => {
-          // this.refreshPage();  
-          Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Unable to register User',
-            showConfirmButton: false,
-            timer: 1000
-          }) 
-          setTimeout(function(){
-            window.location.reload();
-         }, 1000);  
-        })
+      this._snackbar.open("User registered successfully");
+      this.refreshPage();
+    }, error=>{
+      this._snackbar.open("Unable to register User");
+      this.refreshPage();
+    })
   }
   
    refreshPage() {
