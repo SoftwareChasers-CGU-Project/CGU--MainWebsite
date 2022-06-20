@@ -17,6 +17,9 @@ export class ViewProgramComponent implements OnInit {
   programDetails:any;
   
   router: any;
+
+  isPastDate : boolean = false;
+
   constructor(private ProgramsService: ProgramsService, private activatedRoute: ActivatedRoute, private MatDialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -30,6 +33,14 @@ export class ViewProgramComponent implements OnInit {
     this.ProgramsService.viewProgram(this.programId).subscribe(data => {
       
       this.programDetails=data;
+      var dateNow = Date.now();
+      var sessionDate =Math.floor( new Date(this.programDetails[0].programDate).getTime());
+      if(dateNow > sessionDate){
+        this.isPastDate = true;
+      }
+      console.log(dateNow);
+      console.log(sessionDate);
+      
       console.log(this.programDetails)
     })
 

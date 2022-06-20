@@ -19,9 +19,9 @@
 }
 
 .card1{
-  margin-left: 120px;
+  /* margin-left: 120px; */
   margin-top: 20px;
-  margin-right: 500px;
+  /* margin-right: 500px; */
   min-width: 350px;
   min-height:100px;
   background-color: white;
@@ -57,6 +57,8 @@
   color: white;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+
 
 /* .title{
   margin-left: 100px;
@@ -134,4 +136,19 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.main-title{
+  font-size: 40px;
+  padding-left: 350px;
+  color: brown;
+}
+
+.main-title2{
+  font-size: 40px;
+  padding-left: 400px;
+  color: brown;
+}
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: rgb(38, 124, 146);
 }

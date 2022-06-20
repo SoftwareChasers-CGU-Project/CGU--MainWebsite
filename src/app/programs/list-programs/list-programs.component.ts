@@ -20,6 +20,8 @@ export class ListProgramsComponent implements OnInit {
   totalLength:any;
   p:number=1;
   ComSessions:any;
+  listPastPrograms:any;
+  listPastComsessions:any;
 
   constructor(private ProgramsService:ProgramsService, private formBuilder:FormBuilder) { }
 
@@ -34,10 +36,21 @@ export class ListProgramsComponent implements OnInit {
       this.ProgramsService.listProgramsbyCat(this.programCat).subscribe(data =>{
       this.programs=data;
       // console.log(this.programs);
+     
       
         this.ProgramsService.listComSessions().subscribe(data => {
           this.listComSessions=data;
-          console.log(this.listComSessions);
+
+          this.ProgramsService.listPastPrograms().subscribe(data => {
+            this. listPastPrograms=data;
+            this.ProgramsService.listPastComsessions().subscribe(data => {
+              this.listPastComsessions=data;
+          
+
+          
+          });
+        });
+          // console.log(this.listPastPrograms);
       });
    });
 
@@ -54,15 +67,18 @@ export class ListProgramsComponent implements OnInit {
     if(this.programCat!="Company")  {
       this.ProgramsService.listProgramsbyCat(this.programCat).subscribe(data =>{
         this.programs=data;
+
+        
         // console.log(this.programs);
       });
-      this.listComSessions=null;
+     
       console.log(this.listComSessions);
     }else{
       this.ProgramsService.listComSessions().subscribe(data => {
         this.listComSessions=data;
+        this.programs=null;
     });
-    this.programs=null;
+   
   }
     
 }

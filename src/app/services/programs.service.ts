@@ -19,6 +19,13 @@ export class ProgramsService {
     return this.http.get(this.baseurl + 'comSessions/accepted');
   }
 
+  listPastComsessions(){
+    return this.http.get(this.baseurl + 'comSessions/past');
+  }
+  listPastPrograms(){
+    return this.http.get(this.baseurl + 'programs/past');
+  }
+
   sendSessionRequest(sessionObj: any){
      return this.http.post(this.baseurl + 'comSessions/' ,sessionObj );
   }

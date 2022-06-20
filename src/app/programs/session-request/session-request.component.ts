@@ -12,10 +12,12 @@ import { Router } from '@angular/router';
 export class SessionRequestComponent implements OnInit {
 
   sendRequestForm : FormGroup= new FormGroup ({});
+  time: string="";
+
   constructor(private formBuilder: FormBuilder,
     private ProgramsService:ProgramsService,
     private _snackBar: MatSnackBar,
-    private router:Router) { }
+    private router:Router) {}
     // emailPattern ="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" ;
 
   ngOnInit(): void {
@@ -28,18 +30,20 @@ export class SessionRequestComponent implements OnInit {
       'TargetGroup': new FormControl('',[Validators.required]),
       'sessionDate': new FormControl('',[Validators.required]),
       'sessionDesc': new FormControl('',[Validators.required]),
-      
-
- 
+      'sessionTime': new FormControl('',[Validators.required])
     })
+    this.setNow(); 
+    // console.log(this.time)
   }
 
   sendRequest(){
+    console.log(this.sendRequestForm.value);
+    
     this.ProgramsService.sendSessionRequest(this.sendRequestForm.value).subscribe(data =>{
       this._snackBar.open("You registerd Successfully");
       this.router.navigate(["/programs/list"])
     }, err =>{
-      this._snackBar.open("Unable to register for the event..Please try again")
+      this._snackBar.open("This email already exists..!!")
       this.refreshPage();
     })
  
@@ -58,12 +62,27 @@ export class SessionRequestComponent implements OnInit {
     }
     var year=date.getFullYear();
     this.minDate=year+"-"+month+"-"+toDate;
-    console.log(this.minDate)
+    // console.log(this.minDate)
   }
 
   refreshPage(){
     window.location.reload();
   }
+
+  setNow(){
+    let now = new Date();
+    let hours = ("0" + now.getHours()).slice(-2);
+    let minutes = ("0" + now.getMinutes()).slice(-2);
+    let str = hours + ':' + minutes;
+    this.time = str;
+    // console.log(this.time);
+    this.sendRequestForm.patchValue({
+      sessionTime : str
+    })
+    
+  }
+
+
 
 }
 
