@@ -11,7 +11,7 @@ export class ConsultationService {
   listConsultants(){
     return this.http.get(this.baseUrl+ 'consultants/list');
   }
-  requestConsultation(consultationRequestObj: any){
-    return this.http.post(this.baseUrl+ 'consultationReq/add',consultationRequestObj);
+  requestConsultation(consultationRequestObj: any, consultantId:any){
+    return this.http.post(this.baseUrl+ 'consultationReq/add/'+consultantId,consultationRequestObj);
   }
 }

@@ -15,6 +15,21 @@
     margin-inline-start: 150px;
     margin-inline-end: 150px;
 }
+.consultantBack{
+    margin-block-end: 30px;
+    margin-block-start: 20px;
+    padding-bottom: 40px;
+    margin-inline-start: 150px;
+    margin-inline-end: 150px;
+    background-color: rgba(127, 204, 255, 0.729);
+}
+.consultant-card{
+    width: 800px;
+    margin-block-end: 20px;
+    margin-block-start: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
 .card-group{
     margin-block-end: 20px;
     margin-block-start: 20px;
@@ -41,8 +56,9 @@
 .heading{
     text-decoration-color: black;
     padding-top: 10px;
-    margin-inline-start: 160px;
+    /* margin-inline-start: 160px; */
     font-size: 30px;
+    text-align: center;
 }
 .example-card {
     max-width: 400px;
@@ -53,7 +69,20 @@
     ;
     color: white;
 }
-
+/* .button2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: rgb(41, 9, 9);
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  } */
 /* .type-card {
     display: grid;
     grid-template-columns: 300px;

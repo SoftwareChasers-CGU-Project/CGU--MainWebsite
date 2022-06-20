@@ -9,10 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -29,8 +29,10 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule,
     MatSelectModule,
+    MatGridListModule,
   ]
 })
 export class ConsultationModule { }

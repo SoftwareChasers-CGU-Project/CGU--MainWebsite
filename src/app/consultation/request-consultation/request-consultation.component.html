@@ -1,51 +1,40 @@
-<div>
-  <h1>{{ type }}</h1>
-</div>
 
-<mat-card class="form-card">
-  <mat-card-title>Consultation Request</mat-card-title><br />
-  <mat-card-content>
-    <form [formGroup]="requestConsultationForm" (submit)="sendRequest()">
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Undergraduate Email</mat-label>
-        <input type="text" matInput formControlName="undergraduate_email" />
-      </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Select an option</mat-label>
-        <mat-select [(value)]="selected">
-          <mat-option>None</mat-option>
-          <mat-option value="Mock Interview">Mock Interview</mat-option>
-          <mat-option value="Round Table Discusstion">Round Table Discusstion</mat-option>
-          <mat-option value="Soft Skill Development">Soft Skill Development</mat-option>
+<mat-card  class="card">
+  <mat-card-title class = "title">{{sessionType}}</mat-card-title>
+  <mat-card-subtitle class="subTitle">Send Request</mat-card-subtitle>
+
+  
+  <form [formGroup]="requestConsultationForm" (submit)="sendRequest()" class="form"> 
+      <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield">
+        <mat-label>Undergraduate Email ( University Email )</mat-label>
+        <input type="text" matInput formControlName="undergraduate_email"  />
+
+		<!-- <div *ngif="(requestConsultationForm.get('undergraduate_email').invalid && requestConsultationForm.get('undergraduate_email').touched) || requestConsultationForm.get('undergraduate_email').dirty">
+			<p class="text-danger" *ngif="requestConsultationForm.get('undergraduate_email').errors?.pattern">Email address is invalid</p>
+      <small *ngif="requestConsultationForm.get('undergraduate_email').errors?.required" class="text-danger">Email is required</small> 
+		</div> -->
+     
+      </mat-form-field> 
+      
+      <br>
+
+      <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
+        <mat-label>Select a Consultant</mat-label>
+        <mat-select formControlName="consultant" >
+          <mat-option *ngFor="let consultantDropdown of dropDown_list?.data" [value]="consultantDropdown">
+            {{consultantDropdown.consultantFName+" "+consultantDropdown.consultantLName }}
+          </mat-option>
+          <!-- <mat-option>None</mat-option>
+          <mat-option value="Mock Interview">Hashini Gamage</mat-option>
+          <mat-option value="Round Table Discusstion">Menaka Wijewardana</mat-option>
+          <mat-option value="Soft Skill Development">Dr. Nanayakkara LDJF</mat-option> -->
         </mat-select>
       </mat-form-field>
+      <br>
+      <br>
+      
+    <button mat-raised-button color="primary" class="share-button"  [disabled]="!requestConsultationForm.valid">Send Request</button>
 
-      <!-- <p>You selected: {{selected}}</p> -->
-
-      <!--       
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>University Name</mat-label>
-            <input type="text" matInput formControlName="universityName" />
-          </mat-form-field>
-       
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Post</mat-label>
-            <input type="text" matInput formControlName="post" />
-          </mat-form-field>
-        
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Email Address</mat-label>
-            <input type="email" matInput formControlName="email" />
-          </mat-form-field> -->
-
-      <button
-        mat-raised-button
-        color="primary"
-        [disabled]="!requestConsultationForm.valid"
-      >
-        Send Request
-      </button>
-    </form>
-  </mat-card-content>
+  </form>
 </mat-card>

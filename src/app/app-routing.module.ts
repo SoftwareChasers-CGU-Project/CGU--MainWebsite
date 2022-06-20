@@ -45,7 +45,7 @@ const routes: Routes = [
       children: [
         {path: '', component: ListConsultationComponent},
         {path: 'list', component: ListConsultationComponent},
-        {path: 'type', component: RequestConsultationComponent},
+        {path: 'type/:sessionType', component: RequestConsultationComponent},
       ]
     }
 

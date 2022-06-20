@@ -76,7 +76,7 @@ export class AddVacanciesComponent implements OnInit {
       showConfirmButton: false,
       timer: 1000
     })
-    // this.refreshPage(); 
+    this.refreshPage(); 
   }, error => {
     Swal.fire({
       position: 'center',
