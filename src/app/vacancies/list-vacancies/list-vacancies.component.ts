@@ -33,7 +33,6 @@ export class ListVacanciesComponent implements OnInit {
     }
 
   filterVacancy(){
-    console.log("hi");
     console.log(this.filterVacancyForm.value);
     this.vacancytype = this.filterVacancyForm.value['vacancyType']; 
     console.log(this.vacancytype);  

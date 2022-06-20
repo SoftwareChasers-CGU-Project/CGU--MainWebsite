@@ -28,11 +28,11 @@ export class ApplyVacanciesComponent implements OnInit {
  
 applyVacancy(){
   this.VacancyService.applyVacancies(this.applyVacancyForm.value).subscribe(data => {
-    this._snackBar.open("Vacancy created successfully");
+    this._snackBar.open("Applied for the vacancy successfully");
     this.router.navigate(['/vacancies/view',this.vacancyId]);
     this.refresh();
   }, error=>{
-    this._snackBar.open("Unable to create Vacancy");
+    this._snackBar.open("User is not registered.");
     this.refresh();
   }) 
  }
@@ -40,5 +40,7 @@ applyVacancy(){
  refresh(){
   window.location.reload();
  }
+
+ 
  
 }

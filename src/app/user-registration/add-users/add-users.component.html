@@ -38,10 +38,16 @@
           <input matInput formControlName="batch">
        </mat-form-field>
        <br>
+
+       <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
+         <mat-label>Batch2</mat-label>
+         <input matInput formControlName="batch2">
+      </mat-form-field>
+      <br>
       
        <mat-form-field appearance="fill" class = "inputfield" >
           <mat-label>Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" formControlName="undergradPassword">
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="undergradPassword"  id="undergradPassword">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
