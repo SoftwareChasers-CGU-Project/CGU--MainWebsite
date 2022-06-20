@@ -127,3 +127,16 @@ a:hover {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+    background: #A52A2A;
+}
+  
+.center{
+  margin: 0;
+  position: absolute;
+  top: 99%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

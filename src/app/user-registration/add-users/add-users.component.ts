@@ -21,7 +21,6 @@ export class AddUsersComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private UserRegistrationService: UserRegistrationService, private router: Router, private _snackbar:MatSnackBar ) { }
 
   namePattern ="[a-zA-Z]*"; 
-  namePattern2 ="[0-9]*";
   phoneNumPattern = "^((\\+94?)|0)?[0-9]{10}$";
   email_pattern="^[a-z0-9\\.]+@(uom){1}\\.(lk){1}$";
   
@@ -30,9 +29,8 @@ export class AddUsersComponent implements OnInit {
       'undergradFName': new FormControl('',[Validators.required, Validators.pattern(this.namePattern)]),
       'undergradLName' : new FormControl('',[Validators.required, Validators.pattern(this.namePattern)]),
       'email' : new FormControl('', [Validators.required, Validators.pattern(this.email_pattern)]),
-      'faculty' : new FormControl('',[Validators.required, Validators.pattern(this.namePattern2)]),
+      'faculty' : new FormControl('',[Validators.required, Validators.pattern(this.namePattern)]),
       'batch' : new FormControl('', Validators.required),
-      'batch2' : new FormControl('', Validators.required),
       'undergradPassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
       'confirmpassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
       'phone_number' : new FormControl('', [Validators.required, Validators.pattern(this.phoneNumPattern)])

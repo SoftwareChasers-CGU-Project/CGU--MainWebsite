@@ -23,7 +23,7 @@
 
 <button  mat-raised-button class="share-button" color="primary" [routerLink] = "['/vacancies/create']"  >Post vacancies</button>
 
-<mat-card class="card1" *ngFor= "let vacancy of acceptedvacancies.data" style="flex: 1 1 auto;">
+<mat-card class="card1" *ngFor= "let vacancy of acceptedvacancies.data | paginate: { id: 'pagination1', itemsPerPage: 10, currentPage: p}" style="flex: 1 1 auto;">
   <div class="row">
      <div class="column2">
         <div class="align">
@@ -47,8 +47,14 @@
              </ng-template>
      </div>
 </div>
+
     <!-- <mat-card-content class="deadline"></mat-card-content> -->
 </mat-card>
+<br>
+<br>
+<span class="center"><pagination-controls id="pagination1" class="my-pagination" (pageChange) ="p = $event"></pagination-controls> </span> 
+<br>
+<br> 
 
  
 

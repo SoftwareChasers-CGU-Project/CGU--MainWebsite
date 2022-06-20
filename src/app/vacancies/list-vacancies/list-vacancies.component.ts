@@ -15,6 +15,7 @@ export class ListVacanciesComponent implements OnInit {
   selectedValue = String;
   vacancytype : String = "false";
   acceptedvacancies: any = [];
+  p:number=1;
   filterVacancyForm :FormGroup = new FormGroup({});
   
   constructor(private activatedRoute: ActivatedRoute, private VacancyService : VacancyService, private formBuilder: FormBuilder) { }
