@@ -3,8 +3,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserRegistrationService } from 'src/app/services/user-registration.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CustomValidators } from 'src/app/user-registration/Validators';
-import Swal from 'sweetalert2'
+import { CustomValidators } from 'src/app/user-registration/CustomValidators';
+
+
 
 @Component({
   selector: 'app-add-users',
@@ -15,6 +16,8 @@ export class AddUsersComponent implements OnInit {
   hide = true;
 
   userEmail : any;
+  undergradPassword:any;
+  confirmPassword: any;
   addUserForm :FormGroup = new FormGroup({});
 
   constructor(private formBuilder: FormBuilder, private UserRegistrationService: UserRegistrationService, private router: Router, private _snackbar:MatSnackBar ) { }
@@ -30,9 +33,11 @@ export class AddUsersComponent implements OnInit {
       'faculty' : new FormControl('', Validators.required),
       'batch' : new FormControl('', Validators.required),
       'undergradPassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
-      'confirmPassword': new FormControl(['', Validators.required], ),
+      'confirmpassword' : new FormControl('', [Validators.required, Validators.minLength(8)]),
       'phone_number' : new FormControl('', [Validators.required, Validators.pattern(this.phoneNumPattern)])
-   })  
+   },
+     CustomValidators.mustMatch('undergradPassword', 'confirmpassword') 
+   ) 
   }
 
 
@@ -49,9 +54,7 @@ export class AddUsersComponent implements OnInit {
    refreshPage() {
     window.location.reload();
    }
-   get f() {
-    return this.addUserForm.controls;
-  }
+    
 
 }
 

@@ -1,3 +1,4 @@
+<div class="container">
 <mat-card  class="card">
     <mat-card-title class = "title" >Sign Up</mat-card-title>
      <form [formGroup] = "addUserForm" (submit) = "createUser()" class = "form">
@@ -47,22 +48,21 @@
        </mat-form-field>
        <br>
 
-       <!-- <mat-form-field appearance="fill" class = "inputfield" >
+       <mat-form-field appearance="fill" class = "inputfield" >
          <mat-label>Confirmed Password</mat-label>
-         <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword">
+         <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmpassword"  id="confirmpassword" >
          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
        </button>
+       
       </mat-form-field>
-      <br> -->
-
-
-      
+      <br>
+   
       <div class ="center" ><button mat-raised-button color="primary" class="share-button"  [disabled]="!addUserForm.valid" >Sign Up</button></div>
      </form>
   </mat-card>
 
-
+</div>
 
 
 
