@@ -5,24 +5,25 @@ import { DeleteVacanciesComponent } from './vacancies/delete-vacancies/delete-va
 import { ListVacanciesComponent } from './vacancies/list-vacancies/list-vacancies.component';
 import { ViewVacancyComponent } from './vacancies/view-vacancy/view-vacancy.component';
 import { AcceptVacanciesComponent } from './vacancies/accept-vacancies/accept-vacancies.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
-  
-  {path: 'vacancies',
-      children: [
-        {path: '', component: ListVacanciesComponent},
-        {path: 'list', component: ListVacanciesComponent},
-        {path: 'delete/:vacancyId', component: DeleteVacanciesComponent},
-        {path: 'view/:vacancyId', component: ViewVacancyComponent},
-        {path: 'create', component: AddVacanciesComponent},
-        {path: 'accept/:vacancyId', component: AcceptVacanciesComponent},
-      ]
-    }
-
+  {
+    path: 'vacancies',
+    children: [
+      { path: '', component: ListVacanciesComponent },
+      { path: 'list', component: ListVacanciesComponent },
+      { path: 'delete/:vacancyId', component: DeleteVacanciesComponent },
+      { path: 'view/:vacancyId', component: ViewVacancyComponent },
+      { path: 'create', component: AddVacanciesComponent },
+      { path: 'accept/:vacancyId', component: AcceptVacanciesComponent },
+    ],
+  },
+  { path: 'login', children: [{ path: '', component: LoginComponent }] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
