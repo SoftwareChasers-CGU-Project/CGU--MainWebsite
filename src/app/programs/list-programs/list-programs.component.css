@@ -5,11 +5,6 @@
     margin-left: 120px;
 }
 
-/* .button2{
-  background-color: rgb(214, 187, 187);
-  color:  rgb(100, 16, 16);
-  margin-left: 100px;
-} */
 
 .botton-seemore{
   
@@ -19,9 +14,7 @@
 }
 
 .card1{
-  /* margin-left: 120px; */
   margin-top: 20px;
-  /* margin-right: 500px; */
   min-width: 350px;
   min-height:100px;
   background-color: white;
@@ -58,14 +51,6 @@
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-
-/* .title{
-  margin-left: 100px;
-  margin-top: 30px;
-  color: white;
-  text-align: center;
-} */
 
 .filter-button{
   margin-left: 5%;
@@ -112,11 +97,6 @@
   background-color: black;
 }
 
-/* .row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
 .programCategory{
   width: 30%;
   height: 40px;
@@ -125,11 +105,9 @@
 }
 
 .column {
-  /* float: left; */
   width: 90%;
 }
 .column1{
-  /* float: left; */
   width: 10%; 
 }
 .row:after {

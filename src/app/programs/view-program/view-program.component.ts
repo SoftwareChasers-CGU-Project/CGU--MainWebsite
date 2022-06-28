@@ -13,11 +13,8 @@ import { RegisterEventComponent } from '../register-event/register-event.compone
 export class ViewProgramComponent implements OnInit {
 
   programId: String="";
- 
   programDetails:any;
-  
   router: any;
-
   isPastDate : boolean = false;
 
   constructor(private ProgramsService: ProgramsService, private activatedRoute: ActivatedRoute, private MatDialog: MatDialog) { }
@@ -25,9 +22,6 @@ export class ViewProgramComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data => {
       this.programId=data.programId;
-  
-      // console.log( data.programId)
-      // console.log( this.programId)
     })
 
     this.ProgramsService.viewProgram(this.programId).subscribe(data => {
@@ -38,10 +32,6 @@ export class ViewProgramComponent implements OnInit {
       if(dateNow > sessionDate){
         this.isPastDate = true;
       }
-      console.log(dateNow);
-      console.log(sessionDate);
-      
-      console.log(this.programDetails)
     })
 
    

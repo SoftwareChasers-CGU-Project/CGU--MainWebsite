@@ -18,22 +18,20 @@ export class SessionRequestComponent implements OnInit {
     private ProgramsService:ProgramsService,
     private _snackBar: MatSnackBar,
     private router:Router) {}
-    // emailPattern ="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" ;
+   
 
   ngOnInit(): void {
     this.getDate();
     this.sendRequestForm= this.formBuilder.group({
-      // 'programImage': new FormControl(''),
       'companyName' : new FormControl('',[Validators.required]),
       'companyEmail': new FormControl('',[Validators.required,Validators.email]),
-      'sessionTopic': new FormControl('',[Validators.required]),
+      'sessionTopic': new FormControl('',[Validators.required,Validators.maxLength(100)]),
       'TargetGroup': new FormControl('',[Validators.required]),
       'sessionDate': new FormControl('',[Validators.required]),
       'sessionDesc': new FormControl('',[Validators.required]),
       'sessionTime': new FormControl('',[Validators.required])
     })
     this.setNow(); 
-    // console.log(this.time)
   }
 
   sendRequest(){
@@ -62,7 +60,6 @@ export class SessionRequestComponent implements OnInit {
     }
     var year=date.getFullYear();
     this.minDate=year+"-"+month+"-"+toDate;
-    // console.log(this.minDate)
   }
 
   refreshPage(){
@@ -75,7 +72,6 @@ export class SessionRequestComponent implements OnInit {
     let minutes = ("0" + now.getMinutes()).slice(-2);
     let str = hours + ':' + minutes;
     this.time = str;
-    // console.log(this.time);
     this.sendRequestForm.patchValue({
       sessionTime : str
     })

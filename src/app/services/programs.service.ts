@@ -10,10 +10,6 @@ export class ProgramsService {
   
   constructor(private http:HttpClient) { }
 
-  // listPrograms(){
-  //   console.log("hii")
-  //   return this.http.get(this.baseurl + 'programs');
-  // }
 
   listComSessions(){
     return this.http.get(this.baseurl + 'comSessions/accepted');
@@ -47,7 +43,6 @@ viewSession(id : String){
 }
 
 listProgramsbyCat(programCat: any){
-  console.log("HIIIII")
   return this.http.get(this.baseurl +'programs/programType/' + programCat);
 }
 

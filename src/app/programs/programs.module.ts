@@ -5,8 +5,6 @@ import { ListProgramsComponent } from './list-programs/list-programs.component';
 import { RouterModule} from '@angular/router';
 import { SessionRequestComponent } from './session-request/session-request.component';
 import { MatSnackBarModule,MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
-
-
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
