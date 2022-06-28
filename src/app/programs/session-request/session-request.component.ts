@@ -12,34 +12,36 @@ import { Router } from '@angular/router';
 export class SessionRequestComponent implements OnInit {
 
   sendRequestForm : FormGroup= new FormGroup ({});
+  time: string="";
+
   constructor(private formBuilder: FormBuilder,
     private ProgramsService:ProgramsService,
     private _snackBar: MatSnackBar,
-    private router:Router) { }
-    // emailPattern ="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" ;
+    private router:Router) {}
+   
 
   ngOnInit(): void {
     this.getDate();
     this.sendRequestForm= this.formBuilder.group({
-      // 'programImage': new FormControl(''),
       'companyName' : new FormControl('',[Validators.required]),
       'companyEmail': new FormControl('',[Validators.required,Validators.email]),
-      'sessionTopic': new FormControl('',[Validators.required]),
+      'sessionTopic': new FormControl('',[Validators.required,Validators.maxLength(100)]),
       'TargetGroup': new FormControl('',[Validators.required]),
       'sessionDate': new FormControl('',[Validators.required]),
       'sessionDesc': new FormControl('',[Validators.required]),
-      
-
- 
+      'sessionTime': new FormControl('',[Validators.required])
     })
+    this.setNow(); 
   }
 
   sendRequest(){
+    console.log(this.sendRequestForm.value);
+    
     this.ProgramsService.sendSessionRequest(this.sendRequestForm.value).subscribe(data =>{
       this._snackBar.open("You registerd Successfully");
       this.router.navigate(["/programs/list"])
     }, err =>{
-      this._snackBar.open("Unable to register for the event..Please try again")
+      this._snackBar.open("This email already exists..!!")
       this.refreshPage();
     })
  
@@ -58,12 +60,25 @@ export class SessionRequestComponent implements OnInit {
     }
     var year=date.getFullYear();
     this.minDate=year+"-"+month+"-"+toDate;
-    console.log(this.minDate)
   }
 
   refreshPage(){
     window.location.reload();
   }
+
+  setNow(){
+    let now = new Date();
+    let hours = ("0" + now.getHours()).slice(-2);
+    let minutes = ("0" + now.getMinutes()).slice(-2);
+    let str = hours + ':' + minutes;
+    this.time = str;
+    this.sendRequestForm.patchValue({
+      sessionTime : str
+    })
+    
+  }
+
+
 
 }
 

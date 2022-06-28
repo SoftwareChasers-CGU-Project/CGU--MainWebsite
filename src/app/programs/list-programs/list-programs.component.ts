@@ -19,7 +19,12 @@ export class ListProgramsComponent implements OnInit {
   // selectedValue=String;
   totalLength:any;
   p:number=1;
+  p2:number=1;
+  p3:number=1;
+  p4:number=1;
   ComSessions:any;
+  listPastPrograms:any;
+  listPastComsessions:any;
 
   constructor(private ProgramsService:ProgramsService, private formBuilder:FormBuilder) { }
 
@@ -33,36 +38,39 @@ export class ListProgramsComponent implements OnInit {
       console.log(this.programCat);
       this.ProgramsService.listProgramsbyCat(this.programCat).subscribe(data =>{
       this.programs=data;
-      // console.log(this.programs);
-      
-        this.ProgramsService.listComSessions().subscribe(data => {
-          this.listComSessions=data;
-          console.log(this.listComSessions);
+     
+      this.ProgramsService.listComSessions().subscribe(data => {
+      this.listComSessions=data;
+
+      this.ProgramsService.listPastPrograms().subscribe(data => {
+      this. listPastPrograms=data;
+
+      this.ProgramsService.listPastComsessions().subscribe(data => {
+      this.listPastComsessions=data;
+          });
+        });
+          
       });
-   });
+    });
 
-  }
+    }
 
-  }
+}
 
   filterProgram(){
-    // this.refreshPage();
-    // console.log("hi");
-    // console.log(this.filterProgramForm.value);
     this.programCat = this.filterProgramForm.value['programCat']; 
-    // console.log(this.programCat);
     if(this.programCat!="Company")  {
       this.ProgramsService.listProgramsbyCat(this.programCat).subscribe(data =>{
         this.programs=data;
-        // console.log(this.programs);
+
       });
-      this.listComSessions=null;
-      console.log(this.listComSessions);
+     
     }else{
       this.ProgramsService.listComSessions().subscribe(data => {
         this.listComSessions=data;
+        this.programs=null;
     });
-    this.programs=null;
+   
   }
     
 }
