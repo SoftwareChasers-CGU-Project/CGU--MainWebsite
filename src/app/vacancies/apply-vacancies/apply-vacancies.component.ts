@@ -13,17 +13,18 @@ import { Router } from '@angular/router';
 export class ApplyVacanciesComponent implements OnInit {
   vacancyId : String = '';
   applyVacancyForm :FormGroup = new FormGroup({});
+
   constructor( @Inject(MAT_DIALOG_DATA) private data: String, private formBuilder: FormBuilder, private VacancyService: VacancyService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.vacancyId =this. data;
-  
     this.applyVacancyForm = this.formBuilder.group({
       'vacancyId'  : this.vacancyId,
       'undergrad_email' : new FormControl('',[Validators.required, Validators.email]),
       'linkedin' : new FormControl('', Validators.required),
    })
   }
+
   url="./assets/uomlogo.png";
  
 applyVacancy(){
@@ -39,8 +40,5 @@ applyVacancy(){
 
  refresh(){
   window.location.reload();
- }
-
- 
- 
+ } 
 }

@@ -1,72 +1,81 @@
-<img src="./assets/Vacancies.jpg" alt="Find a vacancy" width="100%" height="400">
-<mat-card class="card"> 
-    <h1 class = "title">FIND JOB VACANCIES</h1>
-    <form [formGroup] = "filterVacancyForm" (submit) = "filterVacancy()">
-     <div class="row">
+<img src="./assets/Vacancies.jpg" alt="Find a vacancy" width="100%" height="400"/>
+
+<mat-card class="card">
+  <h1 class="title">FIND JOB VACANCIES</h1>
+  <form [formGroup]="filterVacancyForm" (submit)="filterVacancy()">
+    <div class="row">
       <div class="column">
-      <select class="form-select vacancyType" aria-label="Default select example" formControlName="vacancyType">
-        <option value ="" >All vacancies</option>
-        <option>Government</option>
-        <option>Private</option>
-        <option>NGO</option>
-        <option>Internship</option>
-        <option>Volunteer</option>
-      </select><br><br><br> 
+        <select class="form-select vacancyType" aria-label="Default select example" formControlName="vacancyType">
+          <option value="">All vacancies</option>
+          <option>Government</option>
+          <option>Private</option>
+          <option>NGO</option>
+          <option>Internship</option>
+          <option>Volunteer</option>
+         </select><br /><br /><br />
+      </div>
+      
+      <div class="column1">
+        <button mat-raised-button color="primary" class="filter-button">
+          Search
+        </button>
+      </div>
     </div>
-    <div class="column1">
-    <button mat-raised-button color="primary" class="filter-button">Search</button>
-    </div>
-   </div>
   </form>
 </mat-card>
 
+<button mat-raised-button class="share-button" color="primary" [routerLink]="['/vacancies/create']">
+  Post vacancies
+</button>
 
-<button  mat-raised-button class="share-button" color="primary" [routerLink] = "['/vacancies/create']"  >Post vacancies</button>
-
-<mat-card class="card1" *ngFor= "let vacancy of acceptedvacancies.data | paginate: { id: 'pagination1', itemsPerPage: 10, currentPage: p}" style="flex: 1 1 auto;">
+<mat-card class="card1" *ngFor=" let vacancy of acceptedvacancies.data  | paginate: { id: 'pagination1', itemsPerPage: 10, currentPage: p }"style="flex: 1 1 auto">
   <div class="row">
-     <div class="column2">
-        <div class="align">
-          <span class="vacancyTitle"><a class="action-link" [routerLink] = "['/vacancies/view',vacancy.vacancyId]"> <b>{{vacancy.vacancyTitle}}</b> </a></span> <br>
-          <span class="companyName"> {{ vacancy.companyName }} </span><br> 
-       </div>
-     </div>
+    <div class="column2">
+      <div class="align">
+        <span class="vacancyTitle">
+         <a class="action-link" [routerLink]="['/vacancies/view', vacancy.vacancyId]">
+            <b>{{ vacancy.vacancyTitle }}</b>
+         </a>
+        </span>
+        <br />
+        <span class="companyName"> {{ vacancy.companyName }} </span><br />
+      </div>
+    </div>
 
-     <div class="column2 align2">
-          <span class="deadline"><span class="material-icons">location_on</span>{{vacancy.location}} </span>
-     </div>
+    <div class="column2 align2">
+      <span class="deadline">
+         <span class="material-icons">location_on</span>{{ vacancy.location }}
+      </span>
+    </div>
 
-     <div class="column2 align3" >
-          <span class="deadline">Expires on : {{vacancy.closingDate| date:'longDate'}} </span><br>
-          <div *ngIf="vacancy.contractType == 'Part time'; then thenBlock else elseBlock" class="contractType"></div>
-             <ng-template #thenBlock>
-                <button mat-raised-button class = "button-full"color="primary">Part time</button>
-             </ng-template>
-             <ng-template #elseBlock>
-                <button mat-raised-button class = "button-part"color="primary">Full time</button>
-             </ng-template>
-     </div>
-</div>
-
-    <!-- <mat-card-content class="deadline"></mat-card-content> -->
+    <div class="column2 align3">
+      <span class="deadline">Expires on : {{ vacancy.closingDate | date: "longDate" }} </span>
+      <br />
+      <div
+        *ngIf="
+          vacancy.contractType == 'Part time';
+          then thenBlock;
+          else elseBlock
+        "
+        class="contractType">
+      </div>
+      <ng-template #thenBlock>
+        <button mat-raised-button class="button-full" color="primary">
+          Part time
+        </button>
+      </ng-template>
+      <ng-template #elseBlock>
+        <button mat-raised-button class="button-part" color="primary">
+          Full time
+        </button>
+      </ng-template>
+    </div>
+  </div>
 </mat-card>
-<br>
-<br>
-<span class="center"><pagination-controls id="pagination1" class="my-pagination" (pageChange) ="p = $event"></pagination-controls> </span> 
-<br>
-<br> 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br />
+<br />
+<span class="center">
+   <pagination-controls id="pagination1" class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+</span>
+<br />
+<br />

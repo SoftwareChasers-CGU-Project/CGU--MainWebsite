@@ -1,7 +1,7 @@
-
 <mat-card  class="card">
   <mat-card-title class = "title">Add New Vacancy</mat-card-title>
   <form [formGroup] = "addVacancyForm" (submit) = "createVacancy()" class = "form">
+
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield" >
       <mat-label class="input">Company Name</mat-label>
       <input matInput formControlName="companyName">
@@ -17,70 +17,70 @@
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
       <mat-label class="input">Vacancy Title</mat-label>
       <input matInput formControlName="vacancyTitle">
-  </mat-form-field>
-  <br>
+    </mat-form-field>
+    <br>
 
-  <select class="form-select vacancyType" aria-label="Default select example"  formControlName="vacancyType">
-    <option value ="" >Choose Vacancy Type</option>
-    <option>Government</option>
-    <option>Private</option>
-    <option>NGO</option>
-    <option>Internship</option>
-    <option>Volunteer</option>
-  </select><br>
+    <select class="form-select vacancyType" aria-label="Default select example"  formControlName="vacancyType">
+      <option value ="" >Choose Vacancy Type</option>
+      <option>Government</option>
+      <option>Private</option>
+      <option>NGO</option>
+      <option>Internship</option>
+      <option>Volunteer</option>
+    </select><br>
   
-  <select class="form-select vacancyType" aria-label="Default select example"  formControlName="contractType">
-    <option value ="" >Choose Contract Type</option>
-    <option>Full time</option>
-    <option>Part time</option>
-  </select><br>
+    <select class="form-select vacancyType" aria-label="Default select example"  formControlName="contractType">
+      <option value ="" >Choose Contract Type</option>
+      <option>Full time</option>
+      <option>Part time</option>
+    </select><br>
 
-  <select class="form-select vacancyType" aria-label="Default select example"  formControlName="location">
-    <option value ="" >Choose Location</option>
-    <option>Ampara</option>
-    <option>Anuradhapura</option>
-    <option>Badulla</option>
-    <option>Batticaloa</option>
-    <option>Colombo</option>
-    <option>Galle</option>
-    <option>Gampaha</option>
-    <option>Hambantota</option>
-    <option>Jaffna</option>
-    <option>Kalutara</option>
-    <option>Kandy</option>
-    <option>Kegalle</option>
-    <option>Kilinochchi</option>
-    <option>Kurunegala</option>
-    <option>Mannar</option>
-    <option>Matale</option>
-    <option>Matara</option>
-    <option>Moneragala</option>
-    <option>Mullaitivu</option>
-    <option>Nuwara Eliya</option>
-    <option>Polonnaruwa</option>
-    <option>Puttalam</option>
-    <option>Ratnapura</option>
-    <option>Trincomalee</option>
-    <option>Vavuniya</option>
-  </select><br>
+    <select class="form-select vacancyType" aria-label="Default select example"  formControlName="location">
+      <option value ="" >Choose Location</option>
+      <option>Ampara</option>
+      <option>Anuradhapura</option>
+      <option>Badulla</option>
+      <option>Batticaloa</option>
+      <option>Colombo</option>
+      <option>Galle</option>
+      <option>Gampaha</option>
+      <option>Hambantota</option>
+      <option>Jaffna</option>
+      <option>Kalutara</option>
+      <option>Kandy</option>
+      <option>Kegalle</option>
+      <option>Kilinochchi</option>
+      <option>Kurunegala</option>
+      <option>Mannar</option>
+      <option>Matale</option>
+      <option>Matara</option>
+      <option>Moneragala</option>
+      <option>Mullaitivu</option>
+      <option>Nuwara Eliya</option>
+      <option>Polonnaruwa</option>
+      <option>Puttalam</option>
+      <option>Ratnapura</option>
+      <option>Trincomalee</option>
+      <option>Vavuniya</option>
+    </select><br>
 
 
-  <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-    <mat-label class="input">Vacancy Description</mat-label>
-    <textarea matInput formControlName="vacancyDesc"></textarea>
-  </mat-form-field>
-  <br>
+    <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
+      <mat-label class="input">Vacancy Description</mat-label>
+      <textarea matInput formControlName="vacancyDesc"></textarea>
+    </mat-form-field>
+    <br>
 
-  <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-    <mat-label class="input">Application Closing Date</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="closingDate" min="{{minDate}}">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <br>
-   
-  <br>
-  <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">Share Now</button>
+    <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
+      <mat-label class="input">Application Closing Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="closingDate" min="{{minDate}}">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <br>
+
+   <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">Share Now</button>
  
   </form>
 </mat-card>
@@ -96,56 +96,3 @@
 
 
 
-<!-- 
-<input   type="text" matInput formControlName="VacancyType" >
-          <select class="custom-select" formControlName="vacancyType">
-            <option value="">Choose Vacancy Type</option>
-            <option>Governmenr</option>
-            <option>Semi-government</option>
-            <option>Volunteer</option>
-          </select><br><br><br> -->
-
- <!-- <mat-form-field appearance="fill" class = "inputfield">
-      <mat-label>Company Type</mat-label>
-      <mat-select formControlName="VacancyType">
-        <mat-option *ngFor="let VacancyType of VacancyTypes" [value]="VacancyType.value" formControlName="VacancyType" >
-          {{VacancyType.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br> -->
-
-    <!-- <mat-form-field appearance="fill" class = "inputfield">
-      <mat-label>Choose a Vacancy Type</mat-label>
-      <mat-select formControlName="VacancyType">
-        <mat-option value="one">Government</mat-option>
-        <mat-option value="two">Private</mat-option>
-        <mat-option value="three">NGO</mat-option>
-        <mat-option value="three">Volunteer</mat-option>
-        <mat-option value="three">Internship</mat-option>
-        <mat-option value="four">Higher Studies</mat-option>   
-      </mat-select>
-    </mat-form-field> -->
-    <!-- <input   type="text" matInput formControlName="VacancyType" >
-          <mat-select class="custom-select" formControlName="VacancyType">
-            <mat-option value="">Choose a Vacancy Type</mat-option>
-            <option>Government</option>
-            <option>Semi-government</option>
-            <option>Private</option>
-            <option>Internship</option>
-            <option>Volunteer</option>
-          </mat-select><br><br><br> -->
-
-    
-    
-    <!-- <mat-label>Upload a Poster</mat-label><br>
-    <img [src] = "url" height="200"><br>
-    <input type="file" (change) ="onSelectFile($event)" formControlName="poster">
-    <br> -->
-     
-    <!-- <mat-form-field class="example-full-width" appearance="fill" class = "inputfield">
-          <mat-label>Upload Poster</mat-label>
-          <label for="exampleFormControlFile1">Upload </label><br>
-          <img [src]="url" height="200px" width="300px"><br><br>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onSelectFile($event)"   formControlName="programImage"><br><br>
-    </mat-form-field> -->

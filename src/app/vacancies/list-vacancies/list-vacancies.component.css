@@ -71,15 +71,17 @@ a:hover {
 
 .column {
     width: 75%;
-  }
+}
+
 .column1{
     width: 25%; 
 }
-  .row:after {
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 
 .align{
     margin: 0;
@@ -93,7 +95,7 @@ a:hover {
     float: left;
     width: 33.33%;
     padding: 10px;
-  }
+}
 
 .align2{
     line-height: 100px;
@@ -117,6 +119,7 @@ a:hover {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
 .button-part{
     background-color: #4765fa;
     width: 150px;

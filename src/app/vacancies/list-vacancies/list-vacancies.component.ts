@@ -26,7 +26,6 @@ export class ListVacanciesComponent implements OnInit {
       'vacancyType': new FormControl(''),
     })
     if(this.vacancytype == "false"){
-      console.log(this.vacancytype);
       this.VacancyService.listAcceptedVacancies().subscribe(data =>{
         this.acceptedvacancies = data as String[];
       });
@@ -34,12 +33,9 @@ export class ListVacanciesComponent implements OnInit {
     }
 
   filterVacancy(){
-    console.log(this.filterVacancyForm.value);
     this.vacancytype = this.filterVacancyForm.value['vacancyType']; 
-    console.log(this.vacancytype);  
     this.VacancyService.listVacanciesbyType(this.vacancytype).subscribe(data =>{
       this.acceptedvacancies = data as String[];
-      console.log(this.acceptedvacancies);
     });
   }
 

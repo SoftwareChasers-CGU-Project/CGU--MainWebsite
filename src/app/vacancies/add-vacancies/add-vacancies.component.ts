@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { DateAdapter } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { VacancyService } from 'src/app/services/vacancy.service';
-import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface VacancyType {
@@ -26,7 +25,6 @@ export class AddVacanciesComponent implements OnInit {
   ngOnInit(): void {
     this.getDate();
      this.addVacancyForm = this.formBuilder.group({
-        // 'vacancyType'  : this.vacancyType,
         'companyName': new FormControl('', Validators.required),
         'companyEmail': new FormControl('', [Validators.required, Validators.email]),
         'vacancyTitle': new FormControl('', Validators.required),
@@ -39,6 +37,7 @@ export class AddVacanciesComponent implements OnInit {
  }
 
  minDate:any="";
+
  //Function get the future dates
   getDate(){
     var date:any= new Date();
