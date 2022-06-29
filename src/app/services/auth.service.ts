@@ -14,9 +14,6 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  // createAlbum(albumObj: any) {
-  //   return this.http.post(this.baseUrl, albumObj);
-  // }
 
   login(userValue: any): Observable<any> {
     var email: string[] = userValue.email;

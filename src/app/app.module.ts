@@ -12,6 +12,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { LoginModule } from './login/login.module';
 
+import { authInterceptorProviders } from './helpers/auth.interceptor'
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -26,7 +28,7 @@ import { LoginModule } from './login/login.module';
     MatTableModule,
     LoginModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

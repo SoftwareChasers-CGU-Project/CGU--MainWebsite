@@ -53,8 +53,8 @@
                 <a class="nav-link active navbar-field" href="vacancies/list">VACANCIES</a>
                 <a class="nav-link active navbar-field" href="#">CONSULTATION</a>
                 <a class="nav-link active navbar-field" href="#">SIGN IN</a>
-                <a class="nav-link active navbar-field" href="login" *ngIf="!authenticated">LOG IN</a>
-                <a class="nav-link active navbar-field" href="login" *ngIf="authenticated">LOG OUT</a>
+                <a class="nav-link active navbar-field" href="login" *ngIf="!isLoggedIn">LOG IN</a>
+                <a class="nav-link active navbar-field" href="logout" *ngIf="isLoggedIn" (click)="logout()">LOG OUT</a>
             </div>
         </div>
     </div>
