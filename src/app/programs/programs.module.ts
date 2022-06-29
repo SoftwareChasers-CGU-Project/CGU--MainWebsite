@@ -5,8 +5,6 @@ import { ListProgramsComponent } from './list-programs/list-programs.component';
 import { RouterModule} from '@angular/router';
 import { SessionRequestComponent } from './session-request/session-request.component';
 import { MatSnackBarModule,MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
-
-
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -16,6 +14,7 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { ViewProgramComponent } from './view-program/view-program.component';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { RegisterSessionDialogComponent } from './register-session-dialog/register-session-dialog.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -34,6 +33,7 @@ import { RegisterSessionDialogComponent } from './register-session-dialog/regist
     RegisterEventComponent
   ],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     RouterModule,
     MatCardModule,
@@ -42,7 +42,8 @@ import { RegisterSessionDialogComponent } from './register-session-dialog/regist
     MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+  
   ],
   providers: [
     {

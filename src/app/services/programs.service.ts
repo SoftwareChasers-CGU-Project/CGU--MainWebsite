@@ -10,12 +10,16 @@ export class ProgramsService {
   
   constructor(private http:HttpClient) { }
 
-  listPrograms(){
-    return this.http.get(this.baseurl + 'programs/');
-  }
 
   listComSessions(){
     return this.http.get(this.baseurl + 'comSessions/accepted');
+  }
+
+  listPastComsessions(){
+    return this.http.get(this.baseurl + 'comSessions/past');
+  }
+  listPastPrograms(){
+    return this.http.get(this.baseurl + 'programs/past');
   }
 
   sendSessionRequest(sessionObj: any){
@@ -36,6 +40,10 @@ export class ProgramsService {
 
 viewSession(id : String){
   return this.http.get(this.baseurl + 'comSessions/'+ id );
+}
+
+listProgramsbyCat(programCat: any){
+  return this.http.get(this.baseurl +'programs/programType/' + programCat);
 }
 
  

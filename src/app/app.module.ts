@@ -8,15 +8,19 @@ import { LayoutModule } from './layout/layout.module';
 import { VacanciesModule } from './vacancies/vacancies.module';
 import { UserRegistrationModule } from './user-registration/user-registration.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { ProgramsModule } from './programs/programs.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
+
+ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,8 +32,10 @@ import { ProgramsModule } from './programs/programs.module';
     HttpClientModule,
     MatListModule,
     MatTableModule,
+    ProgramsModule,
+    ProgramsModule,
+    MatDialogModule,
     NgbModule,
-    ProgramsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,21 +13,27 @@ export class ViewSessionComponent implements OnInit {
   sessionId: String="";
   sessionDetails:any;
   router: any;
+  isPastDate : boolean = false;
 
   constructor(private ProgramsService: ProgramsService, private activatedRoute: ActivatedRoute, private MatDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data => {
       this.sessionId=data.sessionId;
-      console.log( data.sessionId)
-      console.log( this.sessionId)
     })
 
     this.ProgramsService.viewSession(this.sessionId).subscribe(data => {
       
       this.sessionDetails=data;
-      console.log(this.sessionDetails)
+      var dateNow = Date.now();
+
+      var sessionDate =Math.floor( new Date(this.sessionDetails[0].sessionDate).getTime());
+      if(dateNow > sessionDate){
+        this.isPastDate = true;
+      }
     })
+
+    
   }
 
   onOpenDialogClick(){

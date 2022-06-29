@@ -5,7 +5,7 @@
         <mat-label>Email</mat-label>
         <input matInput formControlName="email">
       </mat-form-field><br>
-      <button mat-raised-button  class="button" (click)="registerEvent()">Register</button>
+      <button mat-raised-button  class="button" [disabled]="!eventRegisterForm.valid" (click)="registerEvent()">Register</button>
     </form>
 </mat-card>
 
