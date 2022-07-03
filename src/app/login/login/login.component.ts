@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // const { email, password } = this.logInForm;
+    
     console.log('onSubmit');
     this.authService.login(this.logInForm.value).subscribe(
       (data) => {
