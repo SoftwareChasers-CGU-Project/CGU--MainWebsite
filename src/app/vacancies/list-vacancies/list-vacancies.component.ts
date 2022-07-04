@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { observable } from 'rxjs';
 import { VacancyService } from 'src/app/services/vacancy.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { CommonModule } from "@angular/common";
 import { ActivatedRoute } from '@angular/router';
 
 

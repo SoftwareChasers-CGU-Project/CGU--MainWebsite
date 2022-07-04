@@ -14,7 +14,7 @@ export class VacancyService {
   }
 
   ViewVacancies(vacancyId: String) {
-    return this.http.get(this.baseurl + 'vacancies/' + vacancyId);
+    return this.http.get(this.baseurl + 'vacancies/acceptedvacancies/' + vacancyId);
   }
 
   addVacancies(vacancyObj: any) {
@@ -34,7 +34,7 @@ export class VacancyService {
   }
 
   listAcceptedVacancies() {
-    return this.http.get(this.baseurl + 'vacancies/acceptedvacancy');
+    return this.http.get(this.baseurl + 'vacancies/acceptedvacancies');
   }
 
   applyVacancies(cvObj: any) {

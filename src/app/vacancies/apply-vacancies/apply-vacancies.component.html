@@ -15,7 +15,7 @@
         <br>
         <br>
           
-        <button mat-raised-button color="primary" class="share-button" >Submit</button>
+        <button mat-raised-button color="primary" class="share-button" [disabled]="!applyVacancyForm.valid" >Submit</button>
 
     </form>
 </mat-card>

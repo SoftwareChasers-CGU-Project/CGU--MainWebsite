@@ -29,7 +29,7 @@ export class AddUsersComponent implements OnInit {
   ) {}
 
   namePattern = '[a-zA-Z]*';
-  phoneNumPattern = '[0-9]*';
+  phoneNumPattern = '^[0-9]{10}$';
   email_pattern = '^[a-z0-9\\.]+@(uom){1}\\.(lk){1}$';
 
   ngOnInit(): void {
