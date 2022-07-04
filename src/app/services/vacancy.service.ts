@@ -2,53 +2,46 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VacancyService {
+  baseurl: string = 'http://localhost:3000/';
 
-  baseurl: string='http://localhost:3000/';
-  
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  listVacancies(){
+  listVacancies() {
     return this.http.get(this.baseurl + 'vacancies/');
   }
-  
-  ViewVacancies(vacancyId:String){
-    return this.http.get(this.baseurl +'vacancies/' + vacancyId);
+
+  ViewVacancies(vacancyId: String) {
+    return this.http.get(this.baseurl + 'vacancies/acceptedvacancies/' + vacancyId);
   }
 
-  addVacancies(vacancyObj: any){
-    //  console.log(vacancyObj);
-     return this.http.post(this.baseurl + 'vacancies/' ,vacancyObj );
+  addVacancies(vacancyObj: any) {
+    return this.http.post(this.baseurl + 'vacancies/', vacancyObj);
   }
 
-  deleteVacancies(vacancyId: any){
-    console.log(vacancyId);
+  deleteVacancies(vacancyId: any) {
     return this.http.delete(this.baseurl + 'vacancies/' + vacancyId);
   }
 
-  acceptVacancies(vacancyId: any){
-    return this.http.put(this.baseurl + 'vacancies/'  , vacancyId);
+  acceptVacancies(vacancyId: any) {
+    return this.http.put(this.baseurl + 'vacancies/', vacancyId);
   }
 
-  listPendingVacancies(){
+  listPendingVacancies() {
     return this.http.get(this.baseurl + 'vacancies/pendingVacancy/');
   }
 
-  listAcceptedVacancies(){
-    return this.http.get(this.baseurl + 'vacancies/acceptedvacancy');
+  listAcceptedVacancies() {
+    return this.http.get(this.baseurl + 'vacancies/acceptedvacancies');
   }
 
-  applyVacancies(cvObj: any){
-    console.log(cvObj);
-     return this.http.post(this.baseurl + 'vacancies/apply',cvObj );
+  applyVacancies(cvObj: any) {
+    return this.http.post(this.baseurl + 'vacancies/apply', cvObj);
   }
 
-  listVacanciesbyType(vacancyType: any){
-    return this.http.get(this.baseurl +'vacancies/filterVacancies/' + vacancyType);
+  listVacanciesbyType(vacancyType: any) {
+    return this.http.get(this.baseurl + 'vacancies/filterVacancies/' + vacancyType);
   }
 }
-
-
-

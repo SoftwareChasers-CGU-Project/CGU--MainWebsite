@@ -1,7 +1,7 @@
-
- <mat-card  class="card">
+<mat-card  class="card">
     <mat-card-title class = "title">Apply for the Vacancy</mat-card-title>
     <form [formGroup] = "applyVacancyForm"  (submit) = "applyVacancy()">
+
         <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
             <mat-label>Email</mat-label>
             <input matInput formControlName="undergrad_email">
@@ -15,14 +15,7 @@
         <br>
         <br>
           
-        <!-- <mat-form-field class="example-full-width" appearance="fill" class = "inputfield"> 
-           <mat-label>Upload Poster</mat-label>
-          <label for="exampleFormControlFile1">Upload CV </label><br>
-          <img [src]="url" height="200px" width="300px"><br><br>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onSelectFile($event)"   formControlName="programImage"><br><br>
-      </mat-form-field> -->
-
-      <button mat-raised-button color="primary" class="share-button">Submit</button>
+        <button mat-raised-button color="primary" class="share-button" [disabled]="!applyVacancyForm.valid" >Submit</button>
 
     </form>
 </mat-card>

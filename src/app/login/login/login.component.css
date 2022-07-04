@@ -8,14 +8,19 @@
   
   .form{
       margin-left: 5px;
-  }
+      /* margin: auto;
+      width: 50%;
+      padding: 10px; */
+    }
   
   .inputfield{
+    /* margin-left:2.5%;
+    margin-right:2.5%; */
     width: 95%;
-    margin-left:9px ;
+    margin-left:12px ;
   }
   
-  .share-button{
+  .login-button{
     background-color: #A52A2A;
   }
   
