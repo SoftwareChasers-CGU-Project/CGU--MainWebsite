@@ -29,7 +29,7 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
   providers:[
     {
       provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
-      useValue: {duration: 10000, panelClass: ['green-snackbar'], verticalPosition: 'top'}
+      useValue: {duration: 1000, panelClass: ['green-snackbar'], verticalPosition: 'top'}
     }
   ]
 })
