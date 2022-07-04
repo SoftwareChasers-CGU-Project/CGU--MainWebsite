@@ -8,18 +8,14 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class HeaderComponent implements OnInit {
   // authenticated: boolean = false;
-  isLoggedIn: boolean = false;
+  isLoggedIn = false;
+  logged : any
 
   constructor(private tokenStorage: TokenStorageService) {}
 
   ngOnInit(): void {
-    // const authentication = this.tokenStorage.getToken();
-    // if (authentication) {
-    //   this.authenticated = true;
-    // }
-
-    this.isLoggedIn == !!this.tokenStorage.getToken();
-    if (this.isLoggedIn) {
+    this.logged =  this.tokenStorage.getToken();
+    if (this.logged) {
       this.isLoggedIn = true;
     }
   }
