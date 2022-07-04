@@ -13,14 +13,14 @@ import { Router } from '@angular/router';
 export class ApplyVacanciesComponent implements OnInit {
   vacancyId : String = '';
   applyVacancyForm :FormGroup = new FormGroup({});
-
+  email_pattern = '^[a-z0-9\\.]+@(uom){1}\\.(lk){1}$';
   constructor( @Inject(MAT_DIALOG_DATA) private data: String, private formBuilder: FormBuilder, private VacancyService: VacancyService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.vacancyId =this. data;
     this.applyVacancyForm = this.formBuilder.group({
       'vacancyId'  : this.vacancyId,
-      'undergrad_email' : new FormControl('',[Validators.required, Validators.email]),
+      'undergrad_email' : new FormControl('',[Validators.required,Validators.pattern(this.email_pattern)]),
       'linkedin' : new FormControl('', Validators.required),
    })
   }
