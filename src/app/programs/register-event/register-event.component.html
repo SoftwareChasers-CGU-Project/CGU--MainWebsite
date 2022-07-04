@@ -1,0 +1,12 @@
+<mat-card  class="card">
+    <mat-card-title class = "title">Enter University Email Address</mat-card-title>
+    <form [formGroup]="eventRegisterForm">
+      <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field><br>
+      <button mat-raised-button  class="button" [disabled]="!eventRegisterForm.valid" (click)="registerEvent()">Register</button>
+    </form>
+</mat-card>
+
+

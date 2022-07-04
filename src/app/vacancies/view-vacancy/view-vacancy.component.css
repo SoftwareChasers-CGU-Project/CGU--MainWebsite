@@ -1,19 +1,82 @@
-.user-details{
- margin: 20px;
-}
-
-.button{
-    margin-left: 20px;
-}
-
-.button1{
-    margin-left: 20px;
-    background-color: limegreen;
-}
 .title{
-    margin-bottom: 15px;
+    margin-top: 60px;
+    height: 200px;
+    
+}
+
+.vacancyTitle{
+    font-size: 50px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.companyName{
+    color: gray;
+}
+
+.align{
+  margin: 0;
+  position: absolute;
+  top: 165px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.closingDate{
+    top:250px;
 }
 
 .content{
-    margin-bottom: 35px;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.6;
+    font-family: "Times New Roman", Times, serif;
 }
+
+.button1{
+    background-color: #A52A2A;
+    margin-left: 15%;
+    margin-right: auto;
+    margin-bottom: 150px;
+    
+}
+
+
+
+
+
+
+/* 
+.user-details{
+    margin: 20px;
+   }
+
+.card{
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 250px;
+    width: 75%;
+    padding-bottom: 20px;
+  }
+  
+   .button{
+       margin-left: 20px;
+   }
+   
+.button1{
+    background-color: #A52A2A;
+    margin-left: 470px;
+    margin-right: auto;
+    
+}
+.vacancyTitle{
+    font-size: 50px;
+    font-family: "Times New Roman", Times, serif;
+}
+   
+   .content{
+       margin-bottom: 25px;
+   } */

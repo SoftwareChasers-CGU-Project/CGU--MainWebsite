@@ -1,0 +1,30 @@
+.card{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    width: 35%;
+  }
+  
+  .form{
+      margin-left: 5px;
+  }
+  
+  .inputfield{
+    width: 95%;
+    margin-left:9px ;
+  }
+  
+  .share-button{
+    background-color: #A52A2A;
+  }
+  
+  .title{
+    text-align: center;
+  }
+
+  .center{
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+  }

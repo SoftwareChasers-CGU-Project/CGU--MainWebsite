@@ -1,0 +1,12 @@
+<mat-card class="user-details" *ngIf="programDetails" > 
+  <h1><b>{{programDetails[0].programName}}</b></h1><br>
+  <mat-card-content>
+      <b class="topic">Event Categoty</b><br><div>{{programDetails[0].programCat}}</div><br><br>
+      <b class="topic">Event Date</b><br><div>{{programDetails[0].programDate | date:'longDate'}}</div><br><br>
+      <b class="topic">Event Time</b><br><div>{{programDetails[0].programTime}}</div><br><br>
+      <b class="topic">Event Description</b><br><div class="desc">{{programDetails[0].programDesc}}</div><br><br>
+      <button mat-raised-button class="button" (click)="onOpenDialogClick()" [disabled]="isPastDate">Register Event</button><br><br><br>
+  </mat-card-content>
+</mat-card><br><br><br>
+
+

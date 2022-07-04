@@ -1,0 +1,29 @@
+.button{
+    background-color: brown;
+    color: aliceblue;
+}
+
+div{
+   
+    width: 520px;
+    margin: 0;
+    font-size: 15px;
+}
+
+.desc{
+    width:1000px;
+}
+
+.user-details{
+    margin: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.topic{
+    font-size: 20px;
+}
+
+h1{
+    font-size: 30px;
+}

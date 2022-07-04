@@ -1,1 +1,21 @@
-<p>apply-vacancies works!</p>
+<mat-card  class="card">
+    <mat-card-title class = "title">Apply for the Vacancy</mat-card-title>
+    <form [formGroup] = "applyVacancyForm"  (submit) = "applyVacancy()">
+
+        <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="undergrad_email">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
+          <mat-label>Linkedin Profile Link</mat-label>
+          <input matInput formControlName="linkedin">
+        </mat-form-field>
+        <br>
+        <br>
+          
+        <button mat-raised-button color="primary" class="share-button" [disabled]="!applyVacancyForm.valid" >Submit</button>
+
+    </form>
+</mat-card>

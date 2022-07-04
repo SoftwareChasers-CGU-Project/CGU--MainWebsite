@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AcceptVacanciesComponent } from './accept-vacancies.component';
+import { ViewProgramComponent } from './view-program.component';
 
-describe('AcceptVacanciesComponent', () => {
-  let component: AcceptVacanciesComponent;
-  let fixture: ComponentFixture<AcceptVacanciesComponent>;
+describe('ViewProgramComponent', () => {
+  let component: ViewProgramComponent;
+  let fixture: ComponentFixture<ViewProgramComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcceptVacanciesComponent ]
+      declarations: [ ViewProgramComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AcceptVacanciesComponent);
+    fixture = TestBed.createComponent(ViewProgramComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

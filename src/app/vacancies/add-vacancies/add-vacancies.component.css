@@ -8,13 +8,21 @@
 
 .form{
     margin-left: 5px;
-    /* margin: auto;
-    width: 50%;
-    padding: 10px; */
-  }
+}
 
 .inputfield{
-    width: 485px;
+  width: 95%;
+  margin-left: 9px;
+}
+
+.type{
+  color: gray;
+}
+
+.vacancyType{
+  width: 95%;
+  height: 53px;
+  margin-left: 7px;
 }
 
 .share-button{
@@ -25,4 +33,8 @@
   margin: auto;
   width: 50%;
   padding: 10px;
+}
+
+.input{
+  color:black;
 }

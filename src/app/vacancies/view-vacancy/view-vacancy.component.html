@@ -1,20 +1,36 @@
-<mat-card class = "user-details" *ngFor = "let vacancy of VacancyDetails.data"    > 
-    <p></p>
-    <mat-card-title class="title">Company Name</mat-card-title> 
-    <mat-card-content class="content">{{vacancy.companyName}}</mat-card-content>
-    <mat-card-title class="title">Company Email</mat-card-title>
-    <mat-card-content class="content">{{vacancy.companyEmail}}</mat-card-content>
-    <mat-card-title class="title">Vacancy Title</mat-card-title>
-    <mat-card-content class="content">{{vacancy.vacancyTitle}}</mat-card-content>
-    <mat-card-title class="title">Vacancy Description</mat-card-title>
-    <mat-card-content class="content">{{vacancy.vacancyDesc}}</mat-card-content>
-    <mat-card-title class="title">Application Closing Date</mat-card-title>
-    <mat-card-content class="content">{{vacancy.closingDate}}</mat-card-content>
-    <button mat-raised-button class="button1" color="primary" [routerLink] = "['/vacancies/accept',vacancy.vacancyId]">Apply Now</button> 
-    <!-- <button mat-raised-button class = " button"color="warn" [routerLink] = "['/vacancies/delete',vacancy.vacancyId]">Reject</button> -->
-</mat-card>
+<div *ngFor="let vacancy of VacancyDetails.data" class="title">
+  <h1 align="center" class="vacancyTitle">{{ vacancy.vacancyTitle }}</h1>
+  <h3 align="center" class="companyName">
+    <b>{{ vacancy.companyName }}</b>
+  </h3>
 
-<mat-form-field appearance="fill">
-    
-  </mat-form-field>
+  <span class="align">
+    <div *ngIf="vacancy.contractType == 'Part time';then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <button mat-raised-button class="button-full" color="primary">
+        Part time
+      </button>
+    </ng-template>
+    <ng-template #elseBlock>
+      <button mat-raised-button class="button-part" color="primary">
+        Full time
+      </button>
+    </ng-template>
+    <span class="material-icons">location_on</span>{{ vacancy.location }}
+  </span>
+</div>
 
+<div *ngFor="let vacancy of VacancyDetails.data">
+  <p class="content">
+    <b>Expires on : </b> {{ vacancy.closingDate | date: "MM/dd/yyyy" }}
+  </p>
+  <p class="content"><b>Contact :</b> {{ vacancy.companyEmail }}</p>
+  <p class="content">
+    <b>Vacancy Description :</b> <br /><br />
+    {{ vacancy.vacancyDesc }}
+  </p>
+
+  <button mat-raised-button class="button1" color="primary" (click)="onOpenDialogClick()">
+    Apply Now
+  </button>
+</div>
