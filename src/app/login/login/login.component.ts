@@ -61,6 +61,8 @@ export class LoginComponent implements OnInit {
         if(localStorage.getItem('token') != null)
         {
            alert("login successful");
+        }else{
+          alert("login unsuccessful");
         }
 
         this.userRole = this.authService.getRole();
