@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConsultationService } from 'src/app/services/consultation.service';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-request-consultation',

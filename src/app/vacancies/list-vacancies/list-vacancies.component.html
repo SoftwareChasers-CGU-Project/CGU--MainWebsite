@@ -43,7 +43,7 @@
     </div>
 
     <div class="column2 align3">
-      <span class="deadline">Expires on : {{ vacancy.closingDate | date: "longDate" }} </span>
+      <span class="deadline">{{'ListVacancy.Expires_on'|translate}} {{ vacancy.closingDate | date: "longDate" }} </span>
       <br />
       <div
         *ngIf="
@@ -55,12 +55,12 @@
       </div>
       <ng-template #thenBlock>
         <button mat-raised-button class="button-full" color="primary">
-          Part time
+          {{'ListVacancy.Part time'|translate}}
         </button>
       </ng-template>
       <ng-template #elseBlock>
         <button mat-raised-button class="button-part" color="primary">
-          Full time
+          {{'ListVacancy.Full time'|translate}}
         </button>
       </ng-template>
     </div>

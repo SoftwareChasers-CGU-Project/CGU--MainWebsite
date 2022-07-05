@@ -50,7 +50,17 @@
         "Company":"Company"
       },
       "Search":"Search",
-      "SeeMore":"See More"
+      "SeeMore":"See More",
+      "list":{
+        "title":"Upcoming Programs and Company Sessions",
+        "subTitle":"Upcoming Programs",
+        "seeMore":"See More",
+        "subTitle2":"Upcoming Company Sessions",
+        "ComSession":"Company Session",
+        "title2":"Past Programs and Company Sessions",
+        "subTitle3":"Past Programs",
+        "subTitle4":"Past Company Sessions"
+      }
     },
     "RegisterEvent":{
       "title":"Enter University Email Address",
@@ -69,10 +79,23 @@
       "Topic":"Session Topic",
       "Group":"Target Group",
       "Date":"Session Date",
+      "Time":"Session Time",
       "Description":"Session Description",
       "btn":"Send Request"
     },
     "viewPogram":{
+      "Categoty":"Event Categoty",
+      "Date":"Event Date",
+      "Time":"Event Time",
+      "Description":"Event Description",
+      "Register Event":"Register Event"
+    },
+    "viewSession":{
+      "Company Event":"Company Event",
+      "Category":"Session Categoty",
+      "Date":"Session Date",
+      "Time":"Session Time",
+      "Description":"Session Description",
       "Register Event":"Register Event"
     },
     "Company Event":"Company Event",
@@ -82,13 +105,44 @@
       "title":"Add New Vacancy",
       "companyName":"Company Name",
       "companyEmail":"Company Email",
+      "VacancyTitle":"Vacancy Title",
       "Choose":"Choose Vacancy Type",
       "Government":"Government",
       "Private":"Private",
       "NGO":"NGO",
       "Internship":"Internship",
       "Volunteer":"Volunteer",
-      "Vacancy Title":"Vacancy Title",
+      "Contract Type":"Choose Contract Type",
+      "Full time":"Full time",
+      "Part time":"Part time",
+      "loaction":{
+        "Choose Location":"Choose Location",
+        "Ampara":"Ampara",
+        "Anuradhapura":"Anuradhapura",
+        "Badulla":"Badulla",
+        "Batticaloa":"Batticaloa",
+        "Colombo":"Colombo",
+        "Galle":"Galle",
+        "Gampaha":"Gampaha",
+        "Hambantota":"Hambantota",
+        "Jaffna":"Jaffna",
+        "Kalutara":"Kalutara",
+        "Kandy":"Kandy",
+        "Kegalle":"Kegalle",
+        "Kilinochchi":"Kilinochchi",
+        "Kurunegala":"Kurunegala",
+        "Mannar":"Mannar",
+        "Matale":"Matale",
+        "Matara":"Matara",
+        "Moneragala":"Moneragala",
+        "Mullaitivu":"Mullaitivu",
+        "Nuwara Eliya":"Nuwara Eliya",
+        "Polonnaruwa":"Polonnaruwa",
+        "Puttalam":"Puttalam",
+        "Ratnapura":"Ratnapura",
+        "Trincomalee":"Trincomalee",
+        "Vavuniya":"Vavuniya"
+      },
       "Description":"Vacancy Description",
       "ClosingDate":"Application Closing Date",
       "btn":"Share Now"
@@ -101,14 +155,17 @@
     },
     "ListVacancy":{
       "title":"FIND JOB VACANCIES",
-      "Choose":"Choose Vacancy Type",
+      "Choose":"All vacancies",
       "Government":"Government",
       "Private":"Private",
       "NGO":"NGO",
       "Internship":"Internship",
       "Volunteer":"Volunteer",
       "Search":"Search",
-      "Post":"Post vacancies"
+      "Post":"Post vacancies",
+      "Expires_on":"Expires on :",
+      "Part time":"Part time",
+      "Full time":"Full time"
     },
     "ViewVacancy":{
       "Deadline":"Deadline :",
@@ -118,7 +175,7 @@
     },
     "SIGN UP":"SIGN UP",
     "Registration":{
-      "title":"Registration",
+      "title":"Sign Up",
       "First Name":"First Name",
       "Last Name":"Last Name",
       "Email":"Email",
@@ -126,8 +183,16 @@
       "Faculty":"Faculty",
       "Batch":"Batch",
       "Password":"Password",
-      "btn":"Register"
+      "ConfirmPassWord":"Confirmed Password",
+      "btn":"Sign Up"
     },
-    "LOGIN":"LOGIN"
+    "LOGIN":"LOGIN",
+    "Log":{
+      "title":"Login Here",
+      "Email":"Email",
+      "Password":"Password",
+      "btn":"Log In"
+    },
+    "LOGOUT":"LOGOUT"
     
   }

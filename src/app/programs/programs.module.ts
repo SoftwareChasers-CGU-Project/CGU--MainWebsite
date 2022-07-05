@@ -14,7 +14,7 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { ViewProgramComponent } from './view-program/view-program.component';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { RegisterSessionDialogComponent } from './register-session-dialog/register-session-dialog.component';
-// import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { TranslateModule } from '@ngx-translate/core';
 
 
@@ -33,7 +33,7 @@ import { TranslateModule } from '@ngx-translate/core';
     RegisterEventComponent
   ],
   imports: [
-    // NgxPaginationModule,
+    NgxPaginationModule,
     CommonModule,
     RouterModule,
     MatCardModule,

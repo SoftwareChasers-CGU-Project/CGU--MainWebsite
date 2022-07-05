@@ -49,7 +49,7 @@
        <br>
 
        <mat-form-field appearance="fill" class = "inputfield" >
-         <mat-label>Confirmed Password</mat-label>
+         <mat-label>{{'Registration.ConfirmPassWord'|translate}}</mat-label>
          <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmpassword"  id="confirmpassword" >
          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

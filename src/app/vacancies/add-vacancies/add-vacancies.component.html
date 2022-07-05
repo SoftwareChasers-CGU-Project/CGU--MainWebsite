@@ -15,7 +15,7 @@
     <br>
 
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-      <mat-label class="input">Vacancy Title</mat-label>
+      <mat-label class="input">{{'AddVacancy.VacancyTitle'|translate}}</mat-label>
       <input matInput formControlName="vacancyTitle">
     </mat-form-field>
     <br>
@@ -30,49 +30,49 @@
     </select><br>
   
     <select class="form-select vacancyType" aria-label="Default select example"  formControlName="contractType">
-      <option value ="" >Choose Contract Type</option>
-      <option>Full time</option>
-      <option>Part time</option>
+      <option value ="" >{{'AddVacancy.Contract Type'|translate}}</option>
+      <option>{{'AddVacancy.Full time'|translate}}</option>
+      <option>{{'AddVacancy.Part time'|translate}}</option>
     </select><br>
 
     <select class="form-select vacancyType" aria-label="Default select example"  formControlName="location">
-      <option value ="" >Choose Location</option>
-      <option>Ampara</option>
-      <option>Anuradhapura</option>
-      <option>Badulla</option>
-      <option>Batticaloa</option>
-      <option>Colombo</option>
-      <option>Galle</option>
-      <option>Gampaha</option>
-      <option>Hambantota</option>
-      <option>Jaffna</option>
-      <option>Kalutara</option>
-      <option>Kandy</option>
-      <option>Kegalle</option>
-      <option>Kilinochchi</option>
-      <option>Kurunegala</option>
-      <option>Mannar</option>
-      <option>Matale</option>
-      <option>Matara</option>
-      <option>Moneragala</option>
-      <option>Mullaitivu</option>
-      <option>Nuwara Eliya</option>
-      <option>Polonnaruwa</option>
-      <option>Puttalam</option>
-      <option>Ratnapura</option>
-      <option>Trincomalee</option>
-      <option>Vavuniya</option>
+      <option value ="" >{{'AddVacancy.loaction.Choose Location'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Ampara'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Anuradhapura'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Badulla'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Batticaloa'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Colombo'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Galle'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Gampaha'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Hambantota'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Jaffna'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Kalutara'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Kandy'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Kegalle'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Kilinochchi'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Kurunegala'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Mannar'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Matale'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Matara'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Moneragala'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Mullaitivu'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Nuwara Eliya'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Polonnaruwa'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Puttalam'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Ratnapura'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Trincomalee'|translate}}</option>
+      <option>{{'AddVacancy.loaction.Vavuniya'|translate}}</option>
     </select><br>
 
 
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-      <mat-label class="input">Vacancy Description</mat-label>
+      <mat-label class="input">{{'AddVacancy.Description'|translate}}</mat-label>
       <textarea matInput formControlName="vacancyDesc"></textarea>
     </mat-form-field>
     <br>
 
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-      <mat-label class="input">Application Closing Date</mat-label>
+      <mat-label class="input">{{'AddVacancy.ClosingDate'|translate}}</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="closingDate" min="{{minDate}}">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
@@ -80,7 +80,7 @@
     <br>
     <br>
 
-   <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">Share Now</button>
+   <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">{{'AddVacancy.btn'|translate}}</button>
  
   </form>
 </mat-card>

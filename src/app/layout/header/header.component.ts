@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   siteLanguage = 'English';
   languageList = [
     { code: 'en', label: 'English' },
-    { code: 'si', label: 'Sinhala' },
+    { code: 'si', label: 'සිංහල' },
   ];
   constructor(private translate: TranslateService,private tokenStorage: TokenStorageService) { }
 
