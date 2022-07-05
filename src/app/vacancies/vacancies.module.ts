@@ -19,6 +19,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { ApplyVacanciesComponent } from './apply-vacancies/apply-vacancies.component';
 import { TranslateModule } from '@ngx-translate/core';
+// import { NgxPaginationModule } from 'ngx-pagination';
+
+
 @NgModule({
   declarations: [ 
     AddVacanciesComponent,
@@ -42,7 +45,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatSelectModule,
     MatFormFieldModule,
     MatDialogModule,
-    TranslateModule
+    TranslateModule,
+    //NgxPaginationModule
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

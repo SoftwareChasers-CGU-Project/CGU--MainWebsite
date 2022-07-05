@@ -1,10 +1,10 @@
  <mat-card class="user-details" *ngIf="sessionDetails" > 
-    <h1>{{sessionDetails[0].sessionTopic}}</h1>
+    <h1><b>{{sessionDetails[0].sessionTopic}}</b></h1>
     <mat-card-content>
-        <!-- <img src="/assets/blank.jpg" alt="Notebook" style="width:400px; height: 350px;"><br><br> -->
-        <b>Event Categoty</b><br><div><p>{{'Company Event'|translate}}</p></div><br><br>
-        <b>Event Date</b><br><div>{{sessionDetails[0].sessionDate | date:'longDate'}}</div><br><br>
-        <b>Event Description</b><br><div class="desc">{{sessionDetails[0].sessionDesc}}</div><br><br>
-        <button mat-raised-button class="button" (click)="onOpenDialogClick()">{{'viewPogram.Register Event'|translate}}</button>   <br><br><br><br><br><br>
+        <b class="topic">Session Categoty</b><br><div><p>Company Event</p></div><br><br>
+        <b class="topic">Session Date</b><br><div>{{sessionDetails[0].sessionDate | date:'longDate'}}</div><br><br>
+        <b class="topic">Session Time</b><br><div>{{sessionDetails[0].sessionDate | date:'longDate'}}</div><br><br>
+        <b class="topic">Session Description</b><br><div class="desc">{{sessionDetails[0].sessionDesc}}</div><br><br>
+        <button mat-raised-button class="button" (click)="onOpenDialogClick()" [disabled]="isPastDate">{{'viewPogram.Register Event'|translate}}</button>   <br><br><br><br><br><br>
     </mat-card-content>
 </mat-card> 

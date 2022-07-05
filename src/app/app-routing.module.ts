@@ -7,11 +7,11 @@ import { ListConsultationComponent } from './consultation/list-consultation/list
 import { RequestConsultationComponent } from './consultation/request-consultation/request-consultation.component';
 import { ApplyVacanciesComponent } from './vacancies/apply-vacancies/apply-vacancies.component';
 import { AddUsersComponent } from './user-registration/add-users/add-users.component';
-// import { RegisterProgramComponent } from './programs/register-programs/register-program.component';
 import { ListProgramsComponent } from './programs/list-programs/list-programs.component';
 import { SessionRequestComponent} from './programs/session-request/session-request.component';
 import { ViewProgramComponent} from './programs/view-program/view-program.component';
 import { ViewSessionComponent } from './programs/view-session/view-session.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
   
@@ -24,6 +24,8 @@ const routes: Routes = [
         {path: 'apply/:vacancyId', component:  ApplyVacanciesComponent},
       ]
     },
+    
+     { path: 'login', children: [{ path: '', component: LoginComponent }] },
 
     {path: 'user-registration',
     children: [
@@ -35,7 +37,6 @@ const routes: Routes = [
       children: [
         {path: '', component: ListProgramsComponent},
         {path: 'list', component: ListProgramsComponent},
-        // {path: 'register/:programId', component: RegisterProgramComponent},
         {path: 'session-request', component:SessionRequestComponent},
         {path: 'viewprogram/:programId', component:ViewProgramComponent},
         {path: 'viewsession/:sessionId', component:ViewSessionComponent},
@@ -49,10 +50,11 @@ const routes: Routes = [
       ]
     }
 
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

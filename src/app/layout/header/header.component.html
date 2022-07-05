@@ -48,12 +48,16 @@
             <a class="nav-link active navbar-field" href="vacancies/list">{{ 'VACANCIES' | translate }}</a>
             <a class="nav-link active navbar-field" href="consultation/list">{{ 'consultation' | translate }}</a>
             <a class="nav-link active navbar-field" href="user-registration/create">{{ 'SIGN UP' | translate }}</a>
-            <a class="nav-link active navbar-field" href="#">{{ 'LOGIN' | translate }}</a>
-
+            <a class="nav-link active navbar-field" href="login" *ngIf="!isLoggedIn">{{ 'LOGIN' | translate }}</a>
+            <a class="nav-link active navbar-field" href="logout" *ngIf="isLoggedIn" (click)="logout()">LOG OUT</a>
           </div>
         </div>
       </tr>
     </table>
 
   </div>
+
+ 
+
+
 </nav>
