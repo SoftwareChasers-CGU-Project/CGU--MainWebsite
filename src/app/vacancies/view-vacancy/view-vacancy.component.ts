@@ -25,11 +25,16 @@ export class ViewVacancyComponent implements OnInit {
   }
 
   onOpenDialogClick(){
-    this.MatDialog.open(ApplyVacanciesComponent,
-    {
-      //Sending vacancyId
-      data:this.vacancyId
-    });
+    if(localStorage.getItem('token') == null){
+      this.router.navigate(['/login']);
+    }else{
+      this.MatDialog.open(ApplyVacanciesComponent,
+        {
+          //Sending vacancyId
+          data:this.vacancyId
+        });
+    }
+    
   }
 }
 
