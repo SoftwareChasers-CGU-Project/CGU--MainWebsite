@@ -9,6 +9,7 @@
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div class="navbar-nav navbar-fields">
         <a class="nav-link active navbar-field" aria-current="page" href="#">{{ 'HOME' | translate }}</a>
@@ -26,6 +27,7 @@
           <div *ngFor="let language of languageList">
             <button mat-menu-item (click)="changeSiteLanguage(language.code)"> {{ language.label }}</button>
           </div>
+
 
         </mat-menu>
       </div>

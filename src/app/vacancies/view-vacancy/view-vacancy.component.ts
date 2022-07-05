@@ -3,6 +3,7 @@ import { VacancyService } from 'src/app/services/vacancy.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ApplyVacanciesComponent } from '../apply-vacancies/apply-vacancies.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-vacancy',
@@ -12,8 +13,7 @@ import { ApplyVacanciesComponent } from '../apply-vacancies/apply-vacancies.comp
 export class ViewVacancyComponent implements OnInit {
   vacancyId : String = '';
   VacancyDetails : any;
-  router : any;
-  constructor(private VacancyService : VacancyService, private activatedRoute : ActivatedRoute, private MatDialog: MatDialog) { }
+  constructor(private VacancyService : VacancyService, private activatedRoute : ActivatedRoute, private MatDialog: MatDialog,  private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data => {
@@ -25,11 +25,16 @@ export class ViewVacancyComponent implements OnInit {
   }
 
   onOpenDialogClick(){
-    this.MatDialog.open(ApplyVacanciesComponent,
-    {
-      //Sending vacancyId
-      data:this.vacancyId
-    });
+    if(localStorage.getItem('token') == null){
+      this.router.navigateByUrl('/login'); 
+    }else{
+      this.MatDialog.open(ApplyVacanciesComponent,
+        {
+          //Sending vacancyId
+          data:this.vacancyId
+        });
+    }
+    
   }
 }
 
