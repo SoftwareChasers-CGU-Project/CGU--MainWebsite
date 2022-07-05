@@ -16,9 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import { ConsultationModule } from './consultation/consultation.module';
+
 import { ProgramsModule } from './programs/programs.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxTranslateModule } from './translate/translate.module';
+import { TranslateModule } from '@ngx-translate/core';
 import { LoginModule } from './login/login.module';
 
 import { authInterceptorProviders } from './helpers/auth.interceptor'
@@ -42,13 +46,15 @@ import { authInterceptorProviders } from './helpers/auth.interceptor'
     HttpClientModule,
     MatListModule,
     MatTableModule,
-
-    LoginModule,
-
-    ProgramsModule,
+    ConsultationModule,
+    // NgbModule,
     ProgramsModule,
     MatDialogModule,
     NgbModule,
+    // NgbModule
+    NgxTranslateModule, 
+    TranslateModule,
+    LoginModule,
 
   ],
   providers: [authInterceptorProviders],
