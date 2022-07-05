@@ -8,7 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',

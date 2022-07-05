@@ -1,31 +1,36 @@
-
-
- 
-
 <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-
-        <a class="navbar-brand " href="#">
-            <img src="./assets/Uni-logo.jpg" alt="" width="60" height="75" class="d-inline-block align-text-top">
-        </a>
-        <a class="navbar-brand navbar-heading" href="#"><span>Career Guidance Unit<br><br><b>University of
+  <div class="container-fluid">
+    <a class="navbar-brand " href="#">
+      <img src="./assets/Uni-logo.jpg" alt="" width="60" height="75" class="d-inline-block align-text-top">
+    </a>
+    <a class="navbar-brand navbar-heading" href="#"><span>Career Guidance Unit<br><br><b>University of
           Moratuwa</b></span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav navbar-fields">
-                <a class="nav-link active navbar-field" aria-current="page" href="#">HOME</a>
-                <a class="nav-link active navbar-field" href="#">ABOUT US</a>
-                <a class="nav-link active navbar-field" href="programs/list">PROGRAMS</a>
-                <a class="nav-link active navbar-field" href="#">NEWS & ACHIEVEMENTS</a>
-                <a class="nav-link active navbar-field" href="vacancies/list">VACANCIES</a>
-                <a class="nav-link active navbar-field" href="#">CONSULTATION</a>
-                <a class="nav-link active navbar-field" href="user-registration/create">SIGN IN</a>
-                <a class="nav-link active navbar-field" href="login" *ngIf="!isLoggedIn">LOG IN</a>
-                <a class="nav-link active navbar-field" href="logout" *ngIf="isLoggedIn" (click)="logout()">LOG OUT</a>
-            </div>
 
-        </div>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div class="navbar-nav navbar-fields">
+        <a class="nav-link active navbar-field" aria-current="page" href="#">{{ 'HOME' | translate }}</a>
+        <a class="nav-link active navbar-field" href="#">{{ 'ABOUT US' | translate }}</a>
+        <a class="nav-link active navbar-field" href="programs/list">{{ 'PROGRAMS' | translate }}</a>
+        <a class="nav-link active navbar-field" href="#">{{ 'NEWS & ACHIEVEMENTS' | translate }}</a>
+        <a class="nav-link active navbar-field" href="vacancies/list">{{ 'VACANCIES' | translate }}</a>
+        <a class="nav-link active navbar-field" href="consultation/list">{{ 'consultation' | translate }}</a>
+        <a class="nav-link active navbar-field" href="user-registration/create">{{ 'SIGN UP' | translate }}</a>
+        <a class="nav-link active navbar-field" href="login" *ngIf="!isLoggedIn">{{ 'LOGIN' | translate }}</a>
+        <a class="nav-link active navbar-field" href="logout" *ngIf="isLoggedIn"
+          (click)="logout()">{{'LOGOUT'|translate}}</a>
+        <button mat-button [matMenuTriggerFor]="menu" class="langBtn">{{ siteLanguage }}</button>
+        <mat-menu #menu="matMenu">
+          <div *ngFor="let language of languageList">
+            <button mat-menu-item (click)="changeSiteLanguage(language.code)"> {{ language.label }}</button>
+          </div>
+
+
+        </mat-menu>
+      </div>
     </div>
+  </div>
 </nav>
