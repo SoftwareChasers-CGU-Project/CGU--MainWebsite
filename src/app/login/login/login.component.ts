@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -32,7 +33,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -58,11 +60,11 @@ export class LoginComponent implements OnInit {
         console.log(data)
         this.tokenStorage.saveToken(data.accessToken);
         localStorage.setItem('token', data.accessToken);
-        if(localStorage.getItem('token') != null)
+        if(localStorage.getItem('token') != 'undefined')
         {
-           alert("login successful");
+          this._snackBar.open("You LoggedIn Successfully");
         }
-
+        
         this.userRole = this.authService.getRole();
         console.log(this.userRole);
         this.tokenStorage.saveUser(data);
@@ -73,14 +75,15 @@ export class LoginComponent implements OnInit {
 
       },
       (err) => {
-        this.errorMessage = err.error.message;
+        this.errorMessage = err.error.data;
         this.isLoginFailed = true;
+        this._snackBar.open(err.error.data);
       }
     );
   }
   reloadPage(): void {
     console.log('reload');
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('');
     // window.location.reload();
   }
 }
