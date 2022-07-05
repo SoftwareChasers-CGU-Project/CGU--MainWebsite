@@ -12,16 +12,15 @@
 
     <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div class="navbar-nav navbar-fields">
-        <a class="nav-link active navbar-field" aria-current="page" href="#">{{ 'HOME' | translate }}</a>
+        <a class="nav-link active navbar-field" aria-current="page" href="">{{ 'HOME' | translate }}</a>
         <a class="nav-link active navbar-field" href="#">{{ 'ABOUT US' | translate }}</a>
         <a class="nav-link active navbar-field" href="programs/list">{{ 'PROGRAMS' | translate }}</a>
         <a class="nav-link active navbar-field" href="#">{{ 'NEWS & ACHIEVEMENTS' | translate }}</a>
         <a class="nav-link active navbar-field" href="vacancies/list">{{ 'VACANCIES' | translate }}</a>
         <a class="nav-link active navbar-field" href="consultation/list">{{ 'consultation' | translate }}</a>
         <a class="nav-link active navbar-field" href="user-registration/create">{{ 'SIGN UP' | translate }}</a>
-        <a class="nav-link active navbar-field" href="login" *ngIf="!isLoggedIn">{{ 'LOGIN' | translate }}</a>
-        <a class="nav-link active navbar-field" href="logout" *ngIf="isLoggedIn"
-          (click)="logout()">{{'LOGOUT'|translate}}</a>
+        <a class="nav-link active navbar-field" href="login" *ngIf="!isLogged()">{{ 'LOGIN' | translate }}</a>
+        <a class="nav-link active navbar-field" href="logout" *ngIf="isLogged()" (click)="logout()">{{'LOGOUT'|translate}}</a>
         <button mat-button [matMenuTriggerFor]="menu" class="langBtn">{{ siteLanguage }}</button>
         <mat-menu #menu="matMenu">
           <div *ngFor="let language of languageList">
