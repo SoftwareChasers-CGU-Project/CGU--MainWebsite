@@ -1,13 +1,13 @@
 
 
 <mat-card  class="card">
-  <mat-card-title class = "title">{{sessionType}}</mat-card-title>
-  <mat-card-subtitle class="subTitle">Send Request</mat-card-subtitle>
+  <mat-card-title class = "title">{{sessionType|translate}}</mat-card-title>
+  <mat-card-subtitle class="subTitle">{{'ConsultationReq.Send Request'|translate}}</mat-card-subtitle>
 
   
   <form [formGroup]="requestConsultationForm" (submit)="sendRequest()" class="form"> 
       <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield">
-        <mat-label>Undergraduate Email ( University Email )</mat-label>
+        <mat-label>{{'ConsultationReq.Undergraduate Email'|translate}}</mat-label>
         <input type="text" matInput formControlName="undergraduate_email"  />
 
 		<!-- <div *ngif="(requestConsultationForm.get('undergraduate_email').invalid && requestConsultationForm.get('undergraduate_email').touched) || requestConsultationForm.get('undergraduate_email').dirty">
@@ -18,9 +18,10 @@
       </mat-form-field> 
       
       <br>
-
+      
       <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
-        <mat-label>Select a Consultant</mat-label>
+        <mat-label>{{'ConsultationReq.Select Consultant'|translate}}</mat-label>
+        
         <mat-select formControlName="consultant" >
           <mat-option *ngFor="let consultantDropdown of dropDown_list?.data" [value]="consultantDropdown">
             {{consultantDropdown.consultantFName+" "+consultantDropdown.consultantLName }}
@@ -31,10 +32,11 @@
           <mat-option value="Soft Skill Development">Dr. Nanayakkara LDJF</mat-option> -->
         </mat-select>
       </mat-form-field>
+      
       <br>
       <br>
       
-    <button mat-raised-button color="primary" class="share-button"  [disabled]="!requestConsultationForm.valid">Send Request</button>
+    <button mat-raised-button color="primary" class="share-button"  [disabled]="!requestConsultationForm.valid">{{'ConsultationReq.Send Request'|translate}}</button>
 
   </form>
 </mat-card>

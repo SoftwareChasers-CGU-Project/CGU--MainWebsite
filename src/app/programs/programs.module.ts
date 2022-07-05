@@ -17,7 +17,7 @@ import { ViewProgramComponent } from './view-program/view-program.component';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { RegisterSessionDialogComponent } from './register-session-dialog/register-session-dialog.component';
 // import { NgxPaginationModule } from 'ngx-pagination';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -45,6 +45,7 @@ import { RegisterSessionDialogComponent } from './register-session-dialog/regist
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    TranslateModule,
   
   ],
   providers: [

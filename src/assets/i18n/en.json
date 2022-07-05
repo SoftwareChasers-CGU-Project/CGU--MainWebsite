@@ -1,0 +1,133 @@
+{
+    "consultation": "CONSULTATION",
+    "types": {
+      "Individual Career Counseling Sessions": {
+        "title": "Individual Career Counseling Sessions",
+        "description" :"Career Guidance of university of Moratuwa provides Individual Career Counseling Sessions for undergraduates to discuss about their career."
+    },
+    "Round Table Discussions": {
+        "title": "Round Table Discussion",
+        "description" :"Career Guidance of university of Moratuwa provides Round Table Discussions for undergraduates to discuss about their career paths, required sessions etc."
+     },
+     "Soft Skill Development":{
+        "title": "Soft Skill Development",
+         "description" :"Career Guidance of university of Moratuwa provides Soft Skill Development sessions for undergraduates to improve their skills."
+     },
+     "Session with an Expert in a Foreign University":{
+         "title": "Session with an Expert in a Foreign University",
+         "description" :"Career Guidance of university of Moratuwa provides Sessions with an Expert in a Foreign University for undergraduates."
+     },
+     "Mockup Interview":{
+         "title": "Mockup Interviews",
+         "description" :"Career Guidance of university of Moratuwa provides Mockup Interviews to get experience before facing to an interview."
+     },
+     "Session with an Academic Expert": {
+        "title": "Session with an Academic Expert",
+         "description" :"Career Guidance of university of Moratuwa provides Sessions with Academic Experts to improve knowledge."
+     }  
+      
+      
+    },
+    "ConsultationReq":{
+      "Send Request":"Send Request",
+      "Undergraduate Email":"Undergraduate Email ( University Email )",
+      "Select Consultant":"Select a Consultant"
+     
+    },
+    "Consultants":"Consultants",
+    "HOME":"HOME",
+    "ABOUT US":"ABOUT US",
+    "PROGRAMS":"PROGRAMS",
+    "SessionReq":{
+      "Send Request":"Send your Session Request to us",
+      "RequestBtn":"Request to conduct sessions",
+      "title":"Student Programs",
+      "Category":{
+        "placeholder":"Choose Program Category",
+        "Department":"Department",
+        "CGU":"CGU",
+        "Workshops":"Workshops",
+        "Company":"Company"
+      },
+      "Search":"Search",
+      "SeeMore":"See More"
+    },
+    "RegisterEvent":{
+      "title":"Enter University Email Address",
+      "Email":"Email",
+      "Register":"Register"
+    },
+    "RegisterSession":{
+      "title":"Enter University Email Address",
+      "Email":"Email",
+      "Register":"Register"
+    },
+    "SessionRequest":{
+      "title":"Session Request",
+      "CName":"Company Name",
+      "Email":"Company Email",
+      "Topic":"Session Topic",
+      "Group":"Target Group",
+      "Date":"Session Date",
+      "Description":"Session Description",
+      "btn":"Send Request"
+    },
+    "viewPogram":{
+      "Register Event":"Register Event"
+    },
+    "Company Event":"Company Event",
+    "NEWS & ACHIEVEMENTS":"NEWS & ACHIEVEMENTS",
+    "VACANCIES":"VACANCIES",
+    "AddVacancy":{
+      "title":"Add New Vacancy",
+      "companyName":"Company Name",
+      "companyEmail":"Company Email",
+      "Choose":"Choose Vacancy Type",
+      "Government":"Government",
+      "Private":"Private",
+      "NGO":"NGO",
+      "Internship":"Internship",
+      "Volunteer":"Volunteer",
+      "Vacancy Title":"Vacancy Title",
+      "Description":"Vacancy Description",
+      "ClosingDate":"Application Closing Date",
+      "btn":"Share Now"
+    },
+    "ApplyVacancy":{
+      "title":"Apply for the Vacancy",
+      "Email":"Email",
+      "Linkedin":"Linkedin Profile Link",
+      "Submit":"Submit"
+    },
+    "ListVacancy":{
+      "title":"FIND JOB VACANCIES",
+      "Choose":"Choose Vacancy Type",
+      "Government":"Government",
+      "Private":"Private",
+      "NGO":"NGO",
+      "Internship":"Internship",
+      "Volunteer":"Volunteer",
+      "Search":"Search",
+      "Post":"Post vacancies"
+    },
+    "ViewVacancy":{
+      "Deadline":"Deadline :",
+      "Email":"Company Email  :",
+      "Description":"Vacancy Description : ",
+      "Apply Now":"Apply Now"
+    },
+    "SIGN UP":"SIGN UP",
+    "Registration":{
+      "title":"Registration",
+      "First Name":"First Name",
+      "Last Name":"Last Name",
+      "Email":"Email",
+      "Phone Number":"Phone Number",
+      "Faculty":"Faculty",
+      "Batch":"Batch",
+      "Password":"Password",
+      "btn":"Register"
+    },
+    "LOGIN":"LOGIN"
+    
+  }

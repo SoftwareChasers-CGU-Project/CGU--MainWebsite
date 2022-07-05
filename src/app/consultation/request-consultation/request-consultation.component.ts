@@ -28,10 +28,10 @@ export class RequestConsultationComponent implements OnInit {
   ) { }
  
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe(data => {
       this.sessionType=data.sessionType;  
       console.log( data.sessionType)
-
     })
     this.consultationService.listConsultants().subscribe(data=>{
       this.dropDown_list=data;
@@ -57,6 +57,7 @@ export class RequestConsultationComponent implements OnInit {
       undergraduate_email : this.requestConsultationForm.get('undergraduate_email')?.value,
       sessionType: this.sessionType,
     };
+    
     console.log(obj);
     this.consultantId=obj.consultant;
     console.log(this.consultantId);

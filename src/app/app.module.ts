@@ -16,6 +16,9 @@ import { ConsultationModule } from './consultation/consultation.module';
 import { ProgramsModule } from './programs/programs.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxTranslateModule } from './translate/translate.module';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 
 @NgModule({
@@ -40,7 +43,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProgramsModule,
     MatDialogModule,
     NgbModule,
-    // NgbModule 
+    // NgbModule
+    NgxTranslateModule, 
+    TranslateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

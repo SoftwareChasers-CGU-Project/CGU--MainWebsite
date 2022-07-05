@@ -9,7 +9,7 @@ export class ConsultationService {
   constructor(private http: HttpClient) { }
 
   listConsultants(){
-    return this.http.get(this.baseUrl+ 'consultants/list');
+    return this.http.get(this.baseUrl+ 'consultants');
   }
   requestConsultation(consultationRequestObj: any, consultantId:any){
     return this.http.post(this.baseUrl+ 'consultationReq/add/'+consultantId,consultationRequestObj);

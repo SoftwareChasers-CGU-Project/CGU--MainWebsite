@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [
     ListConsultationComponent,
@@ -33,6 +33,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RouterModule,
     MatSelectModule,
     MatGridListModule,
+    TranslateModule,
   ]
 })
 export class ConsultationModule { }

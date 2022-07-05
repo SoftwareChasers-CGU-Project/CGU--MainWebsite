@@ -1,43 +1,43 @@
 
 <mat-card  class="card">
-  <mat-card-title class = "title">Add New Vacancy</mat-card-title>
+  <mat-card-title class = "title">{{'AddVacancy.title'|translate}}</mat-card-title>
   <form [formGroup] = "addVacancyForm" (submit) = "createVacancy()" class = "form">
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield" >
-      <mat-label>Company Name</mat-label>
+      <mat-label>{{'AddVacancy.companyName'|translate}}</mat-label>
       <input matInput formControlName="companyName">
     </mat-form-field>
     <!-- <span *ngIf="">Company Name is required.</span> -->
 
     <br>
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-        <mat-label >Company Email</mat-label>
+        <mat-label >{{'AddVacancy.companyEmail'|translate}}</mat-label>
         <input matInput formControlName="companyEmail">
     </mat-form-field>
     <br>
 
     <select class="form-select vacancyType" aria-label="Default select example"  formControlName="vacancyType">
-      <option value ="" >Choose Vacancy Type</option>
-      <option>Government</option>
-      <option>Private</option>
-      <option>NGO</option>
-      <option>Internship</option>
-      <option>Volunteer</option>
+      <option value ="" >{{'AddVacancy.Choose'|translate}}</option>
+      <option>{{'AddVacancy.Government'|translate}}</option>
+      <option>{{'AddVacancy.Private'|translate}}</option>
+      <option>{{'AddVacancy.NGO'|translate}}</option>
+      <option>{{'AddVacancy.Internship'|translate}}</option>
+      <option>{{'AddVacancy.Volunteer'|translate}}</option>
     </select><br>
 
     <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-      <mat-label>Vacancy Title</mat-label>
+      <mat-label>{{'AddVacancy.Vacancy Title'|translate}}</mat-label>
       <input matInput formControlName="vacancyTitle">
   </mat-form-field>
   <br>
 
   <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-    <mat-label>Vacancy Description</mat-label>
+    <mat-label>{{'AddVacancy.Description'|translate}}</mat-label>
     <textarea matInput formControlName="vacancyDesc"></textarea>
   </mat-form-field>
   <br>
 
   <mat-form-field class="example-full-width" appearance="outline"  class = "inputfield">
-    <mat-label>Application Closing Date</mat-label>
+    <mat-label>{{'AddVacancy.ClosingDate'|translate}}</mat-label>
     <input matInput [matDatepicker]="picker" formControlName="closingDate" min="{{minDate}}">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -45,7 +45,7 @@
   <br>
    
   <br>
-  <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">Share Now</button>
+  <button mat-raised-button color="primary" class="share-button"  [disabled]="!addVacancyForm.valid">{{'AddVacancy.btn'|translate}}</button>
  
   </form>
 </mat-card>
