@@ -1,31 +1,27 @@
-<img src="./assets/Vacancies.jpg" alt="Find a vacancy" width="100%" height="400"/>
-
-<mat-card class="card">
-  <h1 class="title">FIND JOB VACANCIES</h1>
-  <form [formGroup]="filterVacancyForm" (submit)="filterVacancy()">
-    <div class="row">
+<img src="./assets/Vacancies.jpg" alt="Find a vacancy" width="100%" height="400">
+<mat-card class="card"> 
+    <h1 class = "title">{{'ListVacancy.title'|translate}}</h1>
+    <form [formGroup] = "filterVacancyForm" (submit) = "filterVacancy()">
+     <div class="row">
       <div class="column">
-        <select class="form-select vacancyType" aria-label="Default select example" formControlName="vacancyType">
-          <option value="">All vacancies</option>
-          <option>Government</option>
-          <option>Private</option>
-          <option>NGO</option>
-          <option>Internship</option>
-          <option>Volunteer</option>
-         </select><br /><br /><br />
-      </div>
-      
-      <div class="column1">
-        <button mat-raised-button color="primary" class="filter-button">
-          Search
-        </button>
-      </div>
+      <select class="form-select vacancyType" aria-label="Default select example" formControlName="vacancyType">
+        <option value ="" >{{'ListVacancy.Choose'|translate}}</option>
+        <option>{{'ListVacancy.Government'|translate}}</option>
+        <option>{{'ListVacancy.Private'|translate}}</option>
+        <option>{{'ListVacancy.NGO'|translate}}</option>
+        <option>{{'ListVacancy.Internship'|translate}}</option>
+        <option>{{'ListVacancy.Volunteer'|translate}}</option>
+      </select><br><br><br> 
     </div>
+    <div class="column1">
+    <button mat-raised-button color="primary" class="filter-button">{{'ListVacancy.Search'|translate}}</button>
+    </div>
+   </div>
   </form>
 </mat-card>
 
 <button mat-raised-button class="share-button" color="primary" [routerLink]="['/vacancies/create']">
-  Post vacancies
+  {{'ListVacancy.Post'|translate}}
 </button>
 
 <mat-card class="card1" *ngFor=" let vacancy of acceptedvacancies.data  | paginate: { id: 'pagination1', itemsPerPage: 10, currentPage: p }"style="flex: 1 1 auto">
@@ -47,7 +43,7 @@
     </div>
 
     <div class="column2 align3">
-      <span class="deadline">Expires on : {{ vacancy.closingDate | date: "longDate" }} </span>
+      <span class="deadline">{{'ListVacancy.Expires_on'|translate}} {{ vacancy.closingDate | date: "longDate" }} </span>
       <br />
       <div
         *ngIf="
@@ -59,12 +55,12 @@
       </div>
       <ng-template #thenBlock>
         <button mat-raised-button class="button-full" color="primary">
-          Part time
+          {{'ListVacancy.Part time'|translate}}
         </button>
       </ng-template>
       <ng-template #elseBlock>
         <button mat-raised-button class="button-part" color="primary">
-          Full time
+          {{'ListVacancy.Full time'|translate}}
         </button>
       </ng-template>
     </div>

@@ -11,7 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileComponent } from './profile/profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [LoginComponent, ProfileComponent, ForgetPasswordComponent],
   imports: [
@@ -24,6 +24,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     MatFormFieldModule,
     MatTableModule,
     MatIconModule,
+    TranslateModule,
   ],
 })
 export class LoginModule {}

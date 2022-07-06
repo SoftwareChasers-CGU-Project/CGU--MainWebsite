@@ -1,17 +1,17 @@
 <div class="gfg">
   <img src="../../../assets/career.jpg" width="100%" height="400" />
-  <h3 class="first-txt"><b>Send your Session Request to us</b></h3>
+  <h3 class="first-txt"><b>{{'SessionReq.Send Request'|translate}}</b></h3>
   <button
     mat-raised-button
     class="button2"
     [routerLink]="['/programs/session-request']"
   >
-    Request to conduct sessions
+  {{'SessionReq.RequestBtn'|translate}}
   </button>
 </div>
 
 <mat-card class="card">
-  <h1 class="title">Student Programs</h1>
+  <h1 class="title">{{'SessionReq.title'|translate}}</h1>
   <form [formGroup]="filterProgramForm" (submit)="filterProgram()">
     <div class="row">
       <div class="column">
@@ -20,27 +20,27 @@
           aria-label="Default select example"
           formControlName="programCat"
         >
-          <option value="">Choose Program Category</option>
-          <option>Department</option>
-          <option>CGU</option>
-          <option>Workshops</option>
+          <option value="">{{'SessionReq.Category.placeholder'|translate}}</option>
+          <option>{{'SessionReq.Category.Department'|translate}}</option>
+          <option>{{'SessionReq.Category.CGU'|translate}}</option>
+          <option>{{'SessionReq.Category.Workshops'|translate}}</option>
         </select>
       </div>
       <div class="column1">
-        <button mat-raised-button class="filter-button">Search</button>
+        <button mat-raised-button class="filter-button">{{'SessionReq.Search'|translate}}</button>
       </div>
     </div>
   </form>
 </mat-card>
 <br /><br /><br /><br />
-<h1 class="main-title"><b>Upcoming Programs and Company Sessions</b></h1>
+<h1 class="main-title"><b>{{'SessionReq.list.title'|translate}}</b></h1>
 <br /><br />
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6">
       <div style="background-color: rgb(135, 113, 120); padding: 10px">
-        <h1 class="title">Upcoming Programs</h1>
+        <h1 class="title">{{'SessionReq.list.subTitle'|translate}}</h1>
         <mat-card
           class="card1"
           *ngFor="
@@ -61,7 +61,7 @@
               class="botton-seemore"
               [routerLink]="['/programs/viewprogram', program.programId]"
             >
-              See More</button
+            {{'SessionReq.list.seeMore'|translate}}</button
             ><br /><br />
           </mat-card-content>
         </mat-card>
@@ -76,7 +76,7 @@
     <div class="col-sm-1"></div>
     <div class="col-sm-5">
       <div style="background-color: rgb(180, 92, 121); padding: 10px">
-        <h1 class="title">Upcoming Company Sessions</h1>
+        <h1 class="title">{{'SessionReq.list.subTitle2'|translate}}</h1>
         <mat-card
           class="card1"
           *ngFor="
@@ -91,13 +91,13 @@
               ><b>{{ session.sessionTopic }}</b></span
             >
             <br />
-            <span class="programCat">Company Session</span> <br /><br />
+            <span class="programCat">{{'SessionReq.list.ComSession'|translate}}</span> <br /><br />
             <button
               mat-raised-button
               class="botton-seemore"
               [routerLink]="['/programs/viewsession', session.sessionId]"
             >
-              See More</button
+            {{'SessionReq.list.seeMore'|translate}}</button
             ><br /><br />
           </mat-card-content>
         </mat-card>
@@ -113,14 +113,14 @@
   </div>
 </div>
 <br /><br /><br /><br />
-<h1 class="main-title2"><b>Past Programs and Company Sessions</b></h1>
+<h1 class="main-title2"><b>{{'SessionReq.list.title2'|translate}}</b></h1>
 <br /><br />
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6">
       <div style="background-color: rgb(135, 113, 120); padding: 10px">
-        <h1 class="title">Past Programs</h1>
+        <h1 class="title">{{'SessionReq.list.subTitle3'|translate}}</h1>
         <mat-card
           class="card1"
           *ngFor="
@@ -141,7 +141,7 @@
               class="botton-seemore"
               [routerLink]="['/programs/viewprogram', program.programId]"
             >
-              See More</button
+            {{'SessionReq.list.seeMore'|translate}}</button
             ><br /><br />
           </mat-card-content>
         </mat-card>
@@ -157,7 +157,7 @@
     <div class="col-sm-1"></div>
     <div class="col-sm-5">
       <div style="background-color: rgb(180, 92, 121); padding: 10px">
-        <h1 class="title">Past Company Sessions</h1>
+        <h1 class="title">{{'SessionReq.list.subTitle4'|translate}}</h1>
         <mat-card
           class="card1"
           *ngFor="
@@ -171,13 +171,13 @@
               ><b>{{ session.sessionTopic }}</b></span
             >
             <br />
-            <span class="programCat">Company Session</span> <br /><br />
+            <span class="programCat">{{'SessionReq.list.ComSession'|translate}}</span> <br /><br />
             <button
               mat-raised-button
               class="botton-seemore"
               [routerLink]="['/programs/viewsession', session.sessionId]"
             >
-              See More</button
+            {{'SessionReq.list.seeMore'|translate}}</button
             ><br /><br />
           </mat-card-content>
         </mat-card>

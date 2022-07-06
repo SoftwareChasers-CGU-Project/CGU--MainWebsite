@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
     MatButtonModule,
     MatFormFieldModule,
     MatTableModule,
-    MatIconModule 
+    MatIconModule, 
+    TranslateModule
   ],
   providers:[
     {
