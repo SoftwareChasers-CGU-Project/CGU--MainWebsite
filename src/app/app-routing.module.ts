@@ -40,7 +40,7 @@ const routes: Routes = [
         {path: 'list', component: ListConsultationComponent},
         {path: 'type/:sessionType', component: RequestConsultationComponent},
       ]
-    }
+    },
 
 
   {
