@@ -11,24 +11,14 @@ export class ListConsultationComponent implements OnInit {
   listConsultants: any;
   router: any;
   MatDialog: any;
-  sessionType:any;
- 
+  sessionType: any;
+
   constructor(private consultationService: ConsultationService) {}
-  // type = '';
-  // OnMatCardClickEvent(clicked_id: string) {
-  //   this.type = clicked_id;
-  //   console.log(this.type);
-  // }
 
   ngOnInit(): void {
-     
-
     this.consultationService.listConsultants().subscribe((data) => {
       this.listConsultants = data;
       console.log(this.listConsultants);
     });
   }
-  
-    
-  
 }
