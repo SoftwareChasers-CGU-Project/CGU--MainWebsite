@@ -41,14 +41,16 @@ export class ListProgramsComponent implements OnInit {
      
       this.ProgramsService.listComSessions().subscribe(data => {
       this.listComSessions=data;
+    });
 
       this.ProgramsService.listPastPrograms().subscribe(data => {
-      this. listPastPrograms=data;
+      this.listPastPrograms=data;
+    });
 
       this.ProgramsService.listPastComsessions().subscribe(data => {
       this.listPastComsessions=data;
-          });
-        });
+          
+        
           
       });
     });

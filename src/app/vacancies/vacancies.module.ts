@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { ApplyVacanciesComponent } from './apply-vacancies/apply-vacancies.component';
+import { TranslateModule } from '@ngx-translate/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
@@ -44,6 +45,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatSelectModule,
     MatFormFieldModule,
     MatDialogModule,
+    TranslateModule,
     NgxPaginationModule
   ],
   providers: [

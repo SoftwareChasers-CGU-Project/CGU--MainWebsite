@@ -10,19 +10,27 @@
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+
     <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div class="navbar-nav navbar-fields">
-        <a class="nav-link active navbar-field" aria-current="page" href="home">HOME</a>
-        <a class="nav-link active navbar-field" href="#">ABOUT US</a>
-        <a class="nav-link active navbar-field" href="#">PROGRAMS</a>
-        <a class="nav-link active navbar-field" href="#">NEWS & ACHIEVEMENTS</a>
-        <a class="nav-link active navbar-field" href="vacancies/list">VACANCIES</a>
-        <a class="nav-link active navbar-field" href="#">CONSULTATION</a>
-        <a class="nav-link active navbar-field" href="#">SIGN IN</a>
-        <a class="nav-link active navbar-field" href="login" *ngIf="!isLoggedIn">LOG IN</a>
-        <a class="nav-link active navbar-field" href="#" *ngIf="isLoggedIn" (click)="logout()">LOG OUT</a>
+        <a class="nav-link active navbar-field" aria-current="page" href="">{{ 'HOME' | translate }}</a>
+        <a class="nav-link active navbar-field" href="#">{{ 'ABOUT US' | translate }}</a>
+        <a class="nav-link active navbar-field" href="programs/list">{{ 'PROGRAMS' | translate }}</a>
+        <a class="nav-link active navbar-field" href="#">{{ 'NEWS & ACHIEVEMENTS' | translate }}</a>
+        <a class="nav-link active navbar-field" href="vacancies/list">{{ 'VACANCIES' | translate }}</a>
+        <a class="nav-link active navbar-field" href="consultation/list">{{ 'consultation' | translate }}</a>
+        <a class="nav-link active navbar-field" href="user-registration/create">{{ 'SIGN UP' | translate }}</a>
+        <a class="nav-link active navbar-field" href="login" *ngIf="!isLogged()">{{ 'LOGIN' | translate }}</a>
+        <a class="nav-link active navbar-field" href="logout" *ngIf="isLogged()" (click)="logout()">{{'LOGOUT'|translate}}</a>
+        <button mat-button [matMenuTriggerFor]="menu" class="langBtn">{{ siteLanguage }}</button>
+        <mat-menu #menu="matMenu">
+          <div *ngFor="let language of languageList">
+            <button mat-menu-item (click)="changeSiteLanguage(language.code)"> {{ language.label }}</button>
+          </div>
+        </mat-menu>
       </div>
-
     </div>
   </div>
 </nav>
+

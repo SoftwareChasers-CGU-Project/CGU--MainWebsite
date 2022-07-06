@@ -8,12 +8,12 @@
     <div *ngIf="vacancy.contractType == 'Part time';then thenBlock; else elseBlock"></div>
     <ng-template #thenBlock>
       <button mat-raised-button class="button-full" color="primary">
-        Part time
+        {{'ViewVacancy.Part time'|translate}}
       </button>
     </ng-template>
     <ng-template #elseBlock>
       <button mat-raised-button class="button-part" color="primary">
-        Full time
+        {{'ViewVacancy.Full time'|translate}}
       </button>
     </ng-template>
     <span class="material-icons">location_on</span>{{ vacancy.location }}
@@ -22,15 +22,15 @@
 
 <div *ngFor="let vacancy of VacancyDetails.data">
   <p class="content">
-    <b>Expires on : </b> {{ vacancy.closingDate | date: "MM/dd/yyyy" }}
+    <b>{{'ViewVacancy.Expires'|translate}} </b> {{ vacancy.closingDate | date: "MM/dd/yyyy" }}
   </p>
-  <p class="content"><b>Contact :</b> {{ vacancy.companyEmail }}</p>
+  <p class="content"><b>{{'ViewVacancy.Contact'|translate}}</b> {{ vacancy.companyEmail }}</p>
   <p class="content">
-    <b>Vacancy Description :</b> <br /><br />
+    <b>{{'ViewVacancy.Description'|translate}}</b> <br /><br />
     {{ vacancy.vacancyDesc }}
   </p>
 
   <button mat-raised-button class="button1" color="primary" (click)="onOpenDialogClick()">
-    Apply Now
+    {{'ViewVacancy.Apply Now'|translate}}
   </button>
 </div>

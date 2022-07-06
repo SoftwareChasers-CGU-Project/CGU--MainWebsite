@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProgramsService } from 'src/app/services/programs.service';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { RegisterEventComponent } from '../register-event/register-event.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,10 +15,10 @@ export class ViewProgramComponent implements OnInit {
 
   programId: String="";
   programDetails:any;
-  router: any;
   isPastDate : boolean = false;
+  isLoggedIn: boolean = false;
 
-  constructor(private ProgramsService: ProgramsService, private activatedRoute: ActivatedRoute, private MatDialog: MatDialog) { }
+  constructor(private ProgramsService: ProgramsService, private activatedRoute: ActivatedRoute, private MatDialog: MatDialog, private router:Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data => {
@@ -38,10 +39,25 @@ export class ViewProgramComponent implements OnInit {
   }
 
   onOpenDialogClick(){
+  if(localStorage.getItem('token') == null){
+    this.router.navigateByUrl('/login');
+    
+  }else{
     this.MatDialog.open(RegisterEventComponent,{
       width: '500px',
       data:this.programId
     });
   }
+
+    
+  }
+
+  // isLogged(){
+    
+  //   if(localStorage.getItem('token') != null)
+  //   this.isLoggedIn=true;
+  //   return this.isLoggedIn;
+    
+  // }
 
 }
