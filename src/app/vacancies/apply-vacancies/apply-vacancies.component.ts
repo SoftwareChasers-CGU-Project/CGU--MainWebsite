@@ -33,7 +33,7 @@ applyVacancy(){
     this.router.navigate(['/vacancies/view',this.vacancyId]);
     this.refresh();
   }, error=>{
-    this._snackBar.open("User is not registered.");
+    this._snackBar.open("User is not registered.Please register.");
     this.refresh();
   }) 
  }

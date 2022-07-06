@@ -13,6 +13,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { RegisterEventComponent } from '../../programs/register-event/register-event.component';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -66,6 +67,7 @@ export class LoginComponent implements OnInit {
         if(localStorage.getItem('token') != 'undefined')
         {
           this._snackBar.open("You LoggedIn Successfully");
+
         }
 
         // if(localStorage.getItem('token') != 'undefined' && localStorage.getItem('path') != 'undefined'){

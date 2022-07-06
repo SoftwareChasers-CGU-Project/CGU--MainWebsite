@@ -6,8 +6,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-
-
+import {MatMenuModule} from '@angular/material/menu';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -20,7 +20,9 @@ import {MatListModule} from '@angular/material/list';
     CommonModule,
     MatIconModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    TranslateModule,
   ],
   exports: [
     HeaderComponent,
