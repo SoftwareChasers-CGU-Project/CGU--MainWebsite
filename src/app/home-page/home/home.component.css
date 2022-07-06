@@ -1,0 +1,11 @@
+.title {
+  margin-left: 100px;
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+.card {
+  background-color: #a52a2a;
+  height: 150px;
+}
