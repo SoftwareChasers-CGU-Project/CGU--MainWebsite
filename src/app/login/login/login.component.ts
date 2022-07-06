@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
     console.log('onSubmit');
     this.authService.login(this.logInForm.value).subscribe(
       (data) => {
-        console.log(data)
+        console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         localStorage.setItem('token', data.accessToken);
         if(localStorage.getItem('token') != 'undefined')
@@ -74,6 +74,7 @@ export class LoginComponent implements OnInit {
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
 
+
       },
       (err) => {
         this.errorMessage = err.error.data;
@@ -84,7 +85,9 @@ export class LoginComponent implements OnInit {
   }
   reloadPage(): void {
     console.log('reload');
+
     this.router.navigateByUrl('');
+
     // window.location.reload();
   }
 }
