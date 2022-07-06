@@ -23,11 +23,20 @@ export class ViewVacancyComponent implements OnInit {
        this.VacancyDetails = data;
        console.log(this.VacancyDetails);
     });
+    var shouldOpenRegisterDialog =
+      window.sessionStorage.getItem('openRegDialog');
+    if (shouldOpenRegisterDialog) {
+      this.onOpenDialogClick();
+      window.sessionStorage.setItem('openRegDialog', "");
+    }
   }
 
   onOpenDialogClick(){
     if(localStorage.getItem('token') == null){
-      this.router.navigateByUrl('/login'); 
+      var locationPath = '/vacancies/view/' + this.vacancyId;
+      window.sessionStorage.setItem('path', locationPath);
+      window.sessionStorage.setItem('openRegDialog', 'yes');
+      this.router.navigateByUrl('/login');
     }else{
       this.MatDialog.open(ApplyVacanciesComponent,
         {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,16 @@ export class VacancyService {
   baseurl: string = 'http://localhost:3000/';
 
   constructor(private http: HttpClient) {}
+  
+  generateHedaer() {
+    var token = window.localStorage.getItem('token');
+    const hedaerConfig = {
+      'Content-type': 'application/json',
+      Authorization:
+      `Token ${token}`,
+    };
+    return new HttpHeaders(hedaerConfig);
+  }
 
   listVacancies() {
     return this.http.get(this.baseurl + 'vacancies/');
@@ -38,7 +48,9 @@ export class VacancyService {
   }
 
   applyVacancies(cvObj: any) {
-    return this.http.post(this.baseurl + 'vacancies/apply', cvObj);
+    return this.http.post(this.baseurl + 'vacancies/apply', cvObj, {
+      headers: this.generateHedaer(),
+    });
   }
 
   listVacanciesbyType(vacancyType: any) {

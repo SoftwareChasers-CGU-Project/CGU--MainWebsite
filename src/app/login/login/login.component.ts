@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
         Validators.minLength(8),
       ]),
     });
+    
   }
 
   onSubmit(): void {
@@ -73,6 +74,14 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
+
+        var shouldNavigateToViewPage = window.sessionStorage.getItem("path");
+        if(shouldNavigateToViewPage){
+          this.router.navigateByUrl(shouldNavigateToViewPage);
+          window.sessionStorage.setItem("path", "");
+        }else{
+          this.router.navigateByUrl("/");
+        } 
       },
       (err) => {
         this.errorMessage = err.error.data;
@@ -81,6 +90,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
   reloadPage(): void {
     console.log('reload');
     this.router.navigateByUrl('');
