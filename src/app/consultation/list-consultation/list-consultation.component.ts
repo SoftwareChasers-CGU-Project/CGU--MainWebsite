@@ -12,13 +12,15 @@ export class ListConsultationComponent implements OnInit {
   router: any;
   MatDialog: any;
   sessionType: any;
+  
 
   constructor(private consultationService: ConsultationService) {}
 
   ngOnInit(): void {
     this.consultationService.listConsultants().subscribe((data) => {
       this.listConsultants = data;
-      console.log(this.listConsultants);
+
     });
   }
+  
 }

@@ -36,6 +36,10 @@
     },
     "Consultants":"Consultants",
     "HOME":"HOME",
+    "home":{
+      "title":"Programs of Career Guidance Unit",
+      "title2":"How are you satisfied with our site? " 
+    },
     "ABOUT US":"ABOUT US",
     "PROGRAMS":"PROGRAMS",
     "SessionReq":{

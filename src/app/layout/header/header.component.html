@@ -22,7 +22,7 @@
         <a class="nav-link active navbar-field" href="consultation/list">{{ 'consultation' | translate }}</a>
         <a class="nav-link active navbar-field" href="user-registration/create">{{ 'SIGN UP' | translate }}</a>
         <a class="nav-link active navbar-field" href="login" *ngIf="!isLogged()">{{ 'LOGIN' | translate }}</a>
-        <a class="nav-link active navbar-field" href="logout" *ngIf="isLogged()" (click)="logout()">{{'LOGOUT'|translate}}</a>
+        <a class="nav-link active navbar-field" href="" *ngIf="isLogged()" (click)="logout()">{{'LOGOUT'|translate}}</a>
         <button mat-button [matMenuTriggerFor]="menu" class="langBtn">{{ siteLanguage }}</button>
         <mat-menu #menu="matMenu">
           <div *ngFor="let language of languageList">

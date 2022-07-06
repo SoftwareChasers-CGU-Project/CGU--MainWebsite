@@ -1,14 +1,17 @@
-<mat-card class="card">
+<div *ngIf="!isLogged()" class="page">
+  <mat-card class="msgCard">
+    <mat-card-title class="ifnotLogged">You Need to Log In! </mat-card-title><br><br>
+    <p class="msg">You Cannot Send Consultation Request without Logged In</p><br><br>
+    <button mat-raised-button class="share-button" color="primary" [routerLink]="['/login']" (click)="navigatePage()">Log In</button>
+  </mat-card>
+</div>
+<mat-card class="card" *ngIf="isLogged()">
   <mat-card-title class="title">{{ sessionType | translate }}</mat-card-title>
   <mat-card-subtitle class="subTitle">{{
     "ConsultationReq.Send Request" | translate
   }}</mat-card-subtitle>
 
-  <form
-    [formGroup]="requestConsultationForm"
-    (submit)="sendRequest()"
-    class="form"
-  >
+  <form [formGroup]="requestConsultationForm" (submit)="sendRequest()" class="form">
     <mat-form-field
       class="example-full-width"
       appearance="fill"
