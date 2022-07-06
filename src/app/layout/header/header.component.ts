@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   languageList = [
     { code: 'en', label: 'English' },
     { code: 'si', label: 'සිංහල' },
+    { code: 'ta', label: 'தமிழ்' }
   ];
   constructor(private translate: TranslateService,private tokenStorage: TokenStorageService,private _snackBar: MatSnackBar) { }
 

@@ -168,8 +168,10 @@
       "Full time":"Full time"
     },
     "ViewVacancy":{
-      "Deadline":"Deadline :",
-      "Email":"Company Email  :",
+      "Part time":"Part time",
+      "Full time":"Full time",
+      "Expires":"Expires on :",
+      "Contact":"Contact :",
       "Description":"Vacancy Description : ",
       "Apply Now":"Apply Now"
     },

@@ -21,6 +21,7 @@ export class ViewVacancyComponent implements OnInit {
     });
     this.VacancyService.ViewVacancies(this.vacancyId ).subscribe(data => {
        this.VacancyDetails = data;
+       console.log(this.VacancyDetails);
     });
   }
 
@@ -37,4 +38,3 @@ export class ViewVacancyComponent implements OnInit {
     
   }
 }
-
