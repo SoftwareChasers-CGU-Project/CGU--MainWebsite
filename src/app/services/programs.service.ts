@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +10,27 @@ export class ProgramsService {
   
   constructor(private http:HttpClient) { }
 
+  generateHedaer() {
+    var token = window.localStorage.getItem('token');
+    const hedaerConfig = {
+      'Content-type': 'application/json',
+      Authorization:
+      `Token ${token}`,
+    };
+    return new HttpHeaders(hedaerConfig);
+  }
+
 
   listComSessions(){
     return this.http.get(this.baseurl + 'comSessions/accepted');
   }
 
   listPastComsessions(){
+    console.log("past programs")
     return this.http.get(this.baseurl + 'comSessions/past');
   }
   listPastPrograms(){
+    console.log("past programs2")
     return this.http.get(this.baseurl + 'programs/past');
   }
 
@@ -31,11 +43,15 @@ export class ProgramsService {
   }
 
   registerEvent(data: any){
-    return this.http.post(this.baseurl + 'registerEvent/' ,data);
+    return this.http.post(this.baseurl + 'registerEvent/' ,data, {
+      headers: this.generateHedaer(),
+    });
  }
 
  registerSession(data: any){
-  return this.http.post(this.baseurl + 'registerSession/' ,data);
+  return this.http.post(this.baseurl + 'registerSession/' ,data ,{
+    headers: this.generateHedaer(),
+  });
 }
 
 viewSession(id : String){
