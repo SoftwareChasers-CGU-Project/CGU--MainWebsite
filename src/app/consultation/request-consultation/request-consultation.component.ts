@@ -27,7 +27,7 @@ export class RequestConsultationComponent implements OnInit {
   selectedConsultant: String = '';
   consultantId: String = '';
   sessionType: any;
-
+  isLoggedIn: boolean = false;
   email_pattern = '^[a-z0-9.]+@(uom){1}.(lk){1}$';
   constructor(
     private formBuilder: FormBuilder,
@@ -40,11 +40,9 @@ export class RequestConsultationComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((data) => {
       this.sessionType = data.sessionType;
-      console.log(data.sessionType);
     });
     this.consultationService.listConsultants().subscribe((data) => {
       this.dropDown_list = data;
-      console.log(this.dropDown_list);
     });
 
     this.requestConsultationForm = this.formBuilder.group({
@@ -68,28 +66,37 @@ export class RequestConsultationComponent implements OnInit {
       sessionType: this.sessionType,
     };
 
-    console.log(obj);
     this.consultantId = obj.consultant;
-    console.log(this.consultantId);
-    console.log(this.requestConsultationForm.value);
+
     this.selectedConsultant = this.requestConsultationForm.value['consultant'];
-    console.log(this.selectedConsultant);
 
     this.consultationService
       .requestConsultation(obj, this.consultantId)
       .subscribe(
         (data) => {
           this._snackBar.open('Request Sent Successfully');
-
-          console.log(data);
         },
         (err) => {
-          console.log(err.error.msg);
-          this._snackBar.open('Email is not registered in the system!');
+  
+          this._snackBar.open(err.error.msg);
           this.requestConsultationForm.reset();
         }
       );
 
     this.router.navigate(['/consultation/list']);
   }
+
+  isLogged(){
+    
+    if(localStorage.getItem('token') != null)
+    this.isLoggedIn=true;
+    return this.isLoggedIn;
+  }
+  navigatePage(){
+    if (localStorage.getItem('token') == null) {
+      var locationPath = '/consultation/type/' + this.sessionType;
+      window.sessionStorage.setItem('path', locationPath);
+    }
+  }
+  
 }

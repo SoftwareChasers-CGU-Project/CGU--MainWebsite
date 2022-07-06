@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { ConsultationModule } from './consultation/consultation.module';
-
+import {HomePageModule } from './home-page/home-page.module';
 import { ProgramsModule } from './programs/programs.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -55,6 +55,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor'
     NgxTranslateModule, 
     TranslateModule,
     LoginModule,
+    HomePageModule
 
   ],
   providers: [authInterceptorProviders],

@@ -9,7 +9,9 @@ import { MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+
   isLoggedIn: boolean = false;
+
 
 
   selectedLang='';
@@ -23,6 +25,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.selectedLang=localStorage.getItem('Lang')||'en';
     this.changeSiteLanguage(this.selectedLang);
 
@@ -30,6 +33,7 @@ export class HeaderComponent implements OnInit {
     // if (authentication) {
     //   this.authenticated = true;
     // }
+
 
 
     // this.isLoggedIn ==!this.tokenStorage.getToken();

@@ -43,7 +43,7 @@ export class RegisterEventComponent implements OnInit {
       console.log(data);
     }, err =>{
       console.log(err.error.msg);
-      this._snackBar.open("You have to sign up for the website first");
+      this._snackBar.open(err.error.msg);
       this.eventRegisterForm.reset(); 
     })
 

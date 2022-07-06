@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
+
     <a class="navbar-brand " href="#">
       <img src="./assets/Uni-logo.jpg" alt="" width="60" height="75" class="d-inline-block align-text-top">
     </a>
@@ -9,6 +10,7 @@
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
 
     <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div class="navbar-nav navbar-fields">
@@ -20,7 +22,7 @@
         <a class="nav-link active navbar-field" href="consultation/list">{{ 'consultation' | translate }}</a>
         <a class="nav-link active navbar-field" href="user-registration/create">{{ 'SIGN UP' | translate }}</a>
         <a class="nav-link active navbar-field" href="login" *ngIf="!isLogged()">{{ 'LOGIN' | translate }}</a>
-        <a class="nav-link active navbar-field" href="logout" *ngIf="isLogged()" (click)="logout()">{{'LOGOUT'|translate}}</a>
+        <a class="nav-link active navbar-field" href="" *ngIf="isLogged()" (click)="logout()">{{'LOGOUT'|translate}}</a>
         <button mat-button [matMenuTriggerFor]="menu" class="langBtn">{{ siteLanguage }}</button>
         <mat-menu #menu="matMenu">
           <div *ngFor="let language of languageList">
@@ -31,3 +33,4 @@
     </div>
   </div>
 </nav>
+

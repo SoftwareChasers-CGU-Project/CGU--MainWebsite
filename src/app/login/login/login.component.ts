@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { RegisterEventComponent } from '../../programs/register-event/register-event.component';
 
 
 
@@ -35,7 +37,8 @@ export class LoginComponent implements OnInit {
     private tokenStorage: TokenStorageService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private MatDialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -59,7 +62,7 @@ export class LoginComponent implements OnInit {
     console.log('onSubmit');
     this.authService.login(this.logInForm.value).subscribe(
       (data) => {
-        console.log(data)
+        console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         localStorage.setItem('token', data.accessToken);
         if(localStorage.getItem('token') != 'undefined')
@@ -67,13 +70,32 @@ export class LoginComponent implements OnInit {
           this._snackBar.open("You LoggedIn Successfully");
 
         }
+
+        // if(localStorage.getItem('token') != 'undefined' && localStorage.getItem('path') != 'undefined'){
+        //  var dialogComponent=localStorage.getItem('path')
+        //  console.log(dialogComponent)
+        //   this.MatDialog.open(RegisterEventComponent,{
+        //     width: '500px',
+        //     data:"",
+        //   });
+        // }
+        
         this.userRole = this.authService.getRole();
-        console.log(this.userRole);
+        // console.log(this.userRole);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        // this.reloadPage();
+
+        var shouldNavigateToViewPage = window.sessionStorage.getItem("path");
+        if(shouldNavigateToViewPage){
+          this.router.navigateByUrl(shouldNavigateToViewPage);
+          window.sessionStorage.setItem("path", "");
+        }else{
+          this.router.navigateByUrl("/");
+        }
+
 
         var shouldNavigateToViewPage = window.sessionStorage.getItem("path");
         if(shouldNavigateToViewPage){
@@ -93,7 +115,9 @@ export class LoginComponent implements OnInit {
   
   reloadPage(): void {
     console.log('reload');
+
     this.router.navigateByUrl('');
+
     // window.location.reload();
   }
 }
