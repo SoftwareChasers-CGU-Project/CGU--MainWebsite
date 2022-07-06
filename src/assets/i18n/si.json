@@ -166,8 +166,10 @@
       "Full time":"පූර්ණ කාලීන"
     },
     "ViewVacancy":{
-      "Deadline":"අවසාන දිනය :",
-      "Email":"සමාගමේ ඊමේල්  :",
+      "Part time":"අර්ධ කාලීන",
+      "Full time":"පූර්ණ කාලීන",
+      "Expires":"අවසාන දිනය :",
+      "Contact":"අමතන්න :",
       "Description":"පුරප්පාඩු විස්තරය : ",
       "Apply Now":"අයදුම් කරන්න"
     },

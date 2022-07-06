@@ -10,7 +10,7 @@
 
 .navbar-heading{
   color: white;
-  font-size: 26px;
+  font-size: 28px;
   font-family: Archivo Narrow;
 }
 
@@ -23,13 +23,13 @@ margin-right: 0;
 .p{
   font-size:45px;
   font-weight: 100;
-  color: white;
+  color: #ffffff;
   margin-top: 7px;
 }
 
 .navbar-field{
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-family: Archivo Narrow;
 }
 .langBtn{
@@ -39,6 +39,7 @@ margin-right: 0;
   background-color: rgb(255, 0, 0);
   color: white;
   border-color: white;
+  margin-left: 5px;
 }
 .langBtn:hover{
   background-color: rgb(255, 174, 0);

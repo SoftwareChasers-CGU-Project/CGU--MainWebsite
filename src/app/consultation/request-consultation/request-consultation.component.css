@@ -1,58 +1,34 @@
-/* .example-form {
-    min-width: 150px;
-    max-width: 1000px;
-    
-  }
-  
-  .example-full-width {
-    width: 100%;
-    
-  }
+.card {
+  margin-top: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 130px;
+  width: 600px;
+  height: 380px;
+}
 
-  .form-card{
-    width:500px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto; 
-    margin-top:80px;
-    margin-bottom: auto;
-  } */
+.inputfield {
+  margin-top: 10px;
+  width: 545px;
+  margin-left: 12px;
+}
 
-  .card{
-      margin-top: 130px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 130px;
-      width: 600px;
-      height: 380px;
-      
-  }
- 
-  
-  .inputfield{
-    margin-top: 10px;
-      width: 545px;
-      margin-left:12px ;
-      
-  }
-  
-  .share-button{
-      margin-left: 230px;
-      margin-bottom: 15px;
-      background-color: #A52A2A;
-  }
-  
-  .title{
-    /* margin: auto;
+.share-button {
+  margin-left: 230px;
+  margin-bottom: 15px;
+  background-color: #a52a2a;
+}
+
+.title {
+  /* margin: auto;
     width: 50%;
     padding: 10px; */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-  }
-  .subTitle {
-    font-size: 20px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.712);
-  }
- 
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.subTitle {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.712);
+}

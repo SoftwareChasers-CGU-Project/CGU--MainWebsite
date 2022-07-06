@@ -66,7 +66,6 @@ export class LoginComponent implements OnInit {
           this._snackBar.open("You LoggedIn Successfully");
 
         }
-        
         this.userRole = this.authService.getRole();
         console.log(this.userRole);
         this.tokenStorage.saveUser(data);
