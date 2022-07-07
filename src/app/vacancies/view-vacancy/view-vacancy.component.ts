@@ -21,7 +21,6 @@ export class ViewVacancyComponent implements OnInit {
     });
     this.VacancyService.ViewVacancies(this.vacancyId ).subscribe(data => {
        this.VacancyDetails = data;
-       console.log(this.VacancyDetails);
     });
     var shouldOpenRegisterDialog =
       window.sessionStorage.getItem('openRegDialog');
@@ -34,6 +33,7 @@ export class ViewVacancyComponent implements OnInit {
   onOpenDialogClick(){
     if(localStorage.getItem('token') == null){
       var locationPath = '/vacancies/view/' + this.vacancyId;
+      console.log(locationPath);
       window.sessionStorage.setItem('path', locationPath);
       window.sessionStorage.setItem('openRegDialog', 'yes');
       this.router.navigateByUrl('/login');

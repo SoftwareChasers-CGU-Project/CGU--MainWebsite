@@ -97,13 +97,14 @@ export class LoginComponent implements OnInit {
         }
 
 
-        var shouldNavigateToViewPage = window.sessionStorage.getItem("path");
-        if(shouldNavigateToViewPage){
-          this.router.navigateByUrl(shouldNavigateToViewPage);
-          window.sessionStorage.setItem("path", "");
-        }else{
-          this.router.navigateByUrl("/");
-        } 
+        // var shouldNavigateToViewPage = window.sessionStorage.getItem("path");
+        // console.log(shouldNavigateToViewPage)
+        // if(shouldNavigateToViewPage){
+        //   this.router.navigateByUrl(shouldNavigateToViewPage);
+        //   window.sessionStorage.setItem("path", "");
+        // }else{
+        //   this.router.navigateByUrl("/");
+        // } 
       },
       (err) => {
         this.errorMessage = err.error.data;
