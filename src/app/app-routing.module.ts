@@ -10,6 +10,8 @@ import { ListProgramsComponent } from './programs/list-programs/list-programs.co
 import { SessionRequestComponent} from './programs/session-request/session-request.component';
 import { ViewProgramComponent} from './programs/view-program/view-program.component';
 import { ViewSessionComponent } from './programs/view-session/view-session.component';
+import { ListNewsComponent } from './news/list-news/list-news.component';
+import { ListAboutUsComponent } from './about-us/list-about-us/list-about-us.component';
 
 const routes: Routes = [
   
@@ -38,7 +40,22 @@ const routes: Routes = [
         {path: 'viewprogram/:programId', component:ViewProgramComponent},
         {path: 'viewsession/:sessionId', component:ViewSessionComponent},
       ]
-    }
+    },
+
+    {path: 'news',
+      children: [
+        {path: '', component: ListNewsComponent},
+        {path: 'list', component: ListNewsComponent},
+      ]
+    },
+
+    {path: 'about-us',
+    children:[
+      {path: '', component: ListAboutUsComponent},
+      {path: 'list', component: ListAboutUsComponent},
+    ]
+  }
+    
 
 ];
 

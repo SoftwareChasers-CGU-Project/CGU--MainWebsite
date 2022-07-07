@@ -1,0 +1,52 @@
+<div class="gfg">
+    <img src="../../../assets/career.jpg" width="100%" height="400">
+    <!-- <h3 class="first-txt" ><b>Send your Session Request to us</b></h3> -->
+    <!-- <button mat-raised-button class="button2"  [routerLink]="['/programs/session-request']">Request to conduct sessions</button> -->
+  </div>
+<mat-card class="card"> 
+
+
+    <form [formGroup] = "filterNewsForm" (submit) = "filterProgram()" >
+    <div class="row">
+    <div class="column"> 
+      
+        <select class="custom-select programCategory" aria-label="Default select example" formControlName="newsCate">
+          <option value ="" >Choose Program Category</option>
+          <option>Company</option>
+          <option>CGU</option>
+          <!-- <option>Workshops</option>
+          <option>Company</option> -->
+        </select>
+      </div>
+      <div class="column1">
+      <button mat-raised-button  class="button">Search</button>
+    </div>
+</div>
+</form>
+
+    
+  
+   <mat-card class="card" role="list">
+   
+    <div></div> 
+   <table  class="table table-hover">
+       <thead>
+         <tr>
+           <th  scope="col">Title</th>
+           <th scope="col">Description</th>
+           <!-- <th scope="col">Date</th> -->
+           <!-- <th scope="col">Action</th> -->
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let News of news">
+           <td width="200px" ><span class="news">{{News.title}}</span></td>
+           <td width="500px"><span>{{News.newsDescription}}</span></td>
+           <!-- <td><span >{{News.newsDate | date:'longDate'}}</span></td> -->
+           <!-- <td><button mat-raised-button class="button-accept" [routerLink]="['/programs/edit',program.programId]">Update</button>&nbsp;&nbsp;<button class="btn btn-danger" [routerLink]="['/programs/delete',program.programId]">Delete</button></td> -->
+           <!-- <td><button  mat-raised-button class="button-accept" color="primary" [routerLink] = "['/news/edit',News.newsID]">Update</button>&nbsp;&nbsp;<button mat-raised-button class="button-reject" color="warn" [routerLink] = "['/news/delete',News.newsID]">Delete</button></td> -->
+         </tr>
+         
+       </tbody>
+     </table >
+   </mat-card> 
