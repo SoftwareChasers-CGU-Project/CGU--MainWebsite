@@ -1,0 +1,63 @@
+<div *ngIf="!isLogged()" class="page">
+  <mat-card class="msgCard">
+    <mat-card-title class="ifnotLogged">You Need to Log In! </mat-card-title><br><br>
+    <p class="msg">You Cannot Send Consultation Request without Logged In</p><br><br>
+    <button mat-raised-button class="share-button" color="primary" [routerLink]="['/login']" (click)="navigatePage()">Log In</button>
+  </mat-card>
+</div>
+<mat-card class="card" *ngIf="isLogged()">
+  <mat-card-title class="title">{{ sessionType | translate }}</mat-card-title>
+  <mat-card-subtitle class="subTitle">{{
+    "ConsultationReq.Send Request" | translate
+  }}</mat-card-subtitle>
+
+  <form [formGroup]="requestConsultationForm" (submit)="sendRequest()" class="form">
+    <mat-form-field
+      class="example-full-width"
+      appearance="fill"
+      class="inputfield"
+    >
+      <mat-label>{{
+        "ConsultationReq.Undergraduate Email" | translate
+      }}</mat-label>
+      <input type="text" matInput formControlName="undergraduate_email" />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field
+      class="example-full-width"
+      appearance="fill"
+      class="inputfield"
+    >
+      <mat-label>{{
+        "ConsultationReq.Select Consultant" | translate
+      }}</mat-label>
+
+      <mat-select formControlName="consultant">
+        <mat-option
+          *ngFor="let consultantDropdown of dropDown_list?.data"
+          [value]="consultantDropdown"
+        >
+          {{
+            consultantDropdown.consultantFName +
+              " " +
+              consultantDropdown.consultantLName
+          }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
+    <br />
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="share-button"
+      [disabled]="!requestConsultationForm.valid"
+    >
+      {{ "ConsultationReq.Send Request" | translate }}
+    </button>
+  </form>
+</mat-card>

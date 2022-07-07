@@ -1,0 +1,53 @@
+.card {
+  margin-top: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 130px;
+  width: 600px;
+  height: 380px;
+}
+
+.inputfield {
+  margin-top: 10px;
+  width: 545px;
+  margin-left: 12px;
+}
+
+.share-button {
+  margin-left: 230px;
+  margin-bottom: 15px;
+  background-color: #a52a2a;
+}
+
+.title {
+  /* margin: auto;
+    width: 50%;
+    padding: 10px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.subTitle {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.712);
+}
+.ifnotLogged{
+  margin-inline-start: auto;
+  text-align: center;
+  padding-top: 70px;
+  font-size: 30px;
+}
+.msg{
+  text-align: center;
+  font-size: 20px;
+}
+.msgCard{
+  margin-top: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 163px;
+  width: 580px;
+  height: 340px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

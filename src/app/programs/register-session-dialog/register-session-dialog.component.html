@@ -1,11 +1,11 @@
 <mat-card  class="card">
-    <mat-card-title class = "title">Enter University Email Address</mat-card-title>
+    <mat-card-title class = "title">{{'RegisterSession.title'|translate}}</mat-card-title>
     <form [formGroup]="sessionRegisterForm">
       <mat-form-field class="example-full-width" appearance="fill"  class = "inputfield" >
-        <mat-label>Email</mat-label>
+        <mat-label>{{'RegisterSession.Email'|translate}}</mat-label>
         <input matInput formControlName="email">
       </mat-form-field><br>
-      <button mat-raised-button  class="button" (click)="registerSession()">Register</button>
+      <button mat-raised-button  class="button" [disabled]="!sessionRegisterForm.valid" (click)="registerSession()">{{'RegisterSession.Register'|translate}}</button>
     </form>
 </mat-card>
 
