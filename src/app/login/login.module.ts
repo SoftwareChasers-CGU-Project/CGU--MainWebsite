@@ -12,8 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProfileComponent } from './profile/profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
-  declarations: [LoginComponent, ProfileComponent, ForgetPasswordComponent],
+  declarations: [LoginComponent, ProfileComponent, ForgetPasswordComponent, ResetPasswordComponent],
   imports: [
     CommonModule,
     MatCardModule,

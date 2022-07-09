@@ -15,6 +15,8 @@ import { ViewProgramComponent } from './programs/view-program/view-program.compo
 import { ViewSessionComponent } from './programs/view-session/view-session.component';
 import { LoginComponent } from './login/login/login.component';
 import { HomeComponent } from './home-page/home/home.component';
+import { ForgetPasswordComponent } from './login/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,18 +32,23 @@ const routes: Routes = [
     ],
   },
 
+  {
+    path: 'login',
+    children: [
+      { path: '', component: LoginComponent },
+      { path: 'forget-password', component: ForgetPasswordComponent },
+      { path: 'reset-password/:token', component: ResetPasswordComponent },
+    ],
+  },
 
-  { path: 'login', children: [{ path: '', component: LoginComponent }] },
-
-    
-    {path: 'consultation',
-      children: [
-        {path: '', component: ListConsultationComponent},
-        {path: 'list', component: ListConsultationComponent},
-        {path: 'type/:sessionType', component: RequestConsultationComponent},
-      ]
-    }
-
+  {
+    path: 'consultation',
+    children: [
+      { path: '', component: ListConsultationComponent },
+      { path: 'list', component: ListConsultationComponent },
+      { path: 'type/:sessionType', component: RequestConsultationComponent },
+    ],
+  },
 
   {
     path: 'user-registration',

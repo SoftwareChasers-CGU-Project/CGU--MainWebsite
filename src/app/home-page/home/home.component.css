@@ -5,7 +5,16 @@
   text-align: center;
 }
 
-.card {
-  background-color: #a52a2a;
-  height: 150px;
+.form {
+  width: 100%;
+  align-content: center;
+}
+
+iframe {
+  width: 100%;
+  border: 0;
+  margin: 0;
+  /* frameborder:0;
+   margin-height:0 ;
+   margin-width:0;  */
 }

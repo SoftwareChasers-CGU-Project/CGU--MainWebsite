@@ -22,10 +22,11 @@ export class AuthService {
     return userRole;
   }
 
-
-  roleMatch(allowedRoles:any): boolean {
+  roleMatch(allowedRoles: any): boolean {
     var isMatch = false;
-    var payLoad = JSON.parse(window.atob(localStorage.getItem('token')!.split('.')[1]));
+    var payLoad = JSON.parse(
+      window.atob(localStorage.getItem('token')!.split('.')[1])
+    );
     var userRole = payLoad.role;
     allowedRoles.forEach((element: any) => {
       if (userRole == element) {
@@ -44,6 +45,22 @@ export class AuthService {
       {
         email,
         undergradPassword,
+      },
+      httpOptions
+    );
+  }
+
+  forgetPassword(email: any) {
+    return this.http.put(AUTH_API + 'forgot-password', email);
+  }
+
+  resetPassword(email: any, newPass: any, token: any) {
+    return this.http.put(
+      AUTH_API + 'reset-password',
+      {
+        email,
+        newPass,
+        token,
       },
       httpOptions
     );

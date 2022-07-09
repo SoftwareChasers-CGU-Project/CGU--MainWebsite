@@ -8,9 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
-import { MatSnackBar} from '@angular/material/snack-bar';
-
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -54,17 +52,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-
     console.log('onSubmit');
     this.authService.login(this.logInForm.value).subscribe(
       (data) => {
         console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         localStorage.setItem('token', data.accessToken);
-        if(localStorage.getItem('token') != 'undefined')
-        {
-          this._snackBar.open("You LoggedIn Successfully");
-
+        if (localStorage.getItem('token') != 'undefined') {
+          this._snackBar.open('You LoggedIn Successfully');
         }
         this.userRole = this.authService.getRole();
         console.log(this.userRole);
@@ -73,8 +68,6 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
-
-
       },
       (err) => {
         this.errorMessage = err.error.data;
@@ -85,9 +78,9 @@ export class LoginComponent implements OnInit {
   }
   reloadPage(): void {
     console.log('reload');
-
-    this.router.navigateByUrl('');
-
-    // window.location.reload();
   }
+
+  // forgetPassword(): void {
+  //   this.router.navigateByUrl('/login/forget-password');
+  // }
 }
