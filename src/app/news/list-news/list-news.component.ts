@@ -3,7 +3,6 @@ import { NewsService } from 'src/app/services/news.service';
 import { FormBuilder, FormControl} from '@angular/forms';
 // import { Pipe, PipeTransform } from '@angular/core';
 
-
 @Component({
   selector: 'app-list-news',
   templateUrl: './list-news.component.html',
@@ -43,4 +42,5 @@ filterProgram(){
       }); 
 }
 }
+
 

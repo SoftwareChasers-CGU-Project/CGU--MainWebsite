@@ -18,6 +18,7 @@ import { ListAboutUsComponent } from './about-us/list-about-us/list-about-us.com
 import { LoginComponent } from './login/login/login.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { ViewNewsComponent } from './news/view-news/view-news.component';
+import { ListContactUsComponent } from './contact-us/list-contact-us/list-contact-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -74,6 +75,13 @@ const routes: Routes = [
     children:[
       {path: '', component: ListAboutUsComponent},
       {path: 'list', component: ListAboutUsComponent},
+    ]
+  },
+
+  {path: 'contact-us',
+    children:[
+      {path: '', component: ListContactUsComponent},
+      {path: 'list', component: ListContactUsComponent},
     ]
   }
     

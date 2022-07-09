@@ -10,11 +10,7 @@ import { VacanciesModule } from './vacancies/vacancies.module';
 import { NewsModule } from './news/news.module';
 import { UserRegistrationModule } from './user-registration/user-registration.module';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
+import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { ConsultationModule } from './consultation/consultation.module';
@@ -24,9 +20,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListAboutUsComponent } from './about-us/list-about-us/list-about-us.component';
 import { NgxTranslateModule } from './translate/translate.module';
-// import { TranslateModule } from '@ngx-translate/core';
 import { LoginModule } from './login/login.module';
-
+import {ReactiveFormsModule } from '@angular/forms';
+import { ListContactUsComponent } from './contact-us/list-contact-us/list-contact-us.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor'
 
 
@@ -34,6 +30,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor'
   declarations: [
     AppComponent,
     ListAboutUsComponent,
+    ListContactUsComponent,
   ],
 
  
@@ -49,6 +46,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor'
     UserRegistrationModule,
     HttpClientModule,
     MatListModule,
+    ReactiveFormsModule,
     MatTableModule,
     ConsultationModule,
     // NgbModule,
@@ -59,6 +57,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor'
     NgxTranslateModule, 
     // TranslateModule,
     LoginModule,
+    MatCardModule,
     HomePageModule
 
   ],

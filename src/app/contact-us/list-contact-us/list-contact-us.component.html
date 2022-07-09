@@ -1,0 +1,45 @@
+<h1 class="heading"><b>Contact Us</b></h1><br>
+<mat-card class="card"> 
+    <form [formGroup] = "filterContactsForm" (submit) = "filterProgram()" >
+    <div class="row">
+    <div class="column"> 
+      
+        <select class="custom-select programCategory" aria-label="Default select example" formControlName="Faculty">
+          <option value ="" >Choose Faculty</option>
+          <option>CGU</option>
+          <option>IT</option>
+          <option>Engineering</option>
+          <option>Architecture</option>
+        </select>
+      </div>
+      <div class="column1">
+      <button mat-raised-button  class="button">Search</button>
+    </div>
+</div>
+</form>
+<br>
+<br>
+<br>
+   <table  class="table table-hover">
+       <thead>
+         <tr>
+           <th  scope="col">Name</th>
+           <th scope="col">Title</th>
+           <th scope="col">Faculty</th>
+           <th scope="col">Email</th>
+           <th scope="col">Phone number</th>
+           <!-- <th scope="col">Action</th> -->
+         </tr>
+       </thead>
+       <tbody >
+          <tr *ngFor="let ContactUs of Contacts">
+           <td width="300px" ><span class="contact-us">{{ContactUs.NameOf}}</span></td>
+           <td width="300px"><span>{{ContactUs.Title}}</span></td>
+           <td width="300px"><span>{{ContactUs.Faculty}}</span></td>
+           <td width="300px"><span>{{ContactUs.Email}}</span></td>
+           <td width="300px"><span>{{ContactUs.PhNum}}</span></td>
+           <!-- <td><button  mat-raised-button class="button-accept" color="primary" [routerLink] = "['/contact-us/edit',ContactUs.ID]">Update</button>&nbsp;&nbsp;<button mat-raised-button class="button-reject" color="warn" [routerLink] = "['/contact-us/delete',ContactUs.ID]">Delete</button></td> -->
+         </tr>
+       </tbody>
+     </table >
+
