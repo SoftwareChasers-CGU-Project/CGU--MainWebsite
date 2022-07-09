@@ -14,6 +14,7 @@ import {ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 // import { ViewNewsComponent } from './view-news/view-news.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ViewNewsComponent } from './view-news/view-news.component';
 
 
 
@@ -22,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     // AddNewsComponent,
     ListNewsComponent,
+    ViewNewsComponent,
     // ViewNewsComponent
   ],
   imports: [

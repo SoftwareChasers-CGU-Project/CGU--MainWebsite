@@ -17,6 +17,7 @@ import { ListNewsComponent } from './news/list-news/list-news.component';
 import { ListAboutUsComponent } from './about-us/list-about-us/list-about-us.component';
 import { LoginComponent } from './login/login/login.component';
 import { HomeComponent } from './home-page/home/home.component';
+import { ViewNewsComponent } from './news/view-news/view-news.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -65,6 +66,7 @@ const routes: Routes = [
       children: [
         {path: '', component: ListNewsComponent},
         {path: 'list', component: ListNewsComponent},
+        {path: 'view/:newsID', component: ViewNewsComponent},
       ]
     },
 

@@ -1,0 +1,13 @@
+
+<mat-card class="user-details" *ngIf="news">
+    <mat-card-title class="title">{{news[0].title}}</mat-card-title><br><br>
+    <mat-card-content>
+        <!-- {{newsDetails[0].newsImage}}<br> -->
+        <b>News Categoty :  </b>{{news[0].newsCate}}<br><br>
+        <b>News Date  :  </b><span>{{news.newsDate | date:'longDate'}}</span><br><br>
+        {{news[0].newsDescription}}
+    </mat-card-content>
+    <!-- <button class="btn btn-success"  [routerLink]="['/news/edit',newsDetails[0].newsID]">Update</button>&nbsp;&nbsp;
+    <button class="btn btn-danger" [routerLink]="['/news/delete',newsDetails[0].newsID]">Delete</button> -->
+        
+</mat-card>

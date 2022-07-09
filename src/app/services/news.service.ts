@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,16 @@ export class NewsService {
   baseUrl :string='http://localhost:3000/';
 
   constructor(private http: HttpClient) { }
+
+  generateHedaer() {
+    var token = window.localStorage.getItem('token');
+    const hedaerConfig = {
+      'Content-type': 'application/json',
+      Authorization:
+      `Token ${token}`,
+    };
+    return new HttpHeaders(hedaerConfig);
+  }
 
 
   listNews(){
@@ -18,6 +28,12 @@ export class NewsService {
     return this.http.get(this.baseUrl +'news/newsCate/' + newsCate);
   }
 
+
+  viewNews(id : String){
+    return this.http.get(this.baseUrl + 'news/'+ id , {
+      headers: this.generateHedaer(),
+    });
+  }
 //   viewNews(id : String){
 //     return this.http.get(this.baseUrl + 'news/'+ id );
 //   }
