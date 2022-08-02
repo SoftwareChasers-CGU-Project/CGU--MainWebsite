@@ -12,8 +12,6 @@ import { MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { RegisterEventComponent } from '../../programs/register-event/register-event.component';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -54,7 +52,6 @@ export class LoginComponent implements OnInit {
         Validators.minLength(8),
       ]),
     });
-    
   }
 
   onSubmit(): void {
@@ -71,14 +68,7 @@ export class LoginComponent implements OnInit {
 
         }
 
-        // if(localStorage.getItem('token') != 'undefined' && localStorage.getItem('path') != 'undefined'){
-        //  var dialogComponent=localStorage.getItem('path')
-        //  console.log(dialogComponent)
-        //   this.MatDialog.open(RegisterEventComponent,{
-        //     width: '500px',
-        //     data:"",
-        //   });
-        // }
+
         
         this.userRole = this.authService.getRole();
         // console.log(this.userRole);
@@ -95,16 +85,6 @@ export class LoginComponent implements OnInit {
         }else{
           this.router.navigateByUrl("/");
         }
-
-
-        // var shouldNavigateToViewPage = window.sessionStorage.getItem("path");
-        // console.log(shouldNavigateToViewPage)
-        // if(shouldNavigateToViewPage){
-        //   this.router.navigateByUrl(shouldNavigateToViewPage);
-        //   window.sessionStorage.setItem("path", "");
-        // }else{
-        //   this.router.navigateByUrl("/");
-        // } 
       },
       (err) => {
         this.errorMessage = err.error.data;
@@ -113,7 +93,6 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  
   reloadPage(): void {
     console.log('reload');
 

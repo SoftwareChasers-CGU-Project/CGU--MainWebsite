@@ -22,7 +22,6 @@ export class AuthService {
     return userRole;
   }
 
-
   roleMatch(allowedRoles:any): boolean {
     var isMatch = false;
     var payLoad = JSON.parse(window.atob(localStorage.getItem('token')!.split('.')[1]));
@@ -34,6 +33,22 @@ export class AuthService {
     });
     return isMatch;
   }
+  forgetPassword(email: any) {
+    return this.http.put(AUTH_API + 'forgot-password', email);
+  }
+
+  resetPassword(email: any, newPass: any, token: any) {
+    return this.http.put(
+      AUTH_API + 'reset-password',
+      {
+        email,
+        newPass,
+        token,
+      },
+      httpOptions
+    );
+  }
+
   login(userValue: any): Observable<any> {
     var email: string[] = userValue.email;
     var undergradPassword: string[] = userValue.undergradPassword;
