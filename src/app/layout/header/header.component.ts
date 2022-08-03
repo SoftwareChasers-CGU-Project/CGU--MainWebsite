@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ export class HeaderComponent implements OnInit {
     { code: 'si', label: 'සිංහල' },
     { code: 'ta', label: 'தமிழ்' }
   ];
-  constructor(private translate: TranslateService,private tokenStorage: TokenStorageService,private _snackBar: MatSnackBar) { }
+  constructor(private translate: TranslateService,private tokenStorage: TokenStorageService,private _snackBar: MatSnackBar,private router:Router) { }
 
 
   ngOnInit(): void {
@@ -46,9 +47,10 @@ export class HeaderComponent implements OnInit {
   }
   logout(): void {
     localStorage.removeItem('token');
-    // this.router.navigateByUrl('');
+    this.router.navigateByUrl('');
     this.tokenStorage.logout();
     this._snackBar.open("You LoggedOut Successfully");
+    
   }
 
   

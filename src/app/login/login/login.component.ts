@@ -78,6 +78,7 @@ export class LoginComponent implements OnInit {
   }
   reloadPage(): void {
     console.log('reload');
+    this.router.navigateByUrl('');
   }
 
   // forgetPassword(): void {
